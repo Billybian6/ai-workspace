@@ -1,0 +1,27 @@
+# Data and processed files
+inbox/
+outputs/
+converted/
+*.xlsx
+*.pdf
+*.docx
+*.xls
+*.csv
+*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
