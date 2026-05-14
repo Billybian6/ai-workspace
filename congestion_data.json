@@ -1,23 +1,43 @@
 {
   "ALL_DATES": [
-    "2026-4-20",
-    "2026-4-21",
-    "2026-4-22",
-    "2026-4-23",
-    "2026-4-24",
-    "2026-4-27",
-    "2026-4-28",
-    "2026-4-29",
-    "2026-4-30",
-    "2026-5-6",
-    "2026-5-7",
-    "2026-5-8",
-    "2026-5-11",
-    "2026-5-12",
-    "2026-5-13",
-    "2026-5-14"
+    "2026-04-14",
+    "2026-04-15",
+    "2026-04-16",
+    "2026-04-17",
+    "2026-04-20",
+    "2026-04-21",
+    "2026-04-22",
+    "2026-04-23",
+    "2026-04-24",
+    "2026-04-27",
+    "2026-04-28",
+    "2026-04-29",
+    "2026-04-30",
+    "2026-05-06",
+    "2026-05-07",
+    "2026-05-08",
+    "2026-05-11",
+    "2026-05-12",
+    "2026-05-13",
+    "2026-05-14"
   ],
   "MARKET_TOTAL": {
+    "2026-04-14": {
+      "turnover": 23420.24,
+      "free_float_mv": 610028.94
+    },
+    "2026-04-15": {
+      "turnover": 23694.85,
+      "free_float_mv": 610028.94
+    },
+    "2026-04-16": {
+      "turnover": 22914.7,
+      "free_float_mv": 610028.94
+    },
+    "2026-04-17": {
+      "turnover": 23859.38,
+      "free_float_mv": 610028.94
+    },
     "2026-04-20": {
       "turnover": 25434.54,
       "free_float_mv": 610028.94
@@ -85,745 +105,929 @@
   },
   "RAW_DATA": {
     "000016": {
+      "2026-04-14": {
+        "turnover": 1282.96,
+        "free_mv": 228705.96,
+        "percentile": 83.0
+      },
+      "2026-04-15": {
+        "turnover": 1455.3,
+        "free_mv": 228705.96,
+        "percentile": 88.0
+      },
+      "2026-04-16": {
+        "turnover": 1154.89,
+        "free_mv": 228705.96,
+        "percentile": 78.0
+      },
+      "2026-04-17": {
+        "turnover": 1347.88,
+        "free_mv": 228705.96,
+        "percentile": 85.0
+      },
       "2026-04-20": {
         "turnover": 1320.77,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 84.0
       },
       "2026-04-21": {
         "turnover": 1195.09,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 79.0
       },
       "2026-04-22": {
         "turnover": 1263.83,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 82.0
       },
       "2026-04-23": {
         "turnover": 1557.16,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 91.0
       },
       "2026-04-24": {
         "turnover": 1546.14,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 90.0
       },
       "2026-04-27": {
         "turnover": 1590.41,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 92.0
       },
       "2026-04-28": {
         "turnover": 1569.48,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 91.0
       },
       "2026-04-29": {
         "turnover": 1778.86,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 95.0
       },
       "2026-04-30": {
         "turnover": 2155.38,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 98.0
       },
       "2026-05-06": {
         "turnover": 2608.26,
         "free_mv": 228705.96,
-        "percentile": 11.0
+        "percentile": 99.0
       },
       "2026-05-07": {
         "turnover": 2059.12,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 97.0
       },
       "2026-05-08": {
         "turnover": 1812.05,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 95.0
       },
       "2026-05-11": {
         "turnover": 2420.27,
         "free_mv": 228705.96,
-        "percentile": 11.0
+        "percentile": 99.0
       },
       "2026-05-12": {
         "turnover": 2302.01,
         "free_mv": 228705.96,
-        "percentile": 10.0
+        "percentile": 99.0
       },
       "2026-05-13": {
         "turnover": 2133.02,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 97.0
       },
       "2026-05-14": {
         "turnover": 2151.91,
         "free_mv": 228705.96,
-        "percentile": 10
+        "percentile": 97.0
       }
     },
     "000300": {
+      "2026-04-14": {
+        "turnover": 6057.18,
+        "free_mv": 535769.18,
+        "percentile": 90.0
+      },
+      "2026-04-15": {
+        "turnover": 6045.51,
+        "free_mv": 535769.18,
+        "percentile": 90.0
+      },
+      "2026-04-16": {
+        "turnover": 5676.11,
+        "free_mv": 535769.18,
+        "percentile": 87.0
+      },
+      "2026-04-17": {
+        "turnover": 5876.23,
+        "free_mv": 535769.18,
+        "percentile": 89.0
+      },
       "2026-04-20": {
         "turnover": 6265.68,
         "free_mv": 535769.18,
-        "percentile": 12.0
+        "percentile": 91.0
       },
       "2026-04-21": {
         "turnover": 5804.08,
         "free_mv": 535769.18,
-        "percentile": 11.0
+        "percentile": 88.0
       },
       "2026-04-22": {
         "turnover": 6195.06,
         "free_mv": 535769.18,
-        "percentile": 12.0
+        "percentile": 91.0
       },
       "2026-04-23": {
         "turnover": 6938.54,
         "free_mv": 535769.18,
-        "percentile": 13.0
+        "percentile": 96.0
       },
       "2026-04-24": {
         "turnover": 6800.98,
         "free_mv": 535769.18,
-        "percentile": 13.0
+        "percentile": 95.0
       },
       "2026-04-27": {
         "turnover": 6489.05,
         "free_mv": 535769.18,
-        "percentile": 12.0
+        "percentile": 92.0
       },
       "2026-04-28": {
         "turnover": 6315.22,
         "free_mv": 535769.18,
-        "percentile": 12.0
+        "percentile": 91.0
       },
       "2026-04-29": {
         "turnover": 6810.21,
         "free_mv": 535769.18,
-        "percentile": 13.0
+        "percentile": 95.0
       },
       "2026-04-30": {
         "turnover": 7266.65,
         "free_mv": 535769.18,
-        "percentile": 14.0
+        "percentile": 97.0
       },
       "2026-05-06": {
         "turnover": 8817.44,
         "free_mv": 535769.18,
-        "percentile": 16.0
+        "percentile": 99.0
       },
       "2026-05-07": {
         "turnover": 7872.36,
         "free_mv": 535769.18,
-        "percentile": 15.0
+        "percentile": 98.0
       },
       "2026-05-08": {
         "turnover": 7165.46,
         "free_mv": 535769.18,
-        "percentile": 13.0
+        "percentile": 96.0
       },
       "2026-05-11": {
         "turnover": 9044.79,
         "free_mv": 535769.18,
-        "percentile": 17.0
+        "percentile": 100.0
       },
       "2026-05-12": {
         "turnover": 8193.51,
         "free_mv": 535769.18,
-        "percentile": 15.0
+        "percentile": 98.0
       },
       "2026-05-13": {
         "turnover": 8231.73,
         "free_mv": 535769.18,
-        "percentile": 15.0
+        "percentile": 98.0
       },
       "2026-05-14": {
         "turnover": 8574.46,
         "free_mv": 535769.18,
-        "percentile": 16.0
+        "percentile": 99.0
       }
     },
     "000905": {
+      "2026-04-14": {
+        "turnover": 4601.31,
+        "free_mv": 176940.42,
+        "percentile": 91.0
+      },
+      "2026-04-15": {
+        "turnover": 4569.85,
+        "free_mv": 176940.42,
+        "percentile": 91.0
+      },
+      "2026-04-16": {
+        "turnover": 4299.96,
+        "free_mv": 176940.42,
+        "percentile": 88.0
+      },
+      "2026-04-17": {
+        "turnover": 4534.11,
+        "free_mv": 176940.42,
+        "percentile": 91.0
+      },
       "2026-04-20": {
         "turnover": 5073.88,
         "free_mv": 176940.42,
-        "percentile": 29.0
+        "percentile": 95.0
       },
       "2026-04-21": {
         "turnover": 4415.23,
         "free_mv": 176940.42,
-        "percentile": 25.0
+        "percentile": 89.0
       },
       "2026-04-22": {
         "turnover": 5019.52,
         "free_mv": 176940.42,
-        "percentile": 28.0
+        "percentile": 94.0
       },
       "2026-04-23": {
         "turnover": 5650.97,
         "free_mv": 176940.42,
-        "percentile": 32.0
+        "percentile": 97.0
       },
       "2026-04-24": {
         "turnover": 5186.18,
         "free_mv": 176940.42,
-        "percentile": 29.0
+        "percentile": 95.0
       },
       "2026-04-27": {
         "turnover": 5242.19,
         "free_mv": 176940.42,
-        "percentile": 30.0
+        "percentile": 96.0
       },
       "2026-04-28": {
         "turnover": 4945.15,
         "free_mv": 176940.42,
-        "percentile": 28.0
+        "percentile": 93.0
       },
       "2026-04-29": {
         "turnover": 4897.15,
         "free_mv": 176940.42,
-        "percentile": 28.0
+        "percentile": 93.0
       },
       "2026-04-30": {
         "turnover": 5350.36,
         "free_mv": 176940.42,
-        "percentile": 30.0
+        "percentile": 96.0
       },
       "2026-05-06": {
         "turnover": 6356.08,
         "free_mv": 176940.42,
-        "percentile": 36.0
+        "percentile": 99.0
       },
       "2026-05-07": {
         "turnover": 6204.41,
         "free_mv": 176940.42,
-        "percentile": 35.0
+        "percentile": 99.0
       },
       "2026-05-08": {
         "turnover": 6090.03,
         "free_mv": 176940.42,
-        "percentile": 34.0
+        "percentile": 98.0
       },
       "2026-05-11": {
         "turnover": 7091.25,
         "free_mv": 176940.42,
-        "percentile": 40.0
+        "percentile": 100.0
       },
       "2026-05-12": {
         "turnover": 6335.58,
         "free_mv": 176940.42,
-        "percentile": 36.0
+        "percentile": 99.0
       },
       "2026-05-13": {
         "turnover": 6370.53,
         "free_mv": 176940.42,
-        "percentile": 36.0
+        "percentile": 99.0
       },
       "2026-05-14": {
         "turnover": 6582.25,
         "free_mv": 176940.42,
-        "percentile": 37.0
+        "percentile": 99.0
       }
     },
     "000852": {
+      "2026-04-14": {
+        "turnover": 5094.65,
+        "free_mv": 152617.53,
+        "percentile": 92.0
+      },
+      "2026-04-15": {
+        "turnover": 5208.49,
+        "free_mv": 152617.53,
+        "percentile": 93.0
+      },
+      "2026-04-16": {
+        "turnover": 5049.35,
+        "free_mv": 152617.53,
+        "percentile": 91.0
+      },
+      "2026-04-17": {
+        "turnover": 5304.41,
+        "free_mv": 152617.53,
+        "percentile": 94.0
+      },
       "2026-04-20": {
         "turnover": 5596.65,
         "free_mv": 152617.53,
-        "percentile": 37.0
+        "percentile": 95.0
       },
       "2026-04-21": {
         "turnover": 5219.02,
         "free_mv": 152617.53,
-        "percentile": 34.0
+        "percentile": 93.0
       },
       "2026-04-22": {
         "turnover": 5583.9,
         "free_mv": 152617.53,
-        "percentile": 37.0
+        "percentile": 95.0
       },
       "2026-04-23": {
         "turnover": 6236.97,
         "free_mv": 152617.53,
-        "percentile": 41.0
+        "percentile": 98.0
       },
       "2026-04-24": {
         "turnover": 5662.82,
         "free_mv": 152617.53,
-        "percentile": 37.0
+        "percentile": 96.0
       },
       "2026-04-27": {
         "turnover": 5447.36,
         "free_mv": 152617.53,
-        "percentile": 36.0
+        "percentile": 94.0
       },
       "2026-04-28": {
         "turnover": 5492.02,
         "free_mv": 152617.53,
-        "percentile": 36.0
+        "percentile": 94.0
       },
       "2026-04-29": {
         "turnover": 5571.43,
         "free_mv": 152617.53,
-        "percentile": 37.0
+        "percentile": 95.0
       },
       "2026-04-30": {
         "turnover": 5959.82,
         "free_mv": 152617.53,
-        "percentile": 39.0
+        "percentile": 97.0
       },
       "2026-05-06": {
         "turnover": 6909.61,
         "free_mv": 152617.53,
-        "percentile": 45.0
+        "percentile": 99.0
       },
       "2026-05-07": {
         "turnover": 6876.08,
         "free_mv": 152617.53,
-        "percentile": 45.0
+        "percentile": 99.0
       },
       "2026-05-08": {
         "turnover": 6567.47,
         "free_mv": 152617.53,
-        "percentile": 43.0
+        "percentile": 98.0
       },
       "2026-05-11": {
         "turnover": 7425.41,
         "free_mv": 152617.53,
-        "percentile": 49.0
+        "percentile": 100.0
       },
       "2026-05-12": {
         "turnover": 6834.58,
         "free_mv": 152617.53,
-        "percentile": 45.0
+        "percentile": 99.0
       },
       "2026-05-13": {
         "turnover": 6771.87,
         "free_mv": 152617.53,
-        "percentile": 44.0
+        "percentile": 99.0
       },
       "2026-05-14": {
         "turnover": 7309.7,
         "free_mv": 152617.53,
-        "percentile": 48.0
+        "percentile": 99.0
       }
     },
     "000464": {
+      "2026-04-14": {
+        "turnover": 422.27,
+        "free_mv": 154995.04,
+        "percentile": 41.0
+      },
+      "2026-04-15": {
+        "turnover": 485.04,
+        "free_mv": 154995.04,
+        "percentile": 57.0
+      },
+      "2026-04-16": {
+        "turnover": 461.78,
+        "free_mv": 154995.04,
+        "percentile": 51.0
+      },
+      "2026-04-17": {
+        "turnover": 433.3,
+        "free_mv": 154995.04,
+        "percentile": 43.0
+      },
       "2026-04-20": {
         "turnover": 501.45,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 60.0
       },
       "2026-04-21": {
         "turnover": 489.26,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 58.0
       },
       "2026-04-22": {
         "turnover": 462.08,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 51.0
       },
       "2026-04-23": {
         "turnover": 556.46,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 68.0
       },
       "2026-04-24": {
         "turnover": 474.19,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 54.0
       },
       "2026-04-27": {
         "turnover": 512.57,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 62.0
       },
       "2026-04-28": {
         "turnover": 556.43,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 68.0
       },
       "2026-04-29": {
         "turnover": 794.87,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 93.0
       },
       "2026-04-30": {
         "turnover": 786.43,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 92.0
       },
       "2026-05-06": {
         "turnover": 728.34,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 89.0
       },
       "2026-05-07": {
         "turnover": 602.09,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 76.0
       },
       "2026-05-08": {
         "turnover": 500.69,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 59.0
       },
       "2026-05-11": {
         "turnover": 662.51,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 83.0
       },
       "2026-05-12": {
         "turnover": 600.18,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 76.0
       },
       "2026-05-13": {
         "turnover": 583.8,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 72.0
       },
       "2026-05-14": {
         "turnover": 607.73,
         "free_mv": 154995.04,
-        "percentile": 10
+        "percentile": 77.0
       }
     },
     "399006": {
+      "2026-04-14": {
+        "turnover": 6603.12,
+        "free_mv": 92738.27,
+        "percentile": 92.0
+      },
+      "2026-04-15": {
+        "turnover": 6504.59,
+        "free_mv": 92738.27,
+        "percentile": 90.0
+      },
+      "2026-04-16": {
+        "turnover": 6666.16,
+        "free_mv": 92738.27,
+        "percentile": 92.0
+      },
+      "2026-04-17": {
+        "turnover": 6887.25,
+        "free_mv": 92738.27,
+        "percentile": 94.0
+      },
       "2026-04-20": {
         "turnover": 7024.33,
         "free_mv": 92738.27,
-        "percentile": 76.0
+        "percentile": 95.0
       },
       "2026-04-21": {
         "turnover": 6377.79,
         "free_mv": 92738.27,
-        "percentile": 69.0
+        "percentile": 89.0
       },
       "2026-04-22": {
         "turnover": 6952.45,
         "free_mv": 92738.27,
-        "percentile": 75.0
+        "percentile": 94.0
       },
       "2026-04-23": {
         "turnover": 7458.96,
         "free_mv": 92738.27,
-        "percentile": 80.0
+        "percentile": 96.0
       },
       "2026-04-24": {
         "turnover": 7331.79,
         "free_mv": 92738.27,
-        "percentile": 79.0
+        "percentile": 96.0
       },
       "2026-04-27": {
         "turnover": 6779.52,
         "free_mv": 92738.27,
-        "percentile": 73.0
+        "percentile": 92.0
       },
       "2026-04-28": {
         "turnover": 6683.89,
         "free_mv": 92738.27,
-        "percentile": 72.0
+        "percentile": 92.0
       },
       "2026-04-29": {
         "turnover": 6827.3,
         "free_mv": 92738.27,
-        "percentile": 74.0
+        "percentile": 93.0
       },
       "2026-04-30": {
         "turnover": 6417.24,
         "free_mv": 92738.27,
-        "percentile": 69.0
+        "percentile": 88.0
       },
       "2026-05-06": {
         "turnover": 8422.69,
         "free_mv": 92738.27,
-        "percentile": 91.0
+        "percentile": 99.0
       },
       "2026-05-07": {
         "turnover": 8433.82,
         "free_mv": 92738.27,
-        "percentile": 91.0
+        "percentile": 99.0
       },
       "2026-05-08": {
         "turnover": 7873.4,
         "free_mv": 92738.27,
-        "percentile": 85.0
+        "percentile": 97.0
       },
       "2026-05-11": {
         "turnover": 9315.91,
         "free_mv": 92738.27,
-        "percentile": 95
+        "percentile": 99.0
       },
       "2026-05-12": {
         "turnover": 8456.13,
         "free_mv": 92738.27,
-        "percentile": 91.0
+        "percentile": 99.0
       },
       "2026-05-13": {
         "turnover": 8669.8,
         "free_mv": 92738.27,
-        "percentile": 93.0
+        "percentile": 99.0
       },
       "2026-05-14": {
         "turnover": 8939.31,
         "free_mv": 92738.27,
-        "percentile": 95
+        "percentile": 99.0
       }
     },
     "000688": {
+      "2026-04-14": {
+        "turnover": 913.4,
+        "free_mv": 49878.54,
+        "percentile": 94.0
+      },
+      "2026-04-15": {
+        "turnover": 962.68,
+        "free_mv": 49878.54,
+        "percentile": 95.0
+      },
+      "2026-04-16": {
+        "turnover": 863.33,
+        "free_mv": 49878.54,
+        "percentile": 92.0
+      },
+      "2026-04-17": {
+        "turnover": 882.52,
+        "free_mv": 49878.54,
+        "percentile": 93.0
+      },
       "2026-04-20": {
         "turnover": 884.29,
         "free_mv": 49878.54,
-        "percentile": 18.0
+        "percentile": 93.0
       },
       "2026-04-21": {
         "turnover": 802.19,
         "free_mv": 49878.54,
-        "percentile": 16.0
+        "percentile": 90.0
       },
       "2026-04-22": {
         "turnover": 834.01,
         "free_mv": 49878.54,
-        "percentile": 17.0
+        "percentile": 91.0
       },
       "2026-04-23": {
         "turnover": 963.66,
         "free_mv": 49878.54,
-        "percentile": 19.0
+        "percentile": 95.0
       },
       "2026-04-24": {
         "turnover": 1122.77,
         "free_mv": 49878.54,
-        "percentile": 23.0
+        "percentile": 98.0
       },
       "2026-04-27": {
         "turnover": 1235.36,
         "free_mv": 49878.54,
-        "percentile": 25.0
+        "percentile": 99.0
       },
       "2026-04-28": {
         "turnover": 1019.3,
         "free_mv": 49878.54,
-        "percentile": 20.0
+        "percentile": 96.0
       },
       "2026-04-29": {
         "turnover": 962.65,
         "free_mv": 49878.54,
-        "percentile": 19.0
+        "percentile": 94.0
       },
       "2026-04-30": {
         "turnover": 1433.69,
         "free_mv": 49878.54,
-        "percentile": 29.0
+        "percentile": 100.0
       },
       "2026-05-06": {
         "turnover": 2022.64,
         "free_mv": 49878.54,
-        "percentile": 41.0
+        "percentile": 100.0
       },
       "2026-05-07": {
         "turnover": 1471.49,
         "free_mv": 49878.54,
-        "percentile": 30.0
+        "percentile": 100.0
       },
       "2026-05-08": {
         "turnover": 1343.85,
         "free_mv": 49878.54,
-        "percentile": 27.0
+        "percentile": 99.0
       },
       "2026-05-11": {
         "turnover": 1830.92,
         "free_mv": 49878.54,
-        "percentile": 37.0
+        "percentile": 100.0
       },
       "2026-05-12": {
         "turnover": 1631.62,
         "free_mv": 49878.54,
-        "percentile": 33.0
+        "percentile": 100.0
       },
       "2026-05-13": {
         "turnover": 1586.89,
         "free_mv": 49878.54,
-        "percentile": 32.0
+        "percentile": 100.0
       },
       "2026-05-14": {
         "turnover": 1709.25,
         "free_mv": 49878.54,
-        "percentile": 34.0
+        "percentile": 100.0
       }
     },
     "8841331": {
+      "2026-04-14": {
+        "turnover": 476.7,
+        "free_mv": 154553.82,
+        "percentile": 67.0
+      },
+      "2026-04-15": {
+        "turnover": 532.22,
+        "free_mv": 154553.82,
+        "percentile": 76.0
+      },
+      "2026-04-16": {
+        "turnover": 523.47,
+        "free_mv": 154553.82,
+        "percentile": 74.0
+      },
+      "2026-04-17": {
+        "turnover": 473.04,
+        "free_mv": 154553.82,
+        "percentile": 66.0
+      },
       "2026-04-20": {
         "turnover": 538.49,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 77.0
       },
       "2026-04-21": {
         "turnover": 521.66,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 74.0
       },
       "2026-04-22": {
         "turnover": 494.9,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 70.0
       },
       "2026-04-23": {
         "turnover": 624.91,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 86.0
       },
       "2026-04-24": {
         "turnover": 553.37,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 78.0
       },
       "2026-04-27": {
         "turnover": 603.35,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 83.0
       },
       "2026-04-28": {
         "turnover": 651.5,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 88.0
       },
       "2026-04-29": {
         "turnover": 903.74,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 98.0
       },
       "2026-04-30": {
         "turnover": 763.19,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 95.0
       },
       "2026-05-06": {
         "turnover": 801.27,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 96.0
       },
       "2026-05-07": {
         "turnover": 743.82,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 94.0
       },
       "2026-05-08": {
         "turnover": 578.91,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 81.0
       },
       "2026-05-11": {
         "turnover": 712.22,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 92.0
       },
       "2026-05-12": {
         "turnover": 620.55,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 85.0
       },
       "2026-05-13": {
         "turnover": 602.32,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 82.0
       },
       "2026-05-14": {
         "turnover": 614.77,
         "free_mv": 154553.82,
-        "percentile": 10
+        "percentile": 84.0
       }
     },
-    "868008": {
+    "800007": {
+      "2026-04-14": {
+        "turnover": 226.47,
+        "free_mv": 7809.48,
+        "percentile": 23
+      },
+      "2026-04-15": {
+        "turnover": 225.75,
+        "free_mv": 7921.1,
+        "percentile": 23
+      },
+      "2026-04-16": {
+        "turnover": 249.74,
+        "free_mv": 8161.49,
+        "percentile": 24
+      },
+      "2026-04-17": {
+        "turnover": 238.35,
+        "free_mv": 7713.48,
+        "percentile": 25
+      },
       "2026-04-20": {
-        "turnover": 501.45,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 232.11,
+        "free_mv": 7711.45,
+        "percentile": 24
       },
       "2026-04-21": {
-        "turnover": 489.26,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 231.03,
+        "free_mv": 7649.95,
+        "percentile": 24
       },
       "2026-04-22": {
-        "turnover": 462.08,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 218.79,
+        "free_mv": 7927.07,
+        "percentile": 22
       },
       "2026-04-23": {
-        "turnover": 556.46,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 250.25,
+        "free_mv": 7944.52,
+        "percentile": 25
       },
       "2026-04-24": {
-        "turnover": 474.19,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 255.9,
+        "free_mv": 7947.17,
+        "percentile": 26
       },
       "2026-04-27": {
-        "turnover": 512.57,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 305.68,
+        "free_mv": 7798,
+        "percentile": 31
       },
       "2026-04-28": {
-        "turnover": 556.43,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 298.53,
+        "free_mv": 7982.07,
+        "percentile": 30
       },
       "2026-04-29": {
-        "turnover": 794.87,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 316.21,
+        "free_mv": 8983.37,
+        "percentile": 28
       },
       "2026-04-30": {
-        "turnover": 786.43,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 321.76,
+        "free_mv": 8888.46,
+        "percentile": 29
       },
       "2026-05-06": {
-        "turnover": 728.34,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 359.33,
+        "free_mv": 9506.21,
+        "percentile": 30
       },
       "2026-05-07": {
-        "turnover": 602.09,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 304.16,
+        "free_mv": 9329.91,
+        "percentile": 26
       },
       "2026-05-08": {
-        "turnover": 500.69,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 283.28,
+        "free_mv": 9411.38,
+        "percentile": 24
       },
       "2026-05-11": {
-        "turnover": 662.51,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 311.53,
+        "free_mv": 9674.78,
+        "percentile": 26
       },
       "2026-05-12": {
-        "turnover": 600.18,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 280.2,
+        "free_mv": 9309.01,
+        "percentile": 24
       },
       "2026-05-13": {
-        "turnover": 583.8,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 262.81,
+        "free_mv": 9189.18,
+        "percentile": 23
       },
       "2026-05-14": {
-        "turnover": 607.73,
-        "free_mv": 154995.04,
-        "percentile": 10
+        "turnover": 264.11,
+        "free_mv": 9234.68,
+        "percentile": 23
       }
     }
   },
   "TOP5_RATIO": {
+    "2026-04-14": 45.0,
+    "2026-04-15": 45.0,
+    "2026-04-16": 45.0,
+    "2026-04-17": 45.0,
     "2026-04-20": 45.0,
     "2026-04-21": 45.0,
     "2026-04-22": 45.0,
