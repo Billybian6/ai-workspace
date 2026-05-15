@@ -1,0 +1,2618 @@
+{
+  "version": "0.4.0",
+  "generated_at": "2026-05-15 10:18:38",
+  "trade_date": "2026-05-14",
+  "source": {
+    "wide_index": "congestion_data.json",
+    "industry": "东方财富板块API",
+    "industry_quality": "ok"
+  },
+  "summary": {
+    "headline": "市场风险温度 67.7，最热宽基为 创业板指，最热风格为 成长科技，板块扩散为 温和扩散。",
+    "bullets": [
+      "创业板指综合拥挤度 89.9，较前日 升1.2。",
+      "成长科技组均值 67.2，组内包含 创业板指、科创50。",
+      "行业/主题上涨覆盖 100.0%，热点数量 12 个，扩散分 66.8。",
+      "行业/主题热度最高为 氟化工，状态：放量领涨。",
+      "最大风格温差为 创业板 - 科创50：创业板占优，温差 45.4 分。",
+      "关键背离：板块扩散领先于宽基温度。",
+      "若高拥挤方向继续放量但价格动量钝化，应提高对退潮信号的敏感度。"
+    ]
+  },
+  "market_state": [
+    {
+      "id": "regime",
+      "name": "市场温度",
+      "score": 46.5,
+      "status": {
+        "label": "中性",
+        "class": "safe"
+      },
+      "detail": "宽基平均拥挤度 46.5，4 个指数处于偏热以上。"
+    },
+    {
+      "id": "liquidity",
+      "name": "流动性",
+      "score": 71.2,
+      "status": {
+        "label": "高风险",
+        "class": "danger"
+      },
+      "detail": "全A成交额 32794 亿，换手约 5.38%。"
+    },
+    {
+      "id": "concentration",
+      "name": "成交集中度",
+      "score": 66.7,
+      "status": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "detail": "前5%个股成交占比 45.0%，45%附近为拥挤交易临界区。"
+    },
+    {
+      "id": "rotation",
+      "name": "风格扩散",
+      "score": 44.4,
+      "status": {
+        "label": "中性",
+        "class": "safe"
+      },
+      "detail": "4 个宽基指数较前日升温，最热风格为 成长科技。"
+    },
+    {
+      "id": "risk",
+      "name": "风险温度",
+      "score": 67.7,
+      "status": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "detail": "当前最高拥挤方向为 创业板指，综合分 89.9。"
+    }
+  ],
+  "wide_indices": [
+    {
+      "id": "399006",
+      "name": "创业板指",
+      "group": "成长科技",
+      "date": "2026-05-14",
+      "score": 89.9,
+      "day_delta": 1.2,
+      "range_delta": 12.2,
+      "recent_delta": 1.4,
+      "congestion": 9.64,
+      "turnover_ratio": 27.26,
+      "turnover_rate": 9.64,
+      "percentile": 99.0,
+      "turnover": 8939.0,
+      "level": {
+        "label": "高风险",
+        "class": "danger"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 77.7
+        },
+        {
+          "date": "2026-04-15",
+          "score": 76.7
+        },
+        {
+          "date": "2026-04-16",
+          "score": 78.0
+        },
+        {
+          "date": "2026-04-17",
+          "score": 79.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 80.3
+        },
+        {
+          "date": "2026-04-21",
+          "score": 75.9
+        },
+        {
+          "date": "2026-04-22",
+          "score": 79.7
+        },
+        {
+          "date": "2026-04-23",
+          "score": 82.5
+        },
+        {
+          "date": "2026-04-24",
+          "score": 81.9
+        },
+        {
+          "date": "2026-04-27",
+          "score": 78.5
+        },
+        {
+          "date": "2026-04-28",
+          "score": 78.0
+        },
+        {
+          "date": "2026-04-29",
+          "score": 78.9
+        },
+        {
+          "date": "2026-04-30",
+          "score": 74.8
+        },
+        {
+          "date": "2026-05-06",
+          "score": 87.6
+        },
+        {
+          "date": "2026-05-07",
+          "score": 87.6
+        },
+        {
+          "date": "2026-05-08",
+          "score": 84.6
+        },
+        {
+          "date": "2026-05-11",
+          "score": 91.6
+        },
+        {
+          "date": "2026-05-12",
+          "score": 87.7
+        },
+        {
+          "date": "2026-05-13",
+          "score": 88.7
+        },
+        {
+          "date": "2026-05-14",
+          "score": 89.9
+        }
+      ]
+    },
+    {
+      "id": "000852",
+      "name": "中证1000",
+      "group": "小盘",
+      "date": "2026-05-14",
+      "score": 67.0,
+      "day_delta": 2.3,
+      "range_delta": 8.3,
+      "recent_delta": 1.4,
+      "congestion": 4.79,
+      "turnover_ratio": 22.29,
+      "turnover_rate": 4.79,
+      "percentile": 99.0,
+      "turnover": 7310.0,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 58.7
+        },
+        {
+          "date": "2026-04-15",
+          "score": 59.5
+        },
+        {
+          "date": "2026-04-16",
+          "score": 58.6
+        },
+        {
+          "date": "2026-04-17",
+          "score": 60.2
+        },
+        {
+          "date": "2026-04-20",
+          "score": 61.0
+        },
+        {
+          "date": "2026-04-21",
+          "score": 59.7
+        },
+        {
+          "date": "2026-04-22",
+          "score": 61.2
+        },
+        {
+          "date": "2026-04-23",
+          "score": 64.1
+        },
+        {
+          "date": "2026-04-24",
+          "score": 61.4
+        },
+        {
+          "date": "2026-04-27",
+          "score": 59.9
+        },
+        {
+          "date": "2026-04-28",
+          "score": 60.6
+        },
+        {
+          "date": "2026-04-29",
+          "score": 60.9
+        },
+        {
+          "date": "2026-04-30",
+          "score": 62.7
+        },
+        {
+          "date": "2026-05-06",
+          "score": 65.5
+        },
+        {
+          "date": "2026-05-07",
+          "score": 65.8
+        },
+        {
+          "date": "2026-05-08",
+          "score": 64.5
+        },
+        {
+          "date": "2026-05-11",
+          "score": 66.9
+        },
+        {
+          "date": "2026-05-12",
+          "score": 65.1
+        },
+        {
+          "date": "2026-05-13",
+          "score": 64.7
+        },
+        {
+          "date": "2026-05-14",
+          "score": 67.0
+        }
+      ]
+    },
+    {
+      "id": "000905",
+      "name": "中证500",
+      "group": "中盘",
+      "date": "2026-05-14",
+      "score": 60.3,
+      "day_delta": 0.4,
+      "range_delta": 7.1,
+      "recent_delta": -0.0,
+      "congestion": 3.72,
+      "turnover_ratio": 20.07,
+      "turnover_rate": 3.72,
+      "percentile": 99.0,
+      "turnover": 6582.0,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 53.2
+        },
+        {
+          "date": "2026-04-15",
+          "score": 52.8
+        },
+        {
+          "date": "2026-04-16",
+          "score": 50.9
+        },
+        {
+          "date": "2026-04-17",
+          "score": 52.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 55.6
+        },
+        {
+          "date": "2026-04-21",
+          "score": 51.4
+        },
+        {
+          "date": "2026-04-22",
+          "score": 55.3
+        },
+        {
+          "date": "2026-04-23",
+          "score": 58.0
+        },
+        {
+          "date": "2026-04-24",
+          "score": 56.0
+        },
+        {
+          "date": "2026-04-27",
+          "score": 57.0
+        },
+        {
+          "date": "2026-04-28",
+          "score": 54.8
+        },
+        {
+          "date": "2026-04-29",
+          "score": 54.1
+        },
+        {
+          "date": "2026-04-30",
+          "score": 56.5
+        },
+        {
+          "date": "2026-05-06",
+          "score": 59.8
+        },
+        {
+          "date": "2026-05-07",
+          "score": 59.5
+        },
+        {
+          "date": "2026-05-08",
+          "score": 59.3
+        },
+        {
+          "date": "2026-05-11",
+          "score": 62.3
+        },
+        {
+          "date": "2026-05-12",
+          "score": 59.7
+        },
+        {
+          "date": "2026-05-13",
+          "score": 60.0
+        },
+        {
+          "date": "2026-05-14",
+          "score": 60.3
+        }
+      ]
+    },
+    {
+      "id": "000300",
+      "name": "沪深300",
+      "group": "大盘权重",
+      "date": "2026-05-14",
+      "score": 56.4,
+      "day_delta": 0.5,
+      "range_delta": 4.2,
+      "recent_delta": 0.6,
+      "congestion": 1.6,
+      "turnover_ratio": 26.15,
+      "turnover_rate": 1.6,
+      "percentile": 99.0,
+      "turnover": 8574.0,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 52.2
+        },
+        {
+          "date": "2026-04-15",
+          "score": 52.2
+        },
+        {
+          "date": "2026-04-16",
+          "score": 50.9
+        },
+        {
+          "date": "2026-04-17",
+          "score": 51.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 52.3
+        },
+        {
+          "date": "2026-04-21",
+          "score": 51.2
+        },
+        {
+          "date": "2026-04-22",
+          "score": 52.2
+        },
+        {
+          "date": "2026-04-23",
+          "score": 54.4
+        },
+        {
+          "date": "2026-04-24",
+          "score": 54.0
+        },
+        {
+          "date": "2026-04-27",
+          "score": 53.0
+        },
+        {
+          "date": "2026-04-28",
+          "score": 52.7
+        },
+        {
+          "date": "2026-04-29",
+          "score": 54.0
+        },
+        {
+          "date": "2026-04-30",
+          "score": 54.9
+        },
+        {
+          "date": "2026-05-06",
+          "score": 56.6
+        },
+        {
+          "date": "2026-05-07",
+          "score": 55.6
+        },
+        {
+          "date": "2026-05-08",
+          "score": 53.6
+        },
+        {
+          "date": "2026-05-11",
+          "score": 57.0
+        },
+        {
+          "date": "2026-05-12",
+          "score": 55.9
+        },
+        {
+          "date": "2026-05-13",
+          "score": 55.9
+        },
+        {
+          "date": "2026-05-14",
+          "score": 56.4
+        }
+      ]
+    },
+    {
+      "id": "000688",
+      "name": "科创50",
+      "group": "成长科技",
+      "date": "2026-05-14",
+      "score": 44.5,
+      "day_delta": 1.2,
+      "range_delta": 9.5,
+      "recent_delta": 1.0,
+      "congestion": 3.43,
+      "turnover_ratio": 5.21,
+      "turnover_rate": 3.43,
+      "percentile": 100.0,
+      "turnover": 1709.0,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 35.0
+        },
+        {
+          "date": "2026-04-15",
+          "score": 35.9
+        },
+        {
+          "date": "2026-04-16",
+          "score": 34.0
+        },
+        {
+          "date": "2026-04-17",
+          "score": 34.3
+        },
+        {
+          "date": "2026-04-20",
+          "score": 34.1
+        },
+        {
+          "date": "2026-04-21",
+          "score": 32.6
+        },
+        {
+          "date": "2026-04-22",
+          "score": 33.0
+        },
+        {
+          "date": "2026-04-23",
+          "score": 35.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 38.2
+        },
+        {
+          "date": "2026-04-27",
+          "score": 39.9
+        },
+        {
+          "date": "2026-04-28",
+          "score": 36.6
+        },
+        {
+          "date": "2026-04-29",
+          "score": 35.3
+        },
+        {
+          "date": "2026-04-30",
+          "score": 42.3
+        },
+        {
+          "date": "2026-05-06",
+          "score": 48.3
+        },
+        {
+          "date": "2026-05-07",
+          "score": 42.1
+        },
+        {
+          "date": "2026-05-08",
+          "score": 40.5
+        },
+        {
+          "date": "2026-05-11",
+          "score": 45.6
+        },
+        {
+          "date": "2026-05-12",
+          "score": 43.8
+        },
+        {
+          "date": "2026-05-13",
+          "score": 43.3
+        },
+        {
+          "date": "2026-05-14",
+          "score": 44.5
+        }
+      ]
+    },
+    {
+      "id": "000016",
+      "name": "上证50",
+      "group": "大盘权重",
+      "date": "2026-05-14",
+      "score": 34.7,
+      "day_delta": -0.2,
+      "range_delta": 6.2,
+      "recent_delta": -0.3,
+      "congestion": 0.94,
+      "turnover_ratio": 6.56,
+      "turnover_rate": 0.94,
+      "percentile": 97.0,
+      "turnover": 2152.0,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 28.6
+        },
+        {
+          "date": "2026-04-15",
+          "score": 30.8
+        },
+        {
+          "date": "2026-04-16",
+          "score": 26.6
+        },
+        {
+          "date": "2026-04-17",
+          "score": 29.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 28.6
+        },
+        {
+          "date": "2026-04-21",
+          "score": 27.0
+        },
+        {
+          "date": "2026-04-22",
+          "score": 27.8
+        },
+        {
+          "date": "2026-04-23",
+          "score": 31.2
+        },
+        {
+          "date": "2026-04-24",
+          "score": 31.3
+        },
+        {
+          "date": "2026-04-27",
+          "score": 32.2
+        },
+        {
+          "date": "2026-04-28",
+          "score": 31.9
+        },
+        {
+          "date": "2026-04-29",
+          "score": 34.0
+        },
+        {
+          "date": "2026-04-30",
+          "score": 36.5
+        },
+        {
+          "date": "2026-05-06",
+          "score": 37.8
+        },
+        {
+          "date": "2026-05-07",
+          "score": 34.7
+        },
+        {
+          "date": "2026-05-08",
+          "score": 33.1
+        },
+        {
+          "date": "2026-05-11",
+          "score": 36.2
+        },
+        {
+          "date": "2026-05-12",
+          "score": 36.2
+        },
+        {
+          "date": "2026-05-13",
+          "score": 34.9
+        },
+        {
+          "date": "2026-05-14",
+          "score": 34.7
+        }
+      ]
+    },
+    {
+      "id": "8841331",
+      "name": "中证红利",
+      "group": "红利低波",
+      "date": "2026-05-14",
+      "score": 24.5,
+      "day_delta": 0.5,
+      "range_delta": 4.5,
+      "recent_delta": -0.3,
+      "congestion": 0.4,
+      "turnover_ratio": 1.87,
+      "turnover_rate": 0.4,
+      "percentile": 84.0,
+      "turnover": 615.0,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 20.1
+        },
+        {
+          "date": "2026-04-15",
+          "score": 22.7
+        },
+        {
+          "date": "2026-04-16",
+          "score": 22.2
+        },
+        {
+          "date": "2026-04-17",
+          "score": 19.8
+        },
+        {
+          "date": "2026-04-20",
+          "score": 22.8
+        },
+        {
+          "date": "2026-04-21",
+          "score": 22.1
+        },
+        {
+          "date": "2026-04-22",
+          "score": 20.8
+        },
+        {
+          "date": "2026-04-23",
+          "score": 25.5
+        },
+        {
+          "date": "2026-04-24",
+          "score": 23.1
+        },
+        {
+          "date": "2026-04-27",
+          "score": 24.8
+        },
+        {
+          "date": "2026-04-28",
+          "score": 26.4
+        },
+        {
+          "date": "2026-04-29",
+          "score": 30.5
+        },
+        {
+          "date": "2026-04-30",
+          "score": 28.7
+        },
+        {
+          "date": "2026-05-06",
+          "score": 28.7
+        },
+        {
+          "date": "2026-05-07",
+          "score": 27.9
+        },
+        {
+          "date": "2026-05-08",
+          "score": 23.8
+        },
+        {
+          "date": "2026-05-11",
+          "score": 27.0
+        },
+        {
+          "date": "2026-05-12",
+          "score": 24.9
+        },
+        {
+          "date": "2026-05-13",
+          "score": 24.0
+        },
+        {
+          "date": "2026-05-14",
+          "score": 24.5
+        }
+      ]
+    },
+    {
+      "id": "000464",
+      "name": "中证2000",
+      "group": "小盘",
+      "date": "2026-05-14",
+      "score": 22.7,
+      "day_delta": 1.3,
+      "range_delta": 9.5,
+      "recent_delta": 1.0,
+      "congestion": 0.39,
+      "turnover_ratio": 1.85,
+      "turnover_rate": 0.39,
+      "percentile": 77.0,
+      "turnover": 608.0,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 13.2
+        },
+        {
+          "date": "2026-04-15",
+          "score": 17.6
+        },
+        {
+          "date": "2026-04-16",
+          "score": 16.0
+        },
+        {
+          "date": "2026-04-17",
+          "score": 13.7
+        },
+        {
+          "date": "2026-04-20",
+          "score": 18.3
+        },
+        {
+          "date": "2026-04-21",
+          "score": 17.9
+        },
+        {
+          "date": "2026-04-22",
+          "score": 15.8
+        },
+        {
+          "date": "2026-04-23",
+          "score": 20.5
+        },
+        {
+          "date": "2026-04-24",
+          "score": 16.6
+        },
+        {
+          "date": "2026-04-27",
+          "score": 18.9
+        },
+        {
+          "date": "2026-04-28",
+          "score": 20.7
+        },
+        {
+          "date": "2026-04-29",
+          "score": 28.5
+        },
+        {
+          "date": "2026-04-30",
+          "score": 28.0
+        },
+        {
+          "date": "2026-05-06",
+          "score": 26.5
+        },
+        {
+          "date": "2026-05-07",
+          "score": 22.6
+        },
+        {
+          "date": "2026-05-08",
+          "score": 17.8
+        },
+        {
+          "date": "2026-05-11",
+          "score": 24.5
+        },
+        {
+          "date": "2026-05-12",
+          "score": 22.5
+        },
+        {
+          "date": "2026-05-13",
+          "score": 21.4
+        },
+        {
+          "date": "2026-05-14",
+          "score": 22.7
+        }
+      ]
+    },
+    {
+      "id": "800007",
+      "name": "Choice微盘",
+      "group": "微盘",
+      "date": "2026-05-14",
+      "score": 18.5,
+      "day_delta": -0.0,
+      "range_delta": -0.3,
+      "recent_delta": -0.9,
+      "congestion": 2.86,
+      "turnover_ratio": 0.81,
+      "turnover_rate": 2.86,
+      "percentile": 23,
+      "turnover": 264.0,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      },
+      "coverage": "20/20",
+      "series": [
+        {
+          "date": "2026-04-14",
+          "score": 18.8
+        },
+        {
+          "date": "2026-04-15",
+          "score": 18.6
+        },
+        {
+          "date": "2026-04-16",
+          "score": 19.8
+        },
+        {
+          "date": "2026-04-17",
+          "score": 20.1
+        },
+        {
+          "date": "2026-04-20",
+          "score": 19.5
+        },
+        {
+          "date": "2026-04-21",
+          "score": 19.6
+        },
+        {
+          "date": "2026-04-22",
+          "score": 17.9
+        },
+        {
+          "date": "2026-04-23",
+          "score": 20.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 20.9
+        },
+        {
+          "date": "2026-04-27",
+          "score": 25.3
+        },
+        {
+          "date": "2026-04-28",
+          "score": 24.3
+        },
+        {
+          "date": "2026-04-29",
+          "score": 22.9
+        },
+        {
+          "date": "2026-04-30",
+          "score": 23.5
+        },
+        {
+          "date": "2026-05-06",
+          "score": 24.4
+        },
+        {
+          "date": "2026-05-07",
+          "score": 21.1
+        },
+        {
+          "date": "2026-05-08",
+          "score": 19.5
+        },
+        {
+          "date": "2026-05-11",
+          "score": 20.8
+        },
+        {
+          "date": "2026-05-12",
+          "score": 19.4
+        },
+        {
+          "date": "2026-05-13",
+          "score": 18.5
+        },
+        {
+          "date": "2026-05-14",
+          "score": 18.5
+        }
+      ]
+    }
+  ],
+  "style_rotation": [
+    {
+      "name": "成长科技",
+      "members": "创业板指、科创50",
+      "score": 67.2,
+      "day_delta": 1.2,
+      "range_delta": 10.8,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      }
+    },
+    {
+      "name": "中盘",
+      "members": "中证500",
+      "score": 60.3,
+      "day_delta": 0.4,
+      "range_delta": 7.1,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      }
+    },
+    {
+      "name": "大盘权重",
+      "members": "上证50、沪深300",
+      "score": 45.5,
+      "day_delta": 0.1,
+      "range_delta": 5.2,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      }
+    },
+    {
+      "name": "小盘",
+      "members": "中证1000、中证2000",
+      "score": 44.9,
+      "day_delta": 1.8,
+      "range_delta": 8.9,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      }
+    },
+    {
+      "name": "红利低波",
+      "members": "中证红利",
+      "score": 24.5,
+      "day_delta": 0.5,
+      "range_delta": 4.5,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      }
+    },
+    {
+      "name": "微盘",
+      "members": "Choice微盘",
+      "score": 18.5,
+      "day_delta": 0.0,
+      "range_delta": -0.3,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      }
+    }
+  ],
+  "market_breadth": {
+    "coverage": 80,
+    "diffusion_score": 66.8,
+    "status": {
+      "label": "温和扩散",
+      "class": "warning"
+    },
+    "positive_count": 80,
+    "negative_count": 0,
+    "flat_count": 0,
+    "positive_ratio": 100.0,
+    "hot_count": 12,
+    "hot_ratio": 15.0,
+    "cold_count": 0,
+    "net_inflow_positive_ratio": 60.0,
+    "total_net_inflow": 86.18,
+    "dispersion_score": 38.2,
+    "top5_amount_share": 39.7,
+    "top_boards": [
+      {
+        "id": "BK1424",
+        "name": "氟化工",
+        "score": 95.5,
+        "ret_5d": 5.96,
+        "ret_20d": null,
+        "amount": 122.0,
+        "amount_pct": 87.0,
+        "net_inflow": 22.91,
+        "net_inflow_pct": 100.0,
+        "leader": "中欣氟材",
+        "leader_change": 10.0,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1293",
+        "name": "营销代理",
+        "score": 87.8,
+        "ret_5d": 3.76,
+        "ret_20d": null,
+        "amount": 124.0,
+        "amount_pct": 88.0,
+        "net_inflow": 9.33,
+        "net_inflow_pct": 95.0,
+        "leader": "引力传媒",
+        "leader_change": 9.99,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1220",
+        "name": "广告营销",
+        "score": 86.9,
+        "ret_5d": 3.5,
+        "ret_20d": null,
+        "amount": 127.0,
+        "amount_pct": 89.0,
+        "net_inflow": 9.36,
+        "net_inflow_pct": 96.0,
+        "leader": "引力传媒",
+        "leader_change": 9.99,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1589",
+        "name": "通信应用增值服务",
+        "score": 83.2,
+        "ret_5d": 2.85,
+        "ret_20d": null,
+        "amount": 169.0,
+        "amount_pct": 90.0,
+        "net_inflow": 8.7,
+        "net_inflow_pct": 94.0,
+        "leader": "国安股份",
+        "leader_change": 9.91,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK0486",
+        "name": "传媒",
+        "score": 80.5,
+        "ret_5d": 1.88,
+        "ret_20d": null,
+        "amount": 281.0,
+        "amount_pct": 96.0,
+        "net_inflow": 12.84,
+        "net_inflow_pct": 97.0,
+        "leader": "粤 传 媒",
+        "leader_change": 10.0,
+        "state": "高热度",
+        "quality": "ok"
+      }
+    ],
+    "bottom_boards": [
+      {
+        "id": "BK1391",
+        "name": "综合环境治理",
+        "score": 41.2,
+        "ret_5d": 0.87,
+        "ret_20d": null,
+        "amount": 11.0,
+        "amount_pct": 39.0,
+        "net_inflow": -0.21,
+        "net_inflow_pct": 29.0,
+        "leader": "南大环境",
+        "leader_change": 4.58,
+        "state": "中性观察",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1546",
+        "name": "电商服务",
+        "score": 41.5,
+        "ret_5d": 1.29,
+        "ret_20d": null,
+        "amount": 10.0,
+        "amount_pct": 32.0,
+        "net_inflow": -0.17,
+        "net_inflow_pct": 31.0,
+        "leader": "青木科技",
+        "leader_change": 4.75,
+        "state": "温和走强",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1457",
+        "name": "厨房小家电",
+        "score": 42.1,
+        "ret_5d": 1.39,
+        "ret_20d": null,
+        "amount": 3.0,
+        "amount_pct": 20.0,
+        "net_inflow": 0.05,
+        "net_inflow_pct": 52.0,
+        "leader": "利仁科技",
+        "leader_change": 10.0,
+        "state": "温和走强",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1268",
+        "name": "互联网电商",
+        "score": 42.1,
+        "ret_5d": 0.65,
+        "ret_20d": null,
+        "amount": 20.0,
+        "amount_pct": 48.0,
+        "net_inflow": -0.56,
+        "net_inflow_pct": 24.0,
+        "leader": "青木科技",
+        "leader_change": 4.75,
+        "state": "中性观察",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1542",
+        "name": "文化用品",
+        "score": 42.2,
+        "ret_5d": 1.95,
+        "ret_20d": null,
+        "amount": 5.0,
+        "amount_pct": 24.0,
+        "net_inflow": -0.2,
+        "net_inflow_pct": 30.0,
+        "leader": "齐心集团",
+        "leader_change": 7.25,
+        "state": "温和走强",
+        "quality": "ok"
+      }
+    ],
+    "note": "上涨方向较多且热点数量充足，市场扩散处在较活跃状态。"
+  },
+  "style_spreads": [
+    {
+      "name": "创业板 - 科创50",
+      "value": 45.4,
+      "abs_value": 45.4,
+      "direction": "创业板占优",
+      "status": {
+        "label": "极端分化",
+        "class": "danger"
+      },
+      "long_score": 89.9,
+      "short_score": 44.5
+    },
+    {
+      "name": "成长 - 红利",
+      "value": 42.7,
+      "abs_value": 42.7,
+      "direction": "成长占优",
+      "status": {
+        "label": "极端分化",
+        "class": "danger"
+      },
+      "long_score": 67.2,
+      "short_score": 24.5
+    },
+    {
+      "name": "微盘 - 中小盘",
+      "value": -31.5,
+      "abs_value": 31.5,
+      "direction": "微盘落后",
+      "status": {
+        "label": "极端分化",
+        "class": "danger"
+      },
+      "long_score": 18.5,
+      "short_score": 50.0
+    },
+    {
+      "name": "中盘 - 大盘",
+      "value": 14.8,
+      "abs_value": 14.8,
+      "direction": "中盘占优",
+      "status": {
+        "label": "明显占优",
+        "class": "warning"
+      },
+      "long_score": 60.3,
+      "short_score": 45.5
+    },
+    {
+      "name": "小盘 - 大盘",
+      "value": -9.5,
+      "abs_value": 9.5,
+      "direction": "大盘占优",
+      "status": {
+        "label": "相对均衡",
+        "class": "safe"
+      },
+      "long_score": 36.1,
+      "short_score": 45.5
+    }
+  ],
+  "divergence_signals": [
+    {
+      "type": "扩散领先",
+      "level": "中",
+      "title": "板块扩散领先于宽基温度",
+      "message": "行业上涨占比 100.0%，但宽基均温 46.5，可能处在结构行情向指数传导阶段。",
+      "target": "行业/主题"
+    },
+    {
+      "type": "风格极端",
+      "level": "中",
+      "title": "创业板 - 科创50温差处在极端区间",
+      "message": "创业板占优，温差 45.4 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "创业板 - 科创50"
+    },
+    {
+      "type": "风格极端",
+      "level": "中",
+      "title": "成长 - 红利温差处在极端区间",
+      "message": "成长占优，温差 42.7 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "成长 - 红利"
+    },
+    {
+      "type": "微盘背离",
+      "level": "中",
+      "title": "微盘显著弱于中小盘",
+      "message": "Choice微盘温度 18.5，中小盘篮子 50.0，说明风险偏好并未完全下沉。",
+      "target": "Choice微盘"
+    }
+  ],
+  "industry_heatmap": [
+    {
+      "id": "BK1424",
+      "name": "氟化工",
+      "score": 95.5,
+      "ret_5d": 5.96,
+      "ret_20d": null,
+      "amount": 122.0,
+      "amount_pct": 87.0,
+      "net_inflow": 22.91,
+      "net_inflow_pct": 100.0,
+      "leader": "中欣氟材",
+      "leader_change": 10.0,
+      "state": "放量领涨",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1293",
+      "name": "营销代理",
+      "score": 87.8,
+      "ret_5d": 3.76,
+      "ret_20d": null,
+      "amount": 124.0,
+      "amount_pct": 88.0,
+      "net_inflow": 9.33,
+      "net_inflow_pct": 95.0,
+      "leader": "引力传媒",
+      "leader_change": 9.99,
+      "state": "放量领涨",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1220",
+      "name": "广告营销",
+      "score": 86.9,
+      "ret_5d": 3.5,
+      "ret_20d": null,
+      "amount": 127.0,
+      "amount_pct": 89.0,
+      "net_inflow": 9.36,
+      "net_inflow_pct": 96.0,
+      "leader": "引力传媒",
+      "leader_change": 9.99,
+      "state": "放量领涨",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1589",
+      "name": "通信应用增值服务",
+      "score": 83.2,
+      "ret_5d": 2.85,
+      "ret_20d": null,
+      "amount": 169.0,
+      "amount_pct": 90.0,
+      "net_inflow": 8.7,
+      "net_inflow_pct": 94.0,
+      "leader": "国安股份",
+      "leader_change": 9.91,
+      "state": "放量领涨",
+      "quality": "ok"
+    },
+    {
+      "id": "BK0486",
+      "name": "传媒",
+      "score": 80.5,
+      "ret_5d": 1.88,
+      "ret_20d": null,
+      "amount": 281.0,
+      "amount_pct": 96.0,
+      "net_inflow": 12.84,
+      "net_inflow_pct": 97.0,
+      "leader": "粤 传 媒",
+      "leader_change": 10.0,
+      "state": "高热度",
+      "quality": "ok"
+    },
+    {
+      "id": "BK0736",
+      "name": "通信服务",
+      "score": 77.3,
+      "ret_5d": 1.34,
+      "ret_20d": null,
+      "amount": 243.0,
+      "amount_pct": 95.0,
+      "net_inflow": 13.89,
+      "net_inflow_pct": 98.0,
+      "leader": "国安股份",
+      "leader_change": 9.91,
+      "state": "高热度",
+      "quality": "ok"
+    },
+    {
+      "id": "BK0538",
+      "name": "化学制品",
+      "score": 74.9,
+      "ret_5d": 0.76,
+      "ret_20d": null,
+      "amount": 316.0,
+      "amount_pct": 97.0,
+      "net_inflow": 20.31,
+      "net_inflow_pct": 99.0,
+      "leader": "中欣氟材",
+      "leader_change": 10.0,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1206",
+      "name": "基础化工",
+      "score": 74.1,
+      "ret_5d": 0.64,
+      "ret_20d": null,
+      "amount": 732.0,
+      "amount_pct": 100.0,
+      "net_inflow": 7.3,
+      "net_inflow_pct": 93.0,
+      "leader": "中欣氟材",
+      "leader_change": 10.0,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1221",
+      "name": "数字媒体",
+      "score": 72.8,
+      "ret_5d": 2.47,
+      "ret_20d": null,
+      "amount": 39.0,
+      "amount_pct": 72.0,
+      "net_inflow": 1.16,
+      "net_inflow_pct": 84.0,
+      "leader": "值得买",
+      "leader_change": 7.81,
+      "state": "放量领涨",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1396",
+      "name": "金属制品",
+      "score": 72.5,
+      "ret_5d": 1.13,
+      "ret_20d": null,
+      "amount": 172.0,
+      "amount_pct": 91.0,
+      "net_inflow": 2.09,
+      "net_inflow_pct": 87.0,
+      "leader": "大业股份",
+      "leader_change": 9.99,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1019",
+      "name": "化学原料",
+      "score": 71.0,
+      "ret_5d": 1.72,
+      "ret_20d": null,
+      "amount": 104.0,
+      "amount_pct": 86.0,
+      "net_inflow": 0.42,
+      "net_inflow_pct": 72.0,
+      "leader": "滨化股份",
+      "leader_change": 10.04,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1408",
+      "name": "机器人",
+      "score": 70.8,
+      "ret_5d": 1.96,
+      "ret_20d": null,
+      "amount": 42.0,
+      "amount_pct": 75.0,
+      "net_inflow": 1.15,
+      "net_inflow_pct": 83.0,
+      "leader": "雷赛智能",
+      "leader_change": 8.31,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1407",
+      "name": "工控设备",
+      "score": 68.7,
+      "ret_5d": 0.95,
+      "ret_20d": null,
+      "amount": 83.0,
+      "amount_pct": 82.0,
+      "net_inflow": 2.67,
+      "net_inflow_pct": 89.0,
+      "leader": "禾川科技",
+      "leader_change": 6.5,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1438",
+      "name": "合成树脂",
+      "score": 67.3,
+      "ret_5d": 1.69,
+      "ret_20d": null,
+      "amount": 37.0,
+      "amount_pct": 70.0,
+      "net_inflow": 0.88,
+      "net_inflow_pct": 82.0,
+      "leader": "双象股份",
+      "leader_change": 6.59,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1422",
+      "name": "无机盐",
+      "score": 66.5,
+      "ret_5d": 2.56,
+      "ret_20d": null,
+      "amount": 28.0,
+      "amount_pct": 59.0,
+      "net_inflow": 0.44,
+      "net_inflow_pct": 73.0,
+      "leader": "鲁银投资",
+      "leader_change": 10.01,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1383",
+      "name": "航海装备Ⅲ",
+      "score": 66.2,
+      "ret_5d": 1.11,
+      "ret_20d": null,
+      "amount": 40.0,
+      "amount_pct": 74.0,
+      "net_inflow": 1.2,
+      "net_inflow_pct": 86.0,
+      "leader": "海兰信",
+      "leader_change": 4.71,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1230",
+      "name": "航海装备Ⅱ",
+      "score": 66.2,
+      "ret_5d": 1.11,
+      "ret_20d": null,
+      "amount": 40.0,
+      "amount_pct": 74.0,
+      "net_inflow": 1.2,
+      "net_inflow_pct": 86.0,
+      "leader": "海兰信",
+      "leader_change": 4.71,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1297",
+      "name": "图片媒体",
+      "score": 65.2,
+      "ret_5d": 4.52,
+      "ret_20d": null,
+      "amount": 5.0,
+      "amount_pct": 25.0,
+      "net_inflow": 0.42,
+      "net_inflow_pct": 71.0,
+      "leader": "视觉中国",
+      "leader_change": 4.52,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1450",
+      "name": "空调",
+      "score": 64.7,
+      "ret_5d": 2.02,
+      "ret_20d": null,
+      "amount": 24.0,
+      "amount_pct": 54.0,
+      "net_inflow": 2.63,
+      "net_inflow_pct": 88.0,
+      "leader": "海信家电",
+      "leader_change": 3.99,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1420",
+      "name": "其他化学原料",
+      "score": 63.6,
+      "ret_5d": 2.52,
+      "ret_20d": null,
+      "amount": 30.0,
+      "amount_pct": 65.0,
+      "net_inflow": 0.03,
+      "net_inflow_pct": 49.0,
+      "leader": "恒光股份",
+      "leader_change": 14.38,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1239",
+      "name": "白色家电",
+      "score": 63.3,
+      "ret_5d": 0.94,
+      "ret_20d": null,
+      "amount": 32.0,
+      "amount_pct": 66.0,
+      "net_inflow": 3.66,
+      "net_inflow_pct": 90.0,
+      "leader": "海信家电",
+      "leader_change": 3.99,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1294",
+      "name": "门户网站",
+      "score": 63.2,
+      "ret_5d": 2.32,
+      "ret_20d": null,
+      "amount": 22.0,
+      "amount_pct": 51.0,
+      "net_inflow": 0.6,
+      "net_inflow_pct": 77.0,
+      "leader": "值得买",
+      "leader_change": 7.81,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1218",
+      "name": "出版",
+      "score": 62.1,
+      "ret_5d": 1.29,
+      "ret_20d": null,
+      "amount": 25.0,
+      "amount_pct": 56.0,
+      "net_inflow": 4.26,
+      "net_inflow_pct": 92.0,
+      "leader": "粤 传 媒",
+      "leader_change": 10.0,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1298",
+      "name": "文字媒体",
+      "score": 62.0,
+      "ret_5d": 3.62,
+      "ret_20d": null,
+      "amount": 10.0,
+      "amount_pct": 36.0,
+      "net_inflow": 0.15,
+      "net_inflow_pct": 61.0,
+      "leader": "掌阅科技",
+      "leader_change": 3.79,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1289",
+      "name": "大众出版",
+      "score": 61.6,
+      "ret_5d": 1.48,
+      "ret_20d": null,
+      "amount": 22.0,
+      "amount_pct": 52.0,
+      "net_inflow": 4.25,
+      "net_inflow_pct": 91.0,
+      "leader": "粤 传 媒",
+      "leader_change": 10.0,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1307",
+      "name": "电机Ⅲ",
+      "score": 61.4,
+      "ret_5d": 1.53,
+      "ret_20d": null,
+      "amount": 36.0,
+      "amount_pct": 69.0,
+      "net_inflow": 0.13,
+      "net_inflow_pct": 59.0,
+      "leader": "康平科技",
+      "leader_change": 5.93,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1030",
+      "name": "电机Ⅱ",
+      "score": 61.4,
+      "ret_5d": 1.53,
+      "ret_20d": null,
+      "amount": 36.0,
+      "amount_pct": 69.0,
+      "net_inflow": 0.13,
+      "net_inflow_pct": 59.0,
+      "leader": "康平科技",
+      "leader_change": 5.93,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1266",
+      "name": "文娱用品",
+      "score": 58.9,
+      "ret_5d": 1.41,
+      "ret_20d": null,
+      "amount": 24.0,
+      "amount_pct": 55.0,
+      "net_inflow": 0.44,
+      "net_inflow_pct": 74.0,
+      "leader": "齐心集团",
+      "leader_change": 7.25,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1332",
+      "name": "电子化学品Ⅲ",
+      "score": 58.8,
+      "ret_5d": 1.43,
+      "ret_20d": null,
+      "amount": 225.0,
+      "amount_pct": 94.0,
+      "net_inflow": -3.51,
+      "net_inflow_pct": 5.0,
+      "leader": "中巨芯-U",
+      "leader_change": 20.01,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1039",
+      "name": "电子化学品Ⅱ",
+      "score": 58.8,
+      "ret_5d": 1.43,
+      "ret_20d": null,
+      "amount": 225.0,
+      "amount_pct": 94.0,
+      "net_inflow": -3.51,
+      "net_inflow_pct": 5.0,
+      "leader": "中巨芯-U",
+      "leader_change": 20.01,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1525",
+      "name": "车身附件及饰件",
+      "score": 58.4,
+      "ret_5d": 0.87,
+      "ret_20d": null,
+      "amount": 33.0,
+      "amount_pct": 67.0,
+      "net_inflow": 0.22,
+      "net_inflow_pct": 66.0,
+      "leader": "东风科技",
+      "leader_change": 6.97,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1493",
+      "name": "动力煤",
+      "score": 57.9,
+      "ret_5d": 0.62,
+      "ret_20d": null,
+      "amount": 29.0,
+      "amount_pct": 61.0,
+      "net_inflow": 0.86,
+      "net_inflow_pct": 81.0,
+      "leader": "晋控煤业",
+      "leader_change": 4.35,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1237",
+      "name": "自动化设备",
+      "score": 57.5,
+      "ret_5d": 1.01,
+      "ret_20d": null,
+      "amount": 358.0,
+      "amount_pct": 98.0,
+      "net_inflow": -5.19,
+      "net_inflow_pct": 3.0,
+      "leader": "北自科技",
+      "leader_change": 10.01,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1410",
+      "name": "其他自动化设备",
+      "score": 56.9,
+      "ret_5d": 0.76,
+      "ret_20d": null,
+      "amount": 88.0,
+      "amount_pct": 84.0,
+      "net_inflow": -0.11,
+      "net_inflow_pct": 32.0,
+      "leader": "北自科技",
+      "leader_change": 10.01,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1543",
+      "name": "娱乐用品",
+      "score": 56.2,
+      "ret_5d": 1.26,
+      "ret_20d": null,
+      "amount": 19.0,
+      "amount_pct": 47.0,
+      "net_inflow": 0.64,
+      "net_inflow_pct": 79.0,
+      "leader": "金陵体育",
+      "leader_change": 6.35,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1339",
+      "name": "被动元件",
+      "score": 55.6,
+      "ret_5d": 1.47,
+      "ret_20d": null,
+      "amount": 84.0,
+      "amount_pct": 83.0,
+      "net_inflow": -2.3,
+      "net_inflow_pct": 7.0,
+      "leader": "晶赛科技",
+      "leader_change": 13.16,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1037",
+      "name": "消费电子",
+      "score": 55.4,
+      "ret_5d": 0.62,
+      "ret_20d": null,
+      "amount": 610.0,
+      "amount_pct": 99.0,
+      "net_inflow": -7.27,
+      "net_inflow_pct": 2.0,
+      "leader": "波导股份",
+      "leader_change": 10.02,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1564",
+      "name": "体育Ⅲ",
+      "score": 55.2,
+      "ret_5d": 3.46,
+      "ret_20d": null,
+      "amount": 11.0,
+      "amount_pct": 38.0,
+      "net_inflow": -0.22,
+      "net_inflow_pct": 28.0,
+      "leader": "中体产业",
+      "leader_change": 4.96,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1273",
+      "name": "体育Ⅱ",
+      "score": 55.2,
+      "ret_5d": 3.46,
+      "ret_20d": null,
+      "amount": 11.0,
+      "amount_pct": 38.0,
+      "net_inflow": -0.22,
+      "net_inflow_pct": 28.0,
+      "leader": "中体产业",
+      "leader_change": 4.96,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1418",
+      "name": "氯碱",
+      "score": 55.1,
+      "ret_5d": 1.62,
+      "ret_20d": null,
+      "amount": 21.0,
+      "amount_pct": 49.0,
+      "net_inflow": 0.15,
+      "net_inflow_pct": 60.0,
+      "leader": "滨化股份",
+      "leader_change": 10.04,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1456",
+      "name": "其他家电Ⅲ",
+      "score": 54.4,
+      "ret_5d": 3.67,
+      "ret_20d": null,
+      "amount": 2.0,
+      "amount_pct": 11.0,
+      "net_inflow": 0.19,
+      "net_inflow_pct": 65.0,
+      "leader": "融捷健康",
+      "leader_change": 7.61,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1243",
+      "name": "其他家电Ⅱ",
+      "score": 54.4,
+      "ret_5d": 3.67,
+      "ret_20d": null,
+      "amount": 2.0,
+      "amount_pct": 11.0,
+      "net_inflow": 0.19,
+      "net_inflow_pct": 65.0,
+      "leader": "融捷健康",
+      "leader_change": 7.61,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1244",
+      "name": "小家电",
+      "score": 54.3,
+      "ret_5d": 1.21,
+      "ret_20d": null,
+      "amount": 12.0,
+      "amount_pct": 43.0,
+      "net_inflow": 0.63,
+      "net_inflow_pct": 78.0,
+      "leader": "利仁科技",
+      "leader_change": 10.0,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1398",
+      "name": "其他通用设备",
+      "score": 54.2,
+      "ret_5d": 0.78,
+      "ret_20d": null,
+      "amount": 93.0,
+      "amount_pct": 85.0,
+      "net_inflow": -1.0,
+      "net_inflow_pct": 16.0,
+      "leader": "隆华科技",
+      "leader_change": 20.0,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1326",
+      "name": "半导体设备",
+      "score": 53.1,
+      "ret_5d": 0.68,
+      "ret_20d": null,
+      "amount": 196.0,
+      "amount_pct": 92.0,
+      "net_inflow": -8.31,
+      "net_inflow_pct": 1.0,
+      "leader": "富乐德",
+      "leader_change": 11.27,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1435",
+      "name": "磷肥及磷化工",
+      "score": 53.0,
+      "ret_5d": 1.75,
+      "ret_20d": null,
+      "amount": 29.0,
+      "amount_pct": 62.0,
+      "net_inflow": -0.56,
+      "net_inflow_pct": 23.0,
+      "leader": "澄星股份",
+      "leader_change": 4.76,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1395",
+      "name": "机床工具",
+      "score": 52.5,
+      "ret_5d": 1.74,
+      "ret_20d": null,
+      "amount": 30.0,
+      "amount_pct": 64.0,
+      "net_inflow": -0.87,
+      "net_inflow_pct": 17.0,
+      "leader": "华中数控",
+      "leader_change": 8.96,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1432",
+      "name": "氮肥",
+      "score": 52.3,
+      "ret_5d": 1.45,
+      "ret_20d": null,
+      "amount": 10.0,
+      "amount_pct": 35.0,
+      "net_inflow": 0.54,
+      "net_inflow_pct": 75.0,
+      "leader": "赤天化",
+      "leader_change": 3.04,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1423",
+      "name": "纺织化学制品",
+      "score": 52.1,
+      "ret_5d": 1.6,
+      "ret_20d": null,
+      "amount": 13.0,
+      "amount_pct": 44.0,
+      "net_inflow": 0.07,
+      "net_inflow_pct": 54.0,
+      "leader": "建新股份",
+      "leader_change": 8.24,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1301",
+      "name": "游戏Ⅲ",
+      "score": 52.0,
+      "ret_5d": 0.96,
+      "ret_20d": null,
+      "amount": 53.0,
+      "amount_pct": 77.0,
+      "net_inflow": -1.27,
+      "net_inflow_pct": 14.0,
+      "leader": "游族网络",
+      "leader_change": 4.24,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1046",
+      "name": "游戏Ⅱ",
+      "score": 52.0,
+      "ret_5d": 0.96,
+      "ret_20d": null,
+      "amount": 53.0,
+      "amount_pct": 77.0,
+      "net_inflow": -1.27,
+      "net_inflow_pct": 14.0,
+      "leader": "游族网络",
+      "leader_change": 4.24,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1455",
+      "name": "家电零部件Ⅲ",
+      "score": 51.7,
+      "ret_5d": 0.79,
+      "ret_20d": null,
+      "amount": 73.0,
+      "amount_pct": 81.0,
+      "net_inflow": -1.83,
+      "net_inflow_pct": 10.0,
+      "leader": "海达尔",
+      "leader_change": 17.29,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1242",
+      "name": "家电零部件Ⅱ",
+      "score": 51.7,
+      "ret_5d": 0.79,
+      "ret_20d": null,
+      "amount": 73.0,
+      "amount_pct": 81.0,
+      "net_inflow": -1.83,
+      "net_inflow_pct": 10.0,
+      "leader": "海达尔",
+      "leader_change": 17.29,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1537",
+      "name": "成品家居",
+      "score": 50.8,
+      "ret_5d": 1.06,
+      "ret_20d": null,
+      "amount": 11.0,
+      "amount_pct": 40.0,
+      "net_inflow": 0.42,
+      "net_inflow_pct": 70.0,
+      "leader": "致欧科技",
+      "leader_change": 4.96,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1538",
+      "name": "瓷砖地板",
+      "score": 50.6,
+      "ret_5d": 1.22,
+      "ret_20d": null,
+      "amount": 9.0,
+      "amount_pct": 31.0,
+      "net_inflow": 0.68,
+      "net_inflow_pct": 80.0,
+      "leader": "蒙娜丽莎",
+      "leader_change": 9.98,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1528",
+      "name": "其他汽车零部件",
+      "score": 50.6,
+      "ret_5d": 0.69,
+      "ret_20d": null,
+      "amount": 57.0,
+      "amount_pct": 79.0,
+      "net_inflow": -1.75,
+      "net_inflow_pct": 11.0,
+      "leader": "凯龙高科",
+      "leader_change": 12.16,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1448",
+      "name": "横向通用软件",
+      "score": 50.5,
+      "ret_5d": 0.92,
+      "ret_20d": null,
+      "amount": 56.0,
+      "amount_pct": 78.0,
+      "net_inflow": -2.41,
+      "net_inflow_pct": 6.0,
+      "leader": "安博通",
+      "leader_change": 5.17,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1619",
+      "name": "其他金属新材料",
+      "score": 49.7,
+      "ret_5d": 0.74,
+      "ret_20d": null,
+      "amount": 37.0,
+      "amount_pct": 71.0,
+      "net_inflow": -0.81,
+      "net_inflow_pct": 19.0,
+      "leader": "博威合金",
+      "leader_change": 7.04,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1437",
+      "name": "改性塑料",
+      "score": 49.6,
+      "ret_5d": 1.67,
+      "ret_20d": null,
+      "amount": 28.0,
+      "amount_pct": 58.0,
+      "net_inflow": -1.15,
+      "net_inflow_pct": 15.0,
+      "leader": "奇德新材",
+      "leader_change": 10.72,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1222",
+      "name": "影视院线",
+      "score": 49.1,
+      "ret_5d": 1.24,
+      "ret_20d": null,
+      "amount": 28.0,
+      "amount_pct": 60.0,
+      "net_inflow": -0.77,
+      "net_inflow_pct": 21.0,
+      "leader": "中视传媒",
+      "leader_change": 5.31,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1299",
+      "name": "影视动漫制作",
+      "score": 48.8,
+      "ret_5d": 1.34,
+      "ret_20d": null,
+      "amount": 26.0,
+      "amount_pct": 57.0,
+      "net_inflow": -0.76,
+      "net_inflow_pct": 22.0,
+      "leader": "中视传媒",
+      "leader_change": 5.31,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1459",
+      "name": "清洁小家电",
+      "score": 48.6,
+      "ret_5d": 1.19,
+      "ret_20d": null,
+      "amount": 8.0,
+      "amount_pct": 28.0,
+      "net_inflow": 0.6,
+      "net_inflow_pct": 76.0,
+      "leader": "德昌股份",
+      "leader_change": 3.08,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1426",
+      "name": "聚氨酯",
+      "score": 48.3,
+      "ret_5d": 1.38,
+      "ret_20d": null,
+      "amount": 29.0,
+      "amount_pct": 63.0,
+      "net_inflow": -1.95,
+      "net_inflow_pct": 8.0,
+      "leader": "红 宝 丽",
+      "leader_change": 4.9,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1291",
+      "name": "电视广播Ⅲ",
+      "score": 48.2,
+      "ret_5d": 1.42,
+      "ret_20d": null,
+      "amount": 10.0,
+      "amount_pct": 34.0,
+      "net_inflow": 0.09,
+      "net_inflow_pct": 57.0,
+      "leader": "流金科技",
+      "leader_change": 5.07,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1219",
+      "name": "电视广播Ⅱ",
+      "score": 48.2,
+      "ret_5d": 1.42,
+      "ret_20d": null,
+      "amount": 10.0,
+      "amount_pct": 34.0,
+      "net_inflow": 0.09,
+      "net_inflow_pct": 57.0,
+      "leader": "流金科技",
+      "leader_change": 5.07,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1414",
+      "name": "锦纶",
+      "score": 47.4,
+      "ret_5d": 1.86,
+      "ret_20d": null,
+      "amount": 3.0,
+      "amount_pct": 18.0,
+      "net_inflow": 0.42,
+      "net_inflow_pct": 69.0,
+      "leader": "恒申新材",
+      "leader_change": 9.95,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1337",
+      "name": "品牌消费电子",
+      "score": 46.0,
+      "ret_5d": 1.49,
+      "ret_20d": null,
+      "amount": 15.0,
+      "amount_pct": 45.0,
+      "net_inflow": -0.42,
+      "net_inflow_pct": 25.0,
+      "leader": "奥尼电子",
+      "leader_change": 10.37,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1430",
+      "name": "涂料油墨",
+      "score": 46.0,
+      "ret_5d": 0.79,
+      "ret_20d": null,
+      "amount": 12.0,
+      "amount_pct": 42.0,
+      "net_inflow": 0.04,
+      "net_inflow_pct": 50.0,
+      "leader": "东来技术",
+      "leader_change": 5.21,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1534",
+      "name": "印刷",
+      "score": 45.1,
+      "ret_5d": 0.74,
+      "ret_20d": null,
+      "amount": 8.0,
+      "amount_pct": 30.0,
+      "net_inflow": 0.27,
+      "net_inflow_pct": 68.0,
+      "leader": "鸿博股份",
+      "leader_change": 3.55,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1433",
+      "name": "复合肥",
+      "score": 44.7,
+      "ret_5d": 0.91,
+      "ret_20d": null,
+      "amount": 8.0,
+      "amount_pct": 29.0,
+      "net_inflow": 0.18,
+      "net_inflow_pct": 63.0,
+      "leader": "云图控股",
+      "leader_change": 2.55,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1415",
+      "name": "其他化学纤维",
+      "score": 43.5,
+      "ret_5d": 1.01,
+      "ret_20d": null,
+      "amount": 23.0,
+      "amount_pct": 53.0,
+      "net_inflow": -1.28,
+      "net_inflow_pct": 12.0,
+      "leader": "宝丽迪",
+      "leader_change": 8.35,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1421",
+      "name": "钛白粉",
+      "score": 43.3,
+      "ret_5d": 0.88,
+      "ret_20d": null,
+      "amount": 5.0,
+      "amount_pct": 26.0,
+      "net_inflow": 0.16,
+      "net_inflow_pct": 62.0,
+      "leader": "鲁北化工",
+      "leader_change": 3.33,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1419",
+      "name": "煤化工",
+      "score": 42.5,
+      "ret_5d": 0.77,
+      "ret_20d": null,
+      "amount": 17.0,
+      "amount_pct": 46.0,
+      "net_inflow": -0.36,
+      "net_inflow_pct": 26.0,
+      "leader": "金煤科技",
+      "leader_change": 2.05,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1350",
+      "name": "其他纺织",
+      "score": 42.5,
+      "ret_5d": 0.73,
+      "ret_20d": null,
+      "amount": 21.0,
+      "amount_pct": 50.0,
+      "net_inflow": -0.79,
+      "net_inflow_pct": 20.0,
+      "leader": "华升股份",
+      "leader_change": 8.03,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1016",
+      "name": "汽车服务",
+      "score": 42.4,
+      "ret_5d": 1.54,
+      "ret_20d": null,
+      "amount": 4.0,
+      "amount_pct": 23.0,
+      "net_inflow": 0.0,
+      "net_inflow_pct": 44.0,
+      "leader": "北巴传媒",
+      "leader_change": 10.1,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1542",
+      "name": "文化用品",
+      "score": 42.2,
+      "ret_5d": 1.95,
+      "ret_20d": null,
+      "amount": 5.0,
+      "amount_pct": 24.0,
+      "net_inflow": -0.2,
+      "net_inflow_pct": 30.0,
+      "leader": "齐心集团",
+      "leader_change": 7.25,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1457",
+      "name": "厨房小家电",
+      "score": 42.1,
+      "ret_5d": 1.39,
+      "ret_20d": null,
+      "amount": 3.0,
+      "amount_pct": 20.0,
+      "net_inflow": 0.05,
+      "net_inflow_pct": 52.0,
+      "leader": "利仁科技",
+      "leader_change": 10.0,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1268",
+      "name": "互联网电商",
+      "score": 42.1,
+      "ret_5d": 0.65,
+      "ret_20d": null,
+      "amount": 20.0,
+      "amount_pct": 48.0,
+      "net_inflow": -0.56,
+      "net_inflow_pct": 24.0,
+      "leader": "青木科技",
+      "leader_change": 4.75,
+      "state": "中性观察",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1546",
+      "name": "电商服务",
+      "score": 41.5,
+      "ret_5d": 1.29,
+      "ret_20d": null,
+      "amount": 10.0,
+      "amount_pct": 32.0,
+      "net_inflow": -0.17,
+      "net_inflow_pct": 31.0,
+      "leader": "青木科技",
+      "leader_change": 4.75,
+      "state": "温和走强",
+      "quality": "ok"
+    },
+    {
+      "id": "BK1391",
+      "name": "综合环境治理",
+      "score": 41.2,
+      "ret_5d": 0.87,
+      "ret_20d": null,
+      "amount": 11.0,
+      "amount_pct": 39.0,
+      "net_inflow": -0.21,
+      "net_inflow_pct": 29.0,
+      "leader": "南大环境",
+      "leader_change": 4.58,
+      "state": "中性观察",
+      "quality": "ok"
+    }
+  ],
+  "risk_alerts": [
+    {
+      "type": "高拥挤",
+      "target": "创业板指",
+      "level": "高",
+      "message": "综合拥挤度 89.9，换手分位 99%。"
+    },
+    {
+      "type": "行业热度",
+      "target": "氟化工",
+      "level": "中",
+      "message": "行业热度 95.5，状态：放量领涨。"
+    },
+    {
+      "type": "行业热度",
+      "target": "营销代理",
+      "level": "中",
+      "message": "行业热度 87.8，状态：放量领涨。"
+    },
+    {
+      "type": "行业热度",
+      "target": "广告营销",
+      "level": "中",
+      "message": "行业热度 86.9，状态：放量领涨。"
+    },
+    {
+      "type": "行业热度",
+      "target": "通信应用增值服务",
+      "level": "中",
+      "message": "行业热度 83.2，状态：放量领涨。"
+    },
+    {
+      "type": "行业热度",
+      "target": "传媒",
+      "level": "中",
+      "message": "行业热度 80.5，状态：高热度。"
+    },
+    {
+      "type": "风格分化",
+      "target": "创业板 - 科创50",
+      "level": "中",
+      "message": "创业板占优，温差 45.4 分，需跟踪是否触发再平衡。"
+    },
+    {
+      "type": "风格分化",
+      "target": "成长 - 红利",
+      "level": "中",
+      "message": "成长占优，温差 42.7 分，需跟踪是否触发再平衡。"
+    }
+  ],
+  "data_quality": [
+    {
+      "item": "宽基指数",
+      "status": "ok",
+      "detail": "9 个指数，覆盖 2026-05-14。"
+    },
+    {
+      "item": "行业热力",
+      "status": "ok",
+      "detail": "东方财富板块API"
+    },
+    {
+      "item": "市场宽度",
+      "status": "ok",
+      "detail": "基于 80 个行业/主题样本计算扩散、集中度与资金覆盖。"
+    },
+    {
+      "item": "微盘指数",
+      "status": "cache",
+      "detail": "使用 800007 Choice微盘股指数；外部接口失败时读取本地缓存。"
+    },
+    {
+      "item": "历史分位",
+      "status": "mixed",
+      "detail": "宽基更新脚本支持近3年分位；缓存页保留最新生成结果。"
+    },
+    {
+      "item": "历史快照",
+      "status": "ok",
+      "detail": "按交易日写入 data/history/market_dashboard_2026-05-14.json。"
+    }
+  ],
+  "report": {
+    "daily_markdown": "outputs/reports/daily_2026-05-14.md"
+  },
+  "history": {
+    "snapshot": "data/history/market_dashboard_2026-05-14.json"
+  }
+}
