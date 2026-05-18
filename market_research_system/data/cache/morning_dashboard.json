@@ -1,97 +1,70 @@
 {
-  "version": "0.4.0",
-  "generated_at": "2026-05-18 19:14:22",
+  "version": "0.1.0",
+  "session": "morning",
+  "generated_at": "2026-05-18 19:14:43",
   "trade_date": "2026-05-18",
   "source": {
-    "wide_index": "congestion_data.json",
+    "wide_index": "东方财富实时指数 + congestion_data.json估算",
     "industry": "东方财富板块API",
     "industry_quality": "ok",
-    "raw_latest_date": "2026-05-18"
+    "projection_factor": 1.85,
+    "raw_latest_date": "2026-05-18",
+    "close_base_date": "2026-05-18"
   },
   "summary": {
-    "headline": "市场风险温度 62.4，最热宽基为 创业板指，最热风格为 成长科技，板块扩散为 温和扩散。",
+    "headline": "午盘快照：全A成交 28403 亿，按早盘节奏折算约为昨日 187.7%；最热风格为 小盘，板块扩散为 温和扩散。",
     "bullets": [
-      "创业板指综合拥挤度 83.6，较前日 降6.2。",
-      "成长科技组均值 63.3，组内包含 创业板指、科创50。",
-      "行业/主题上涨覆盖 100.0%，热点数量 14 个，扩散分 67.6。",
-      "行业/主题热度最高为 通信线缆及配套，状态：放量领涨。",
-      "最大风格温差为 创业板 - 科创50：创业板占优，温差 40.5 分。",
-      "关键背离：板块扩散领先于宽基温度。",
-      "若高拥挤方向继续放量但价格动量钝化，应提高对退潮信号的敏感度。"
+      "创业板指早盘温度 100.0，较昨日收盘 升16.4，涨跌 -0.36%。",
+      "小盘风格温度 78.0，较昨日收盘 升15.1。",
+      "全A上涨家数 2309，下跌家数 2759，上涨占比 44.5%。",
+      "行业/主题扩散分 67.6，热点数量 14 个，主力净流入合计 102.12 亿元。",
+      "早盘热度最高方向为 通信线缆及配套，状态：放量领涨，板块热度 86.6。",
+      "风格提示：风格首位由昨日的 成长科技 切换至早盘 小盘。",
+      "异动提示：创业板指，早盘温度较昨日收盘升 16.4 分，成交进度 100.0%。"
     ]
   },
-  "market_state": [
-    {
-      "id": "regime",
-      "name": "市场温度",
-      "score": 44.2,
-      "status": {
-        "label": "中性",
-        "class": "safe"
-      },
-      "detail": "宽基平均拥挤度 44.2，4 个指数处于偏热以上。"
-    },
-    {
-      "id": "liquidity",
-      "name": "流动性",
-      "score": 52.0,
-      "status": {
-        "label": "偏热",
-        "class": "warning"
-      },
-      "detail": "全A成交额 28000 亿，换手约 4.64%。"
-    },
-    {
-      "id": "concentration",
-      "name": "成交集中度",
-      "score": 59.3,
-      "status": {
-        "label": "偏热",
-        "class": "warning"
-      },
-      "detail": "前5%成交占比 43.9%，45%附近为拥挤交易临界区。"
-    },
-    {
-      "id": "rotation",
-      "name": "风格扩散",
-      "score": 44.4,
-      "status": {
-        "label": "中性",
-        "class": "safe"
-      },
-      "detail": "0 个宽基指数较前日升温，最热风格为 成长科技。"
-    },
-    {
-      "id": "risk",
-      "name": "风险温度",
-      "score": 62.4,
-      "status": {
-        "label": "偏热",
-        "class": "warning"
-      },
-      "detail": "当前最高拥挤方向为 创业板指，综合分 83.6。"
-    }
-  ],
-  "wide_indices": [
+  "market_overview": {
+    "last_trade_date": "2026-05-18",
+    "all_a_amount": 28403.0,
+    "last_full_day_amount": 28000.0,
+    "amount_progress": 101.4,
+    "projected_full_day_amount": 52546.0,
+    "projected_vs_last": 187.7,
+    "projection_factor": 1.85,
+    "stock_count": 5189,
+    "up_count": 2309,
+    "down_count": 2759,
+    "flat_count": 121,
+    "up_ratio": 44.5
+  },
+  "morning_indices": [
     {
       "id": "399006",
       "name": "创业板指",
       "group": "成长科技",
       "date": "2026-05-18",
-      "score": 83.6,
-      "day_delta": -6.2,
-      "range_delta": 5.4,
-      "recent_delta": -4.6,
-      "congestion": 8.3,
-      "turnover_ratio": 27.24,
-      "turnover_rate": 8.3,
-      "percentile": 96.0,
-      "turnover": 7628.0,
+      "score": 100.0,
+      "day_delta": 16.4,
+      "range_delta": 16.4,
+      "recent_delta": 16.4,
+      "congestion": 15.36,
+      "turnover_ratio": 26.86,
+      "turnover_rate": 15.36,
+      "percentile": 100.0,
+      "turnover": 14112.0,
+      "morning_amount": 7628.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": -0.36,
+      "close": 3914.88,
+      "net_inflow": -140.99,
       "level": {
         "label": "高风险",
         "class": "danger"
       },
-      "coverage": "20/20",
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
       "series": [
         {
           "date": "2026-04-16",
@@ -172,6 +145,10 @@
         {
           "date": "2026-05-18",
           "score": 83.6
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 100.0
         }
       ]
     },
@@ -180,20 +157,28 @@
       "name": "中证1000",
       "group": "小盘",
       "date": "2026-05-18",
-      "score": 64.0,
-      "day_delta": -3.3,
-      "range_delta": 5.3,
-      "recent_delta": -1.7,
-      "congestion": 4.15,
-      "turnover_ratio": 22.45,
-      "turnover_rate": 4.15,
-      "percentile": 97.0,
-      "turnover": 6285.0,
+      "score": 79.1,
+      "day_delta": 15.1,
+      "range_delta": 15.1,
+      "recent_delta": 15.1,
+      "congestion": 7.68,
+      "turnover_ratio": 22.13,
+      "turnover_rate": 7.68,
+      "percentile": 100.0,
+      "turnover": 11627.0,
+      "morning_amount": 6285.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": 0.43,
+      "close": 8720.21,
+      "net_inflow": -22.86,
       "level": {
-        "label": "偏热",
-        "class": "warning"
+        "label": "高风险",
+        "class": "danger"
       },
-      "coverage": "20/20",
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
       "series": [
         {
           "date": "2026-04-16",
@@ -274,516 +259,10 @@
         {
           "date": "2026-05-18",
           "score": 64.0
-        }
-      ]
-    },
-    {
-      "id": "000905",
-      "name": "中证500",
-      "group": "中盘",
-      "date": "2026-05-18",
-      "score": 57.3,
-      "day_delta": -2.5,
-      "range_delta": 6.3,
-      "recent_delta": -2.2,
-      "congestion": 3.21,
-      "turnover_ratio": 19.97,
-      "turnover_rate": 3.21,
-      "percentile": 96.0,
-      "turnover": 5593.0,
-      "level": {
-        "label": "偏热",
-        "class": "warning"
-      },
-      "coverage": "20/20",
-      "series": [
-        {
-          "date": "2026-04-16",
-          "score": 51.0
-        },
-        {
-          "date": "2026-04-17",
-          "score": 52.6
-        },
-        {
-          "date": "2026-04-20",
-          "score": 55.8
-        },
-        {
-          "date": "2026-04-21",
-          "score": 51.5
-        },
-        {
-          "date": "2026-04-22",
-          "score": 55.4
-        },
-        {
-          "date": "2026-04-23",
-          "score": 58.2
-        },
-        {
-          "date": "2026-04-24",
-          "score": 56.2
-        },
-        {
-          "date": "2026-04-27",
-          "score": 57.2
-        },
-        {
-          "date": "2026-04-28",
-          "score": 55.0
-        },
-        {
-          "date": "2026-04-29",
-          "score": 54.2
-        },
-        {
-          "date": "2026-04-30",
-          "score": 56.7
-        },
-        {
-          "date": "2026-05-06",
-          "score": 60.1
-        },
-        {
-          "date": "2026-05-07",
-          "score": 59.7
-        },
-        {
-          "date": "2026-05-08",
-          "score": 59.5
-        },
-        {
-          "date": "2026-05-11",
-          "score": 62.6
-        },
-        {
-          "date": "2026-05-12",
-          "score": 60.0
-        },
-        {
-          "date": "2026-05-13",
-          "score": 60.2
-        },
-        {
-          "date": "2026-05-14",
-          "score": 60.5
-        },
-        {
-          "date": "2026-05-15",
-          "score": 59.9
-        },
-        {
-          "date": "2026-05-18",
-          "score": 57.3
-        }
-      ]
-    },
-    {
-      "id": "000300",
-      "name": "沪深300",
-      "group": "大盘权重",
-      "date": "2026-05-18",
-      "score": 54.8,
-      "day_delta": -2.0,
-      "range_delta": 3.8,
-      "recent_delta": -1.2,
-      "congestion": 1.39,
-      "turnover_ratio": 26.19,
-      "turnover_rate": 1.39,
-      "percentile": 96.0,
-      "turnover": 7335.0,
-      "level": {
-        "label": "偏热",
-        "class": "warning"
-      },
-      "coverage": "20/20",
-      "series": [
-        {
-          "date": "2026-04-16",
-          "score": 51.0
-        },
-        {
-          "date": "2026-04-17",
-          "score": 51.5
-        },
-        {
-          "date": "2026-04-20",
-          "score": 52.3
-        },
-        {
-          "date": "2026-04-21",
-          "score": 51.2
-        },
-        {
-          "date": "2026-04-22",
-          "score": 52.3
-        },
-        {
-          "date": "2026-04-23",
-          "score": 54.5
-        },
-        {
-          "date": "2026-04-24",
-          "score": 54.1
-        },
-        {
-          "date": "2026-04-27",
-          "score": 53.1
-        },
-        {
-          "date": "2026-04-28",
-          "score": 52.7
-        },
-        {
-          "date": "2026-04-29",
-          "score": 54.1
-        },
-        {
-          "date": "2026-04-30",
-          "score": 55.0
-        },
-        {
-          "date": "2026-05-06",
-          "score": 56.7
-        },
-        {
-          "date": "2026-05-07",
-          "score": 55.7
-        },
-        {
-          "date": "2026-05-08",
-          "score": 53.7
-        },
-        {
-          "date": "2026-05-11",
-          "score": 57.1
-        },
-        {
-          "date": "2026-05-12",
-          "score": 56.0
-        },
-        {
-          "date": "2026-05-13",
-          "score": 56.0
-        },
-        {
-          "date": "2026-05-14",
-          "score": 56.5
-        },
-        {
-          "date": "2026-05-15",
-          "score": 56.7
-        },
-        {
-          "date": "2026-05-18",
-          "score": 54.8
-        }
-      ]
-    },
-    {
-      "id": "000688",
-      "name": "科创50",
-      "group": "成长科技",
-      "date": "2026-05-18",
-      "score": 43.1,
-      "day_delta": -4.0,
-      "range_delta": 9.0,
-      "recent_delta": -1.4,
-      "congestion": 3.1,
-      "turnover_ratio": 5.44,
-      "turnover_rate": 3.1,
-      "percentile": 99.0,
-      "turnover": 1524.0,
-      "level": {
-        "label": "中性",
-        "class": "safe"
-      },
-      "coverage": "20/20",
-      "series": [
-        {
-          "date": "2026-04-16",
-          "score": 34.1
-        },
-        {
-          "date": "2026-04-17",
-          "score": 34.4
-        },
-        {
-          "date": "2026-04-20",
-          "score": 34.2
-        },
-        {
-          "date": "2026-04-21",
-          "score": 32.7
-        },
-        {
-          "date": "2026-04-22",
-          "score": 33.1
-        },
-        {
-          "date": "2026-04-23",
-          "score": 35.4
-        },
-        {
-          "date": "2026-04-24",
-          "score": 38.3
-        },
-        {
-          "date": "2026-04-27",
-          "score": 40.1
-        },
-        {
-          "date": "2026-04-28",
-          "score": 36.7
-        },
-        {
-          "date": "2026-04-29",
-          "score": 35.4
-        },
-        {
-          "date": "2026-04-30",
-          "score": 42.5
-        },
-        {
-          "date": "2026-05-06",
-          "score": 48.5
-        },
-        {
-          "date": "2026-05-07",
-          "score": 42.2
-        },
-        {
-          "date": "2026-05-08",
-          "score": 40.6
-        },
-        {
-          "date": "2026-05-11",
-          "score": 45.8
-        },
-        {
-          "date": "2026-05-12",
-          "score": 44.0
-        },
-        {
-          "date": "2026-05-13",
-          "score": 43.5
-        },
-        {
-          "date": "2026-05-14",
-          "score": 44.7
-        },
-        {
-          "date": "2026-05-15",
-          "score": 47.1
-        },
-        {
-          "date": "2026-05-18",
-          "score": 43.1
-        }
-      ]
-    },
-    {
-      "id": "000016",
-      "name": "上证50",
-      "group": "大盘权重",
-      "date": "2026-05-18",
-      "score": 33.3,
-      "day_delta": -2.8,
-      "range_delta": 6.6,
-      "recent_delta": -1.8,
-      "congestion": 0.8,
-      "turnover_ratio": 6.45,
-      "turnover_rate": 0.8,
-      "percentile": 94.0,
-      "turnover": 1805.0,
-      "level": {
-        "label": "中性",
-        "class": "safe"
-      },
-      "coverage": "20/20",
-      "series": [
-        {
-          "date": "2026-04-16",
-          "score": 26.7
-        },
-        {
-          "date": "2026-04-17",
-          "score": 29.4
-        },
-        {
-          "date": "2026-04-20",
-          "score": 28.6
-        },
-        {
-          "date": "2026-04-21",
-          "score": 27.0
-        },
-        {
-          "date": "2026-04-22",
-          "score": 27.9
-        },
-        {
-          "date": "2026-04-23",
-          "score": 31.3
-        },
-        {
-          "date": "2026-04-24",
-          "score": 31.3
-        },
-        {
-          "date": "2026-04-27",
-          "score": 32.2
-        },
-        {
-          "date": "2026-04-28",
-          "score": 32.0
-        },
-        {
-          "date": "2026-04-29",
-          "score": 34.0
-        },
-        {
-          "date": "2026-04-30",
-          "score": 36.5
-        },
-        {
-          "date": "2026-05-06",
-          "score": 37.8
-        },
-        {
-          "date": "2026-05-07",
-          "score": 34.7
-        },
-        {
-          "date": "2026-05-08",
-          "score": 33.2
-        },
-        {
-          "date": "2026-05-11",
-          "score": 36.3
-        },
-        {
-          "date": "2026-05-12",
-          "score": 36.3
-        },
-        {
-          "date": "2026-05-13",
-          "score": 35.0
-        },
-        {
-          "date": "2026-05-14",
-          "score": 34.8
-        },
-        {
-          "date": "2026-05-15",
-          "score": 36.1
-        },
-        {
-          "date": "2026-05-18",
-          "score": 33.3
-        }
-      ]
-    },
-    {
-      "id": "8841331",
-      "name": "中证红利",
-      "group": "红利低波",
-      "date": "2026-05-18",
-      "score": 23.6,
-      "day_delta": -2.2,
-      "range_delta": 1.4,
-      "recent_delta": -1.0,
-      "congestion": 0.38,
-      "turnover_ratio": 2.07,
-      "turnover_rate": 0.38,
-      "percentile": 80.0,
-      "turnover": 579.0,
-      "level": {
-        "label": "偏冷",
-        "class": "info"
-      },
-      "coverage": "20/20",
-      "series": [
-        {
-          "date": "2026-04-16",
-          "score": 22.2
-        },
-        {
-          "date": "2026-04-17",
-          "score": 19.8
-        },
-        {
-          "date": "2026-04-20",
-          "score": 22.8
-        },
-        {
-          "date": "2026-04-21",
-          "score": 22.1
-        },
-        {
-          "date": "2026-04-22",
-          "score": 20.8
-        },
-        {
-          "date": "2026-04-23",
-          "score": 25.5
-        },
-        {
-          "date": "2026-04-24",
-          "score": 23.1
-        },
-        {
-          "date": "2026-04-27",
-          "score": 24.8
-        },
-        {
-          "date": "2026-04-28",
-          "score": 26.4
-        },
-        {
-          "date": "2026-04-29",
-          "score": 30.5
-        },
-        {
-          "date": "2026-04-30",
-          "score": 28.7
-        },
-        {
-          "date": "2026-05-06",
-          "score": 28.7
-        },
-        {
-          "date": "2026-05-07",
-          "score": 27.9
-        },
-        {
-          "date": "2026-05-08",
-          "score": 23.8
-        },
-        {
-          "date": "2026-05-11",
-          "score": 27.0
-        },
-        {
-          "date": "2026-05-12",
-          "score": 24.9
-        },
-        {
-          "date": "2026-05-13",
-          "score": 24.0
-        },
-        {
-          "date": "2026-05-14",
-          "score": 24.5
-        },
-        {
-          "date": "2026-05-15",
-          "score": 25.8
         },
         {
-          "date": "2026-05-18",
-          "score": 23.6
+          "date": "2026-05-18 AM",
+          "score": 79.1
         }
       ]
     },
@@ -792,20 +271,28 @@
       "name": "中证2000",
       "group": "小盘",
       "date": "2026-05-18",
-      "score": 19.7,
-      "day_delta": -3.7,
-      "range_delta": 3.6,
-      "recent_delta": -2.3,
-      "congestion": 0.35,
-      "turnover_ratio": 1.94,
-      "turnover_rate": 0.35,
-      "percentile": 65.0,
-      "turnover": 543.0,
+      "score": 76.9,
+      "day_delta": null,
+      "range_delta": null,
+      "recent_delta": null,
+      "congestion": 7.34,
+      "turnover_ratio": 21.36,
+      "turnover_rate": 7.34,
+      "percentile": 100.0,
+      "turnover": 11226.0,
+      "morning_amount": 6068.0,
+      "amount_progress": null,
+      "projected_vs_last": null,
+      "pct_chg": 0.3,
+      "close": 3674.7,
+      "net_inflow": -73.23,
       "level": {
-        "label": "偏冷",
-        "class": "info"
+        "label": "高风险",
+        "class": "danger"
       },
-      "coverage": "20/20",
+      "quality": "realtime/baseline_mismatch",
+      "baseline_mismatch": true,
+      "coverage": "21/21",
       "series": [
         {
           "date": "2026-04-16",
@@ -886,111 +373,656 @@
         {
           "date": "2026-05-18",
           "score": 19.7
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 76.9
         }
       ]
     },
     {
-      "id": "800007",
-      "name": "Choice微盘",
-      "group": "微盘",
-      "date": "2026-05-14",
-      "score": 18.5,
-      "day_delta": -0.0,
-      "range_delta": -1.4,
-      "recent_delta": -0.9,
-      "congestion": 2.86,
-      "turnover_ratio": 0.81,
-      "turnover_rate": 2.86,
-      "percentile": 23,
-      "turnover": 264.0,
+      "id": "000905",
+      "name": "中证500",
+      "group": "中盘",
+      "date": "2026-05-18",
+      "score": 69.4,
+      "day_delta": 12.1,
+      "range_delta": 12.1,
+      "recent_delta": 12.1,
+      "congestion": 5.93,
+      "turnover_ratio": 19.69,
+      "turnover_rate": 5.93,
+      "percentile": 100.0,
+      "turnover": 10346.0,
+      "morning_amount": 5593.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": 0.21,
+      "close": 8554.24,
+      "net_inflow": -69.68,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
+      "series": [
+        {
+          "date": "2026-04-16",
+          "score": 51.0
+        },
+        {
+          "date": "2026-04-17",
+          "score": 52.6
+        },
+        {
+          "date": "2026-04-20",
+          "score": 55.8
+        },
+        {
+          "date": "2026-04-21",
+          "score": 51.5
+        },
+        {
+          "date": "2026-04-22",
+          "score": 55.4
+        },
+        {
+          "date": "2026-04-23",
+          "score": 58.2
+        },
+        {
+          "date": "2026-04-24",
+          "score": 56.2
+        },
+        {
+          "date": "2026-04-27",
+          "score": 57.2
+        },
+        {
+          "date": "2026-04-28",
+          "score": 55.0
+        },
+        {
+          "date": "2026-04-29",
+          "score": 54.2
+        },
+        {
+          "date": "2026-04-30",
+          "score": 56.7
+        },
+        {
+          "date": "2026-05-06",
+          "score": 60.1
+        },
+        {
+          "date": "2026-05-07",
+          "score": 59.7
+        },
+        {
+          "date": "2026-05-08",
+          "score": 59.5
+        },
+        {
+          "date": "2026-05-11",
+          "score": 62.6
+        },
+        {
+          "date": "2026-05-12",
+          "score": 60.0
+        },
+        {
+          "date": "2026-05-13",
+          "score": 60.2
+        },
+        {
+          "date": "2026-05-14",
+          "score": 60.5
+        },
+        {
+          "date": "2026-05-15",
+          "score": 59.9
+        },
+        {
+          "date": "2026-05-18",
+          "score": 57.3
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 69.4
+        }
+      ]
+    },
+    {
+      "id": "000300",
+      "name": "沪深300",
+      "group": "大盘权重",
+      "date": "2026-05-18",
+      "score": 60.7,
+      "day_delta": 5.9,
+      "range_delta": 5.9,
+      "recent_delta": 5.9,
+      "congestion": 2.57,
+      "turnover_ratio": 25.82,
+      "turnover_rate": 2.57,
+      "percentile": 100.0,
+      "turnover": 13569.0,
+      "morning_amount": 7335.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": -0.54,
+      "close": 4833.52,
+      "net_inflow": -212.83,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
+      "series": [
+        {
+          "date": "2026-04-16",
+          "score": 51.0
+        },
+        {
+          "date": "2026-04-17",
+          "score": 51.5
+        },
+        {
+          "date": "2026-04-20",
+          "score": 52.3
+        },
+        {
+          "date": "2026-04-21",
+          "score": 51.2
+        },
+        {
+          "date": "2026-04-22",
+          "score": 52.3
+        },
+        {
+          "date": "2026-04-23",
+          "score": 54.5
+        },
+        {
+          "date": "2026-04-24",
+          "score": 54.1
+        },
+        {
+          "date": "2026-04-27",
+          "score": 53.1
+        },
+        {
+          "date": "2026-04-28",
+          "score": 52.7
+        },
+        {
+          "date": "2026-04-29",
+          "score": 54.1
+        },
+        {
+          "date": "2026-04-30",
+          "score": 55.0
+        },
+        {
+          "date": "2026-05-06",
+          "score": 56.7
+        },
+        {
+          "date": "2026-05-07",
+          "score": 55.7
+        },
+        {
+          "date": "2026-05-08",
+          "score": 53.7
+        },
+        {
+          "date": "2026-05-11",
+          "score": 57.1
+        },
+        {
+          "date": "2026-05-12",
+          "score": 56.0
+        },
+        {
+          "date": "2026-05-13",
+          "score": 56.0
+        },
+        {
+          "date": "2026-05-14",
+          "score": 56.5
+        },
+        {
+          "date": "2026-05-15",
+          "score": 56.7
+        },
+        {
+          "date": "2026-05-18",
+          "score": 54.8
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 60.7
+        }
+      ]
+    },
+    {
+      "id": "000688",
+      "name": "科创50",
+      "group": "成长科技",
+      "date": "2026-05-18",
+      "score": 54.2,
+      "day_delta": 11.1,
+      "range_delta": 11.1,
+      "recent_delta": 11.1,
+      "congestion": 5.73,
+      "turnover_ratio": 5.37,
+      "turnover_rate": 5.73,
+      "percentile": 100.0,
+      "turnover": 2820.0,
+      "morning_amount": 1524.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": 0.81,
+      "close": 1709.96,
+      "net_inflow": 2.43,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      },
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
+      "series": [
+        {
+          "date": "2026-04-16",
+          "score": 34.1
+        },
+        {
+          "date": "2026-04-17",
+          "score": 34.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 34.2
+        },
+        {
+          "date": "2026-04-21",
+          "score": 32.7
+        },
+        {
+          "date": "2026-04-22",
+          "score": 33.1
+        },
+        {
+          "date": "2026-04-23",
+          "score": 35.4
+        },
+        {
+          "date": "2026-04-24",
+          "score": 38.3
+        },
+        {
+          "date": "2026-04-27",
+          "score": 40.1
+        },
+        {
+          "date": "2026-04-28",
+          "score": 36.7
+        },
+        {
+          "date": "2026-04-29",
+          "score": 35.4
+        },
+        {
+          "date": "2026-04-30",
+          "score": 42.5
+        },
+        {
+          "date": "2026-05-06",
+          "score": 48.5
+        },
+        {
+          "date": "2026-05-07",
+          "score": 42.2
+        },
+        {
+          "date": "2026-05-08",
+          "score": 40.6
+        },
+        {
+          "date": "2026-05-11",
+          "score": 45.8
+        },
+        {
+          "date": "2026-05-12",
+          "score": 44.0
+        },
+        {
+          "date": "2026-05-13",
+          "score": 43.5
+        },
+        {
+          "date": "2026-05-14",
+          "score": 44.7
+        },
+        {
+          "date": "2026-05-15",
+          "score": 47.1
+        },
+        {
+          "date": "2026-05-18",
+          "score": 43.1
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 54.2
+        }
+      ]
+    },
+    {
+      "id": "000016",
+      "name": "上证50",
+      "group": "大盘权重",
+      "date": "2026-05-18",
+      "score": 37.5,
+      "day_delta": 4.2,
+      "range_delta": 4.2,
+      "recent_delta": 4.2,
+      "congestion": 1.48,
+      "turnover_ratio": 6.36,
+      "turnover_rate": 1.48,
+      "percentile": 100.0,
+      "turnover": 3340.0,
+      "morning_amount": 1805.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": -0.77,
+      "close": 2934.96,
+      "net_inflow": -78.17,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      },
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
+      "series": [
+        {
+          "date": "2026-04-16",
+          "score": 26.7
+        },
+        {
+          "date": "2026-04-17",
+          "score": 29.4
+        },
+        {
+          "date": "2026-04-20",
+          "score": 28.6
+        },
+        {
+          "date": "2026-04-21",
+          "score": 27.0
+        },
+        {
+          "date": "2026-04-22",
+          "score": 27.9
+        },
+        {
+          "date": "2026-04-23",
+          "score": 31.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 31.3
+        },
+        {
+          "date": "2026-04-27",
+          "score": 32.2
+        },
+        {
+          "date": "2026-04-28",
+          "score": 32.0
+        },
+        {
+          "date": "2026-04-29",
+          "score": 34.0
+        },
+        {
+          "date": "2026-04-30",
+          "score": 36.5
+        },
+        {
+          "date": "2026-05-06",
+          "score": 37.8
+        },
+        {
+          "date": "2026-05-07",
+          "score": 34.7
+        },
+        {
+          "date": "2026-05-08",
+          "score": 33.2
+        },
+        {
+          "date": "2026-05-11",
+          "score": 36.3
+        },
+        {
+          "date": "2026-05-12",
+          "score": 36.3
+        },
+        {
+          "date": "2026-05-13",
+          "score": 35.0
+        },
+        {
+          "date": "2026-05-14",
+          "score": 34.8
+        },
+        {
+          "date": "2026-05-15",
+          "score": 36.1
+        },
+        {
+          "date": "2026-05-18",
+          "score": 33.3
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 37.5
+        }
+      ]
+    },
+    {
+      "id": "8841331",
+      "name": "中证红利",
+      "group": "红利低波",
+      "date": "2026-05-18",
+      "score": 29.9,
+      "day_delta": 6.3,
+      "range_delta": 6.3,
+      "recent_delta": 6.3,
+      "congestion": 0.7,
+      "turnover_ratio": 2.04,
+      "turnover_rate": 0.7,
+      "percentile": 100.0,
+      "turnover": 1071.0,
+      "morning_amount": 579.0,
+      "amount_progress": 100.0,
+      "projected_vs_last": 185.0,
+      "pct_chg": -0.46,
+      "close": 5654.2,
+      "net_inflow": -12.7,
       "level": {
         "label": "偏冷",
         "class": "info"
       },
-      "coverage": "18/20",
+      "quality": "realtime",
+      "baseline_mismatch": false,
+      "coverage": "21/21",
       "series": [
         {
           "date": "2026-04-16",
-          "score": 19.8
+          "score": 22.2
         },
         {
           "date": "2026-04-17",
-          "score": 20.1
+          "score": 19.8
         },
         {
           "date": "2026-04-20",
-          "score": 19.5
+          "score": 22.8
         },
         {
           "date": "2026-04-21",
-          "score": 19.6
+          "score": 22.1
         },
         {
           "date": "2026-04-22",
-          "score": 17.9
-        },
-        {
-          "date": "2026-04-23",
-          "score": 20.3
-        },
-        {
-          "date": "2026-04-24",
-          "score": 20.9
-        },
-        {
-          "date": "2026-04-27",
-          "score": 25.3
-        },
-        {
-          "date": "2026-04-28",
-          "score": 24.3
-        },
-        {
-          "date": "2026-04-29",
-          "score": 22.9
-        },
-        {
-          "date": "2026-04-30",
-          "score": 23.5
-        },
-        {
-          "date": "2026-05-06",
-          "score": 24.4
-        },
-        {
-          "date": "2026-05-07",
-          "score": 21.1
-        },
-        {
-          "date": "2026-05-08",
-          "score": 19.5
-        },
-        {
-          "date": "2026-05-11",
           "score": 20.8
         },
         {
+          "date": "2026-04-23",
+          "score": 25.5
+        },
+        {
+          "date": "2026-04-24",
+          "score": 23.1
+        },
+        {
+          "date": "2026-04-27",
+          "score": 24.8
+        },
+        {
+          "date": "2026-04-28",
+          "score": 26.4
+        },
+        {
+          "date": "2026-04-29",
+          "score": 30.5
+        },
+        {
+          "date": "2026-04-30",
+          "score": 28.7
+        },
+        {
+          "date": "2026-05-06",
+          "score": 28.7
+        },
+        {
+          "date": "2026-05-07",
+          "score": 27.9
+        },
+        {
+          "date": "2026-05-08",
+          "score": 23.8
+        },
+        {
+          "date": "2026-05-11",
+          "score": 27.0
+        },
+        {
           "date": "2026-05-12",
-          "score": 19.4
+          "score": 24.9
         },
         {
           "date": "2026-05-13",
-          "score": 18.5
+          "score": 24.0
         },
         {
           "date": "2026-05-14",
-          "score": 18.5
+          "score": 24.5
+        },
+        {
+          "date": "2026-05-15",
+          "score": 25.8
+        },
+        {
+          "date": "2026-05-18",
+          "score": 23.6
+        },
+        {
+          "date": "2026-05-18 AM",
+          "score": 29.9
         }
       ]
     }
   ],
   "style_rotation": [
     {
+      "name": "小盘",
+      "members": "中证1000、中证2000",
+      "score": 78.0,
+      "day_delta": 15.1,
+      "range_delta": 15.1,
+      "pct_chg": 0.36,
+      "amount_progress": 100.0,
+      "level": {
+        "label": "高风险",
+        "class": "danger"
+      }
+    },
+    {
+      "name": "成长科技",
+      "members": "创业板指、科创50",
+      "score": 77.1,
+      "day_delta": 13.8,
+      "range_delta": 13.8,
+      "pct_chg": 0.23,
+      "amount_progress": 100.0,
+      "level": {
+        "label": "高风险",
+        "class": "danger"
+      }
+    },
+    {
+      "name": "中盘",
+      "members": "中证500",
+      "score": 69.4,
+      "day_delta": 12.1,
+      "range_delta": 12.1,
+      "pct_chg": 0.21,
+      "amount_progress": 100.0,
+      "level": {
+        "label": "偏热",
+        "class": "warning"
+      }
+    },
+    {
+      "name": "大盘权重",
+      "members": "上证50、沪深300",
+      "score": 49.1,
+      "day_delta": 5.1,
+      "range_delta": 5.1,
+      "pct_chg": -0.66,
+      "amount_progress": 100.0,
+      "level": {
+        "label": "中性",
+        "class": "safe"
+      }
+    },
+    {
+      "name": "红利低波",
+      "members": "中证红利",
+      "score": 29.9,
+      "day_delta": 6.3,
+      "range_delta": 6.3,
+      "pct_chg": -0.46,
+      "amount_progress": 100.0,
+      "level": {
+        "label": "偏冷",
+        "class": "info"
+      }
+    }
+  ],
+  "previous_style_rotation": [
+    {
       "name": "成长科技",
       "members": "创业板指、科创50",
       "score": 63.3,
-      "day_delta": -5.1,
-      "range_delta": 7.2,
       "level": {
         "label": "偏热",
         "class": "warning"
@@ -1000,8 +1032,6 @@
       "name": "中盘",
       "members": "中证500",
       "score": 57.3,
-      "day_delta": -2.5,
-      "range_delta": 6.3,
       "level": {
         "label": "偏热",
         "class": "warning"
@@ -1011,8 +1041,6 @@
       "name": "大盘权重",
       "members": "上证50、沪深300",
       "score": 44.0,
-      "day_delta": -2.4,
-      "range_delta": 5.2,
       "level": {
         "label": "中性",
         "class": "safe"
@@ -1022,8 +1050,6 @@
       "name": "小盘",
       "members": "中证1000、中证2000",
       "score": 41.9,
-      "day_delta": -3.5,
-      "range_delta": 4.5,
       "level": {
         "label": "中性",
         "class": "safe"
@@ -1033,8 +1059,6 @@
       "name": "红利低波",
       "members": "中证红利",
       "score": 23.6,
-      "day_delta": -2.2,
-      "range_delta": 1.4,
       "level": {
         "label": "偏冷",
         "class": "info"
@@ -1044,258 +1068,60 @@
       "name": "微盘",
       "members": "Choice微盘",
       "score": 18.5,
-      "day_delta": 0.0,
-      "range_delta": -1.4,
       "level": {
         "label": "偏冷",
         "class": "info"
       }
     }
   ],
-  "market_breadth": {
-    "coverage": 80,
-    "diffusion_score": 67.6,
-    "status": {
-      "label": "温和扩散",
-      "class": "warning"
-    },
-    "positive_count": 80,
-    "negative_count": 0,
-    "flat_count": 0,
-    "positive_ratio": 100.0,
-    "hot_count": 14,
-    "hot_ratio": 17.5,
-    "cold_count": 0,
-    "net_inflow_positive_ratio": 62.5,
-    "total_net_inflow": 102.12,
-    "dispersion_score": 34.0,
-    "top5_amount_share": 43.2,
-    "top_boards": [
-      {
-        "id": "BK1592",
-        "name": "通信线缆及配套",
-        "score": 86.6,
-        "ret_5d": 4.2,
-        "ret_20d": null,
-        "amount": 461.0,
-        "amount_pct": 79.0,
-        "net_inflow": 8.52,
-        "net_inflow_pct": 92.0,
-        "state": "放量领涨",
-        "quality": "ok"
-      },
-      {
-        "id": "BK0459",
-        "name": "元件",
-        "score": 82.2,
-        "ret_5d": 2.34,
-        "ret_20d": null,
-        "amount": 1084.0,
-        "amount_pct": 92.0,
-        "net_inflow": 42.32,
-        "net_inflow_pct": 100.0,
-        "state": "放量领涨",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1331",
-        "name": "数字芯片设计",
-        "score": 81.7,
-        "ret_5d": 2.08,
-        "ret_20d": null,
-        "amount": 1799.0,
-        "amount_pct": 97.0,
-        "net_inflow": 24.86,
-        "net_inflow_pct": 96.0,
-        "state": "放量领涨",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1340",
-        "name": "印制电路板",
-        "score": 80.9,
-        "ret_5d": 2.2,
-        "ret_20d": null,
-        "amount": 871.0,
-        "amount_pct": 91.0,
-        "net_inflow": 36.41,
-        "net_inflow_pct": 99.0,
-        "state": "放量领涨",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1587",
-        "name": "电信运营商",
-        "score": 80.1,
-        "ret_5d": 5.25,
-        "ret_20d": null,
-        "amount": 101.0,
-        "amount_pct": 46.0,
-        "net_inflow": 21.72,
-        "net_inflow_pct": 95.0,
-        "state": "温和走强",
-        "quality": "ok"
-      }
-    ],
-    "bottom_boards": [
-      {
-        "id": "BK1586",
-        "name": "软饮料",
-        "score": 43.5,
-        "ret_5d": 1.38,
-        "ret_20d": null,
-        "amount": 28.0,
-        "amount_pct": 26.0,
-        "net_inflow": 0.46,
-        "net_inflow_pct": 49.0,
-        "state": "温和走强",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1443",
-        "name": "橡胶助剂",
-        "score": 43.9,
-        "ret_5d": 1.66,
-        "ret_20d": null,
-        "amount": 19.0,
-        "amount_pct": 19.0,
-        "net_inflow": 0.71,
-        "net_inflow_pct": 55.0,
-        "state": "温和走强",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1583",
-        "name": "零食",
-        "score": 44.3,
-        "ret_5d": 1.39,
-        "ret_20d": null,
-        "amount": 25.0,
-        "amount_pct": 24.0,
-        "net_inflow": 0.8,
-        "net_inflow_pct": 56.0,
-        "state": "温和走强",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1593",
-        "name": "通信终端及配件",
-        "score": 44.4,
-        "ret_5d": 0.91,
-        "ret_20d": null,
-        "amount": 163.0,
-        "amount_pct": 59.0,
-        "net_inflow": -6.99,
-        "net_inflow_pct": 9.0,
-        "state": "中性观察",
-        "quality": "ok"
-      },
-      {
-        "id": "BK1300",
-        "name": "院线",
-        "score": 44.6,
-        "ret_5d": 2.24,
-        "ret_20d": null,
-        "amount": 9.0,
-        "amount_pct": 9.0,
-        "net_inflow": 1.06,
-        "net_inflow_pct": 60.0,
-        "state": "温和走强",
-        "quality": "ok"
-      }
-    ],
-    "note": "上涨方向较多且热点数量充足，市场扩散处在较活跃状态。"
-  },
   "style_spreads": [
     {
-      "name": "创业板 - 科创50",
-      "value": 40.5,
-      "abs_value": 40.5,
-      "direction": "创业板占优",
-      "status": {
-        "label": "极端分化",
-        "class": "danger"
-      },
-      "long_score": 83.6,
-      "short_score": 43.1
-    },
-    {
       "name": "成长 - 红利",
-      "value": 39.7,
-      "abs_value": 39.7,
+      "value": 47.2,
+      "abs_value": 47.2,
       "direction": "成长占优",
       "status": {
         "label": "极端分化",
         "class": "danger"
       },
-      "long_score": 63.3,
-      "short_score": 23.6
+      "long_score": 77.1,
+      "short_score": 29.9
     },
     {
-      "name": "微盘 - 中小盘",
-      "value": -28.5,
-      "abs_value": 28.5,
-      "direction": "微盘落后",
+      "name": "创业板 - 科创50",
+      "value": 45.8,
+      "abs_value": 45.8,
+      "direction": "创业板占优",
       "status": {
         "label": "极端分化",
         "class": "danger"
       },
-      "long_score": 18.5,
-      "short_score": 47.0
+      "long_score": 100.0,
+      "short_score": 54.2
+    },
+    {
+      "name": "小盘 - 大盘",
+      "value": 28.9,
+      "abs_value": 28.9,
+      "direction": "小盘占优",
+      "status": {
+        "label": "极端分化",
+        "class": "danger"
+      },
+      "long_score": 78.0,
+      "short_score": 49.1
     },
     {
       "name": "中盘 - 大盘",
-      "value": 13.2,
-      "abs_value": 13.2,
+      "value": 20.3,
+      "abs_value": 20.3,
       "direction": "中盘占优",
       "status": {
         "label": "明显占优",
         "class": "warning"
       },
-      "long_score": 57.3,
-      "short_score": 44.0
-    },
-    {
-      "name": "小盘 - 大盘",
-      "value": -10.0,
-      "abs_value": 10.0,
-      "direction": "大盘占优",
-      "status": {
-        "label": "相对均衡",
-        "class": "safe"
-      },
-      "long_score": 34.1,
-      "short_score": 44.0
-    }
-  ],
-  "divergence_signals": [
-    {
-      "type": "扩散领先",
-      "level": "中",
-      "title": "板块扩散领先于宽基温度",
-      "message": "行业上涨占比 100.0%，但宽基均温 44.2，可能处在结构行情向指数传导阶段。",
-      "target": "行业/主题"
-    },
-    {
-      "type": "风格极端",
-      "level": "中",
-      "title": "创业板 - 科创50温差处在极端区间",
-      "message": "创业板占优，温差 40.5 分。极端价差后要跟踪均值回归或强化突破。",
-      "target": "创业板 - 科创50"
-    },
-    {
-      "type": "风格极端",
-      "level": "中",
-      "title": "成长 - 红利温差处在极端区间",
-      "message": "成长占优，温差 39.7 分。极端价差后要跟踪均值回归或强化突破。",
-      "target": "成长 - 红利"
-    },
-    {
-      "type": "微盘背离",
-      "level": "中",
-      "title": "微盘显著弱于中小盘",
-      "message": "Choice微盘温度 18.5，中小盘篮子 47.0，说明风险偏好并未完全下沉。",
-      "target": "Choice微盘"
+      "long_score": 69.4,
+      "short_score": 49.1
     }
   ],
   "industry_heatmap": [
@@ -2340,54 +2166,324 @@
       "quality": "ok"
     }
   ],
+  "market_breadth": {
+    "coverage": 80,
+    "diffusion_score": 67.6,
+    "status": {
+      "label": "温和扩散",
+      "class": "warning"
+    },
+    "positive_count": 80,
+    "negative_count": 0,
+    "flat_count": 0,
+    "positive_ratio": 100.0,
+    "hot_count": 14,
+    "hot_ratio": 17.5,
+    "cold_count": 0,
+    "net_inflow_positive_ratio": 62.5,
+    "total_net_inflow": 102.12,
+    "dispersion_score": 34.0,
+    "top5_amount_share": 43.2,
+    "top_boards": [
+      {
+        "id": "BK1592",
+        "name": "通信线缆及配套",
+        "score": 86.6,
+        "ret_5d": 4.2,
+        "ret_20d": null,
+        "amount": 461.0,
+        "amount_pct": 79.0,
+        "net_inflow": 8.52,
+        "net_inflow_pct": 92.0,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK0459",
+        "name": "元件",
+        "score": 82.2,
+        "ret_5d": 2.34,
+        "ret_20d": null,
+        "amount": 1084.0,
+        "amount_pct": 92.0,
+        "net_inflow": 42.32,
+        "net_inflow_pct": 100.0,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1331",
+        "name": "数字芯片设计",
+        "score": 81.7,
+        "ret_5d": 2.08,
+        "ret_20d": null,
+        "amount": 1799.0,
+        "amount_pct": 97.0,
+        "net_inflow": 24.86,
+        "net_inflow_pct": 96.0,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1340",
+        "name": "印制电路板",
+        "score": 80.9,
+        "ret_5d": 2.2,
+        "ret_20d": null,
+        "amount": 871.0,
+        "amount_pct": 91.0,
+        "net_inflow": 36.41,
+        "net_inflow_pct": 99.0,
+        "state": "放量领涨",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1587",
+        "name": "电信运营商",
+        "score": 80.1,
+        "ret_5d": 5.25,
+        "ret_20d": null,
+        "amount": 101.0,
+        "amount_pct": 46.0,
+        "net_inflow": 21.72,
+        "net_inflow_pct": 95.0,
+        "state": "温和走强",
+        "quality": "ok"
+      }
+    ],
+    "bottom_boards": [
+      {
+        "id": "BK1586",
+        "name": "软饮料",
+        "score": 43.5,
+        "ret_5d": 1.38,
+        "ret_20d": null,
+        "amount": 28.0,
+        "amount_pct": 26.0,
+        "net_inflow": 0.46,
+        "net_inflow_pct": 49.0,
+        "state": "温和走强",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1443",
+        "name": "橡胶助剂",
+        "score": 43.9,
+        "ret_5d": 1.66,
+        "ret_20d": null,
+        "amount": 19.0,
+        "amount_pct": 19.0,
+        "net_inflow": 0.71,
+        "net_inflow_pct": 55.0,
+        "state": "温和走强",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1583",
+        "name": "零食",
+        "score": 44.3,
+        "ret_5d": 1.39,
+        "ret_20d": null,
+        "amount": 25.0,
+        "amount_pct": 24.0,
+        "net_inflow": 0.8,
+        "net_inflow_pct": 56.0,
+        "state": "温和走强",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1593",
+        "name": "通信终端及配件",
+        "score": 44.4,
+        "ret_5d": 0.91,
+        "ret_20d": null,
+        "amount": 163.0,
+        "amount_pct": 59.0,
+        "net_inflow": -6.99,
+        "net_inflow_pct": 9.0,
+        "state": "中性观察",
+        "quality": "ok"
+      },
+      {
+        "id": "BK1300",
+        "name": "院线",
+        "score": 44.6,
+        "ret_5d": 2.24,
+        "ret_20d": null,
+        "amount": 9.0,
+        "amount_pct": 9.0,
+        "net_inflow": 1.06,
+        "net_inflow_pct": 60.0,
+        "state": "温和走强",
+        "quality": "ok"
+      }
+    ],
+    "note": "上涨方向较多且热点数量充足，市场扩散处在较活跃状态。"
+  },
+  "style_switch_signals": [
+    {
+      "type": "风格切换",
+      "level": "高",
+      "target": "小盘",
+      "message": "风格首位由昨日的 成长科技 切换至早盘 小盘。"
+    },
+    {
+      "type": "风格升温",
+      "level": "中",
+      "target": "小盘",
+      "message": "小盘较昨日收盘升温 15.1 分，成交进度 100.0%。"
+    },
+    {
+      "type": "风格升温",
+      "level": "中",
+      "target": "成长科技",
+      "message": "成长科技较昨日收盘升温 13.8 分，成交进度 100.0%。"
+    },
+    {
+      "type": "风格升温",
+      "level": "中",
+      "target": "中盘",
+      "message": "中盘较昨日收盘升温 12.1 分，成交进度 100.0%。"
+    },
+    {
+      "type": "风格价差",
+      "level": "中",
+      "target": "成长 - 红利",
+      "message": "成长占优，温差 47.2 分。"
+    },
+    {
+      "type": "风格价差",
+      "level": "中",
+      "target": "创业板 - 科创50",
+      "message": "创业板占优，温差 45.8 分。"
+    },
+    {
+      "type": "风格价差",
+      "level": "中",
+      "target": "小盘 - 大盘",
+      "message": "小盘占优，温差 28.9 分。"
+    }
+  ],
+  "anomaly_signals": [
+    {
+      "type": "宽基升温",
+      "level": "中",
+      "target": "创业板指",
+      "message": "早盘温度较昨日收盘升 16.4 分，成交进度 100.0%。"
+    },
+    {
+      "type": "宽基升温",
+      "level": "中",
+      "target": "中证1000",
+      "message": "早盘温度较昨日收盘升 15.1 分，成交进度 100.0%。"
+    },
+    {
+      "type": "宽基升温",
+      "level": "中",
+      "target": "中证500",
+      "message": "早盘温度较昨日收盘升 12.1 分，成交进度 100.0%。"
+    },
+    {
+      "type": "板块放量异动",
+      "level": "中",
+      "target": "元件",
+      "message": "热度 82.2，涨跌 2.34%，成交分位 92%。"
+    },
+    {
+      "type": "板块放量异动",
+      "level": "中",
+      "target": "数字芯片设计",
+      "message": "热度 81.7，涨跌 2.08%，成交分位 97%。"
+    },
+    {
+      "type": "板块放量异动",
+      "level": "中",
+      "target": "印制电路板",
+      "message": "热度 80.9，涨跌 2.20%，成交分位 91%。"
+    },
+    {
+      "type": "板块放量异动",
+      "level": "中",
+      "target": "自动化设备",
+      "message": "热度 78.4，涨跌 1.95%，成交分位 89%。"
+    }
+  ],
+  "divergence_signals": [
+    {
+      "type": "风格极端",
+      "level": "中",
+      "title": "成长 - 红利温差处在极端区间",
+      "message": "成长占优，温差 47.2 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "成长 - 红利"
+    },
+    {
+      "type": "风格极端",
+      "level": "中",
+      "title": "创业板 - 科创50温差处在极端区间",
+      "message": "创业板占优，温差 45.8 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "创业板 - 科创50"
+    }
+  ],
   "risk_alerts": [
     {
       "type": "高拥挤",
       "target": "创业板指",
       "level": "高",
-      "message": "综合拥挤度 83.6，换手分位 96%。"
+      "message": "综合拥挤度 100.0，换手分位 100%。"
     },
     {
-      "type": "行业热度",
-      "target": "通信线缆及配套",
+      "type": "快速升温",
+      "target": "创业板指",
       "level": "中",
-      "message": "行业热度 86.6，状态：放量领涨。"
+      "message": "较前日升温 16.4 分，需观察成交是否继续扩张。"
     },
     {
-      "type": "行业热度",
-      "target": "元件",
-      "level": "中",
-      "message": "行业热度 82.2，状态：放量领涨。"
+      "type": "高拥挤",
+      "target": "中证1000",
+      "level": "高",
+      "message": "综合拥挤度 79.1，换手分位 100%。"
     },
     {
-      "type": "行业热度",
-      "target": "数字芯片设计",
+      "type": "快速升温",
+      "target": "中证1000",
       "level": "中",
-      "message": "行业热度 81.7，状态：放量领涨。"
+      "message": "较前日升温 15.1 分，需观察成交是否继续扩张。"
     },
     {
-      "type": "行业热度",
-      "target": "印制电路板",
-      "level": "中",
-      "message": "行业热度 80.9，状态：放量领涨。"
+      "type": "高拥挤",
+      "target": "中证2000",
+      "level": "高",
+      "message": "综合拥挤度 76.9，换手分位 100%。"
     },
     {
-      "type": "行业热度",
-      "target": "电信运营商",
+      "type": "快速升温",
+      "target": "中证500",
       "level": "中",
-      "message": "行业热度 80.1，状态：温和走强。"
+      "message": "较前日升温 12.1 分，需观察成交是否继续扩张。"
     },
     {
-      "type": "风格分化",
-      "target": "创业板 - 科创50",
+      "type": "快速升温",
+      "target": "沪深300",
       "level": "中",
-      "message": "创业板占优，温差 40.5 分，需跟踪是否触发再平衡。"
+      "message": "较前日升温 5.9 分，需观察成交是否继续扩张。"
     },
     {
-      "type": "风格分化",
-      "target": "成长 - 红利",
+      "type": "快速升温",
+      "target": "科创50",
       "level": "中",
-      "message": "成长占优，温差 39.7 分，需跟踪是否触发再平衡。"
+      "message": "较前日升温 11.1 分，需观察成交是否继续扩张。"
+    },
+    {
+      "type": "快速升温",
+      "target": "上证50",
+      "level": "中",
+      "message": "较前日升温 4.2 分，需观察成交是否继续扩张。"
+    },
+    {
+      "type": "快速升温",
+      "target": "中证红利",
+      "level": "中",
+      "message": "较前日升温 6.3 分，需观察成交是否继续扩张。"
     }
   ],
   "data_health": [
@@ -2785,9 +2881,19 @@
   },
   "data_quality": [
     {
-      "item": "宽基指数",
-      "status": "ok",
-      "detail": "9 个指数，覆盖 2026-05-18。"
+      "item": "实时指数",
+      "status": "realtime",
+      "detail": "东方财富实时指数返回 9 / 9 个监控指数。"
+    },
+    {
+      "item": "全A成交",
+      "status": "realtime",
+      "detail": "基于东方财富 5189 只A股成交额汇总。"
+    },
+    {
+      "item": "午盘折算",
+      "status": "estimate",
+      "detail": "使用早盘成交 x 1.85 估算全日成交，仅用于午盘节奏判断。"
     },
     {
       "item": "行业热力",
@@ -2795,35 +2901,20 @@
       "detail": "东方财富板块API"
     },
     {
-      "item": "市场宽度",
-      "status": "ok",
-      "detail": "基于 80 个行业/主题样本计算扩散、集中度与资金覆盖。"
-    },
-    {
       "item": "微盘指数",
-      "status": "cache",
-      "detail": "使用 800007 Choice微盘股指数；外部接口失败时读取本地缓存。"
-    },
-    {
-      "item": "历史分位",
       "status": "mixed",
-      "detail": "宽基更新脚本支持近3年分位；缓存页保留最新生成结果。"
+      "detail": "800007 Choice微盘股指数实时成交来自东方财富，拥挤分母沿用本地最近缓存。"
     },
     {
-      "item": "历史快照",
+      "item": "收盘基准",
       "status": "ok",
-      "detail": "按交易日写入 data/history/market_dashboard_2026-05-18.json。"
-    },
-    {
-      "item": "收盘日过滤",
-      "status": "ok",
-      "detail": "原始最新日 2026-05-18；有效收盘日 2026-05-18。午盘日频为空时会自动跳过。"
+      "detail": "原始最新日 2026-05-18；午盘比较基准为有效收盘日 2026-05-18。"
     }
   ],
   "report": {
-    "daily_markdown": "outputs/reports/daily_2026-05-18.md"
+    "morning_markdown": "outputs/reports/morning_2026-05-18.md"
   },
   "history": {
-    "snapshot": "data/history/market_dashboard_2026-05-18.json"
+    "snapshot": "data/history/morning/morning_dashboard_2026-05-18.json"
   }
 }

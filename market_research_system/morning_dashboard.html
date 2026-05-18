@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>午盘投研快照</title>
+<style>
+:root{
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+  --panel-soft:#f9fbff;
+  --text:#172033;
+  --muted:#667085;
+  --line:#d9e1ee;
+  --blue:#2563eb;
+  --cyan:#0891b2;
+  --green:#169b62;
+  --amber:#b7791f;
+  --red:#cf3f3f;
+  --shadow:0 8px 24px rgba(16,24,40,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.5;overflow-x:hidden;
+}
+.app{width:100%;max-width:1500px;margin:0 auto;padding:20px;min-width:0}
+.topbar{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px
+}
+.title{min-width:0}
+.title h1{font-size:24px;margin:0 0 4px;font-weight:760;letter-spacing:0}
+.title p{margin:0;color:var(--muted);font-size:13px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;min-width:0}
+.chip{
+  border:1px solid var(--line);background:var(--panel);border-radius:999px;
+  padding:6px 10px;font-size:12px;color:var(--muted);max-width:100%;word-break:break-word
+}
+.chip a{color:var(--blue);text-decoration:none}
+.section{margin-bottom:18px}
+.summary{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:1000px){.summary,.two-col,.three-col{grid-template-columns:1fr!important}.topbar{display:block}.meta{justify-content:flex-start;margin-top:12px}}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  box-shadow:var(--shadow);padding:16px;min-width:0
+}
+.panel h2,.panel h3{font-size:15px;margin:0 0 12px;font-weight:720}
+.headline{font-size:20px;font-weight:760;margin-bottom:10px;overflow-wrap:anywhere;word-break:break-word}
+.bullets{margin:0;padding-left:18px;color:var(--muted);font-size:13px}
+.bullets li{margin:5px 0;overflow-wrap:anywhere;word-break:break-word}
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:1100px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.stat-grid{grid-template-columns:1fr}}
+.stat-card{border:1px solid var(--line);background:var(--panel-soft);border-radius:8px;padding:12px;min-height:104px}
+.stat-card .k{font-size:12px;color:var(--muted)}
+.stat-card .v{font-size:25px;font-weight:780;margin:2px 0}
+.stat-card .d{font-size:12px;color:var(--muted)}
+.signal-row{
+  display:grid;grid-template-columns:70px 116px minmax(0,1fr);gap:10px;align-items:start;
+  border-bottom:1px solid #edf1f7;padding:9px 0;font-size:13px
+}
+.signal-row:last-child{border-bottom:none}
+.signal-row>div{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{
+  text-align:left;color:var(--muted);font-weight:650;background:#f3f6fb;
+  border-bottom:1px solid var(--line);padding:9px 10px;white-space:nowrap
+}
+td{padding:9px 10px;border-bottom:1px solid #edf1f7;vertical-align:middle;white-space:nowrap}
+tr:hover td{background:#fbfdff}
+.tag{
+  display:inline-block;min-width:50px;text-align:center;border-radius:6px;padding:3px 8px;
+  font-weight:700;font-size:12px
+}
+.tag.danger{background:#fee5e5;color:var(--red)}
+.tag.warning{background:#fff2d6;color:var(--amber)}
+.tag.safe{background:#def7ec;color:var(--green)}
+.tag.info{background:#dff4fb;color:var(--cyan)}
+.tag.neutral{background:#edf1f7;color:var(--muted)}
+.text-danger{color:var(--red)}
+.text-warning{color:var(--amber)}
+.text-safe{color:var(--green)}
+.text-info{color:var(--cyan)}
+.delta-up{color:var(--red);font-weight:700}
+.delta-down{color:var(--green);font-weight:700}
+.delta-flat{color:var(--muted)}
+.sub{color:var(--muted);font-size:12px}
+.bar-track{width:120px;height:8px;border-radius:999px;background:#e8eef7;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.select{border:1px solid var(--line);background:#fff;border-radius:6px;color:var(--text);padding:7px 10px;font-size:13px;outline:none}
+.quality-row{
+  display:grid;grid-template-columns:94px 78px minmax(0,1fr);gap:8px;align-items:start;
+  border-bottom:1px solid #edf1f7;padding:9px 0;font-size:13px
+}
+.quality-row:last-child{border-bottom:none}
+.quality-row>div{min-width:0;overflow-wrap:anywhere}
+.empty{padding:20px;border:1px dashed var(--line);border-radius:8px;background:var(--panel-soft);color:var(--muted);font-size:13px}
+.footer{color:var(--muted);font-size:12px;padding:4px 0 20px}
+@media(max-width:620px){
+  .app{padding:20px 14px}
+  .headline{font-size:17px;line-height:1.45;word-break:break-all}
+  .signal-row{grid-template-columns:48px 88px minmax(0,1fr)}
+  .quality-row{grid-template-columns:76px 58px minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="title">
+      <h1>午盘投研快照</h1>
+      <p>早盘成交节奏、风格切换、板块放量异动和资金背离。</p>
+    </div>
+    <div class="meta" id="metaChips"></div>
+  </div>
+
+  <div id="missingData" class="section"></div>
+
+  <div class="section summary">
+    <div class="panel">
+      <h2>午盘摘要</h2>
+      <div id="summaryPanel"></div>
+    </div>
+    <div class="panel">
+      <h2>风格切换</h2>
+      <div id="styleSignals"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="stat-grid" id="overviewCards"></div>
+  </div>
+
+  <div class="section two-col">
+    <div class="panel">
+      <h3>早盘异动</h3>
+      <div id="anomalySignals"></div>
+    </div>
+    <div class="panel">
+      <h3>风险提示</h3>
+      <div id="riskAlerts"></div>
+    </div>
+  </div>
+
+  <div class="section two-col">
+    <div class="panel">
+      <h3>风格温度</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>风格</th>
+              <th>成员</th>
+              <th>温度</th>
+              <th>较昨日</th>
+              <th>涨跌</th>
+              <th>成交进度</th>
+            </tr>
+          </thead>
+          <tbody id="styleRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>宽基午盘温度</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指数</th>
+              <th>温度</th>
+              <th>较昨日</th>
+              <th>涨跌</th>
+              <th>早盘成交</th>
+              <th>质量</th>
+            </tr>
+          </thead>
+          <tbody id="indexRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section two-col">
+    <div class="panel">
+      <div class="controls">
+        <h3>行业/主题热力</h3>
+        <select id="industrySort" class="select">
+          <option value="score">按热度</option>
+          <option value="ret_5d">按涨跌</option>
+          <option value="net_inflow">按主力净流入</option>
+          <option value="amount_pct">按成交分位</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方向</th>
+              <th>热度</th>
+              <th>涨跌</th>
+              <th>主力净流入</th>
+              <th>状态</th>
+            </tr>
+          </thead>
+          <tbody id="industryRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>数据源健康状态</h3>
+      <div id="qualityRows"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    午盘快照使用实时行情和早盘成交折算，适合观察节奏和异动，不替代收盘后的完整复盘。
+  </div>
+</div>
+
+<script src="data/cache/morning_dashboard_data.js"></script>
+<script>
+const data = window.MORNING_DASHBOARD_DATA;
+
+function cls(level){ return level?.class || 'info'; }
+function fmt(value, digits=1, suffix=''){
+  return Number.isFinite(value) ? `${value.toFixed(digits)}${suffix}` : '-';
+}
+function signed(value, digits=1){
+  if (!Number.isFinite(value)) return '-';
+  if (Math.abs(value) < 0.05) return '<span class="delta-flat">0.0</span>';
+  const c = value > 0 ? 'delta-up' : 'delta-down';
+  const s = value > 0 ? '+' : '';
+  return `<span class="${c}">${s}${value.toFixed(digits)}</span>`;
+}
+function tag(level){
+  return `<span class="tag ${cls(level)}">${level?.label || '-'}</span>`;
+}
+function severityClass(value){
+  const map = { '高':'danger', '中':'warning', '低':'safe' };
+  return map[value] || 'info';
+}
+function severityTag(value){
+  return `<span class="tag ${severityClass(value)}">${value}</span>`;
+}
+function qualityTag(status){
+  const map = { ok:'safe', realtime:'safe', estimate:'warning', mixed:'warning', proxy:'warning', cache:'warning', partial:'warning', limited:'warning', failed:'danger' };
+  return `<span class="tag ${map[status] || 'neutral'}">${status}</span>`;
+}
+function bar(score){
+  const width = Math.max(0, Math.min(100, Number(score) || 0));
+  return `<div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>`;
+}
+
+function renderMissing(){
+  const box = document.getElementById('missingData');
+  if (data) { box.innerHTML = ''; return; }
+  box.innerHTML = `<div class="empty">未找到午盘缓存。请先运行 tools/build_morning_dashboard.py 生成 data/cache/morning_dashboard_data.js。</div>`;
+}
+
+function renderMeta(){
+  document.getElementById('metaChips').innerHTML = [
+    `版本 ${data.version}`,
+    `交易日 ${data.trade_date}`,
+    `生成 ${data.generated_at}`,
+    `行业数据 ${data.source.industry_quality}`,
+    data.report?.morning_markdown ? `午盘报告 ${data.report.morning_markdown}` : '',
+    data.history?.snapshot ? `快照 ${data.history.snapshot}` : '',
+    `<a href="intraday_research.html">历史分时</a>`,
+    `<a href="strategy_dashboard.html">策略研究</a>`,
+    `<a href="dashboard.html">收盘驾驶舱</a>`,
+  ].filter(Boolean).map(v => `<span class="chip">${v}</span>`).join('');
+}
+
+function renderSummary(){
+  document.getElementById('summaryPanel').innerHTML = `
+    <div class="headline">${data.summary.headline}</div>
+    <ul class="bullets">${data.summary.bullets.map(v => `<li>${v}</li>`).join('')}</ul>
+  `;
+}
+
+function signalRows(rows){
+  return rows.map(row => `
+    <div class="signal-row">
+      <div>${severityTag(row.level)}</div>
+      <div><strong>${row.target}</strong><div class="sub">${row.type}</div></div>
+      <div>${row.message}</div>
+    </div>
+  `).join('');
+}
+
+function renderSignals(){
+  document.getElementById('styleSignals').innerHTML = signalRows(data.style_switch_signals || []);
+  document.getElementById('anomalySignals').innerHTML = signalRows(data.anomaly_signals || []);
+  document.getElementById('riskAlerts').innerHTML = signalRows(data.risk_alerts || []);
+}
+
+function renderOverview(){
+  const o = data.market_overview;
+  const b = data.market_breadth;
+  const topStyle = data.style_rotation[0];
+  document.getElementById('overviewCards').innerHTML = [
+    ['全A成交', fmt(o.all_a_amount,0,'亿'), `昨日进度 ${fmt(o.amount_progress,1,'%')}`, 'warning'],
+    ['折算全日', fmt(o.projected_full_day_amount,0,'亿'), `约为昨日 ${fmt(o.projected_vs_last,1,'%')}`, 'danger'],
+    ['上涨占比', fmt(o.up_ratio,1,'%'), `${o.up_count} 涨 / ${o.down_count} 跌`, 'safe'],
+    ['板块扩散', fmt(b.diffusion_score), `${b.status.label}，热点 ${b.hot_count} 个`, cls(b.status)],
+    ['最热风格', topStyle.name, `温度 ${fmt(topStyle.score)}，较昨日 ${fmt(topStyle.day_delta)}`, cls(topStyle.level)],
+  ].map(([k,v,d,c]) => `
+    <div class="stat-card">
+      <div class="k">${k}</div>
+      <div class="v text-${c}">${v}</div>
+      <div class="d">${d}</div>
+    </div>
+  `).join('');
+}
+
+function renderStyles(){
+  document.getElementById('styleRows').innerHTML = data.style_rotation.map(row => `
+    <tr>
+      <td><strong>${row.name}</strong></td>
+      <td><span class="sub">${row.members}</span></td>
+      <td>${tag(row.level)} ${fmt(row.score)}</td>
+      <td>${signed(row.day_delta)}</td>
+      <td>${fmt(row.pct_chg,2,'%')}</td>
+      <td>${fmt(row.amount_progress,1,'%')}</td>
+    </tr>
+  `).join('');
+}
+
+function renderIndices(){
+  document.getElementById('indexRows').innerHTML = data.morning_indices.map(row => `
+    <tr>
+      <td><strong>${row.name}</strong><div class="sub">${row.group}</div></td>
+      <td>${bar(row.score)}<div class="sub">${tag(row.level)} ${fmt(row.score)}</div></td>
+      <td>${signed(row.day_delta)}</td>
+      <td>${fmt(row.pct_chg,2,'%')}</td>
+      <td>${fmt(row.morning_amount,0,'亿')}<div class="sub">${fmt(row.amount_progress,1,'%')}</div></td>
+      <td>${qualityTag(row.quality)}</td>
+    </tr>
+  `).join('');
+}
+
+function renderIndustries(){
+  const sortKey = document.getElementById('industrySort').value;
+  const rows = [...data.industry_heatmap].sort((a,b) => (Number(b[sortKey]) || -999) - (Number(a[sortKey]) || -999));
+  document.getElementById('industryRows').innerHTML = rows.map(row => `
+    <tr>
+      <td><strong>${row.name}</strong></td>
+      <td>${bar(row.score)}<div class="sub">${fmt(row.score)}</div></td>
+      <td>${fmt(row.ret_5d,2,'%')}</td>
+      <td>${fmt(row.net_inflow,2,'亿')}</td>
+      <td>${row.state}</td>
+    </tr>
+  `).join('');
+}
+
+function renderQuality(){
+  const rows = data.data_health?.length ? data.data_health : data.data_quality;
+  document.getElementById('qualityRows').innerHTML = rows.map(row => {
+    const name = row.indicator_name || row.item || '-';
+    const complete = row.source ? (row.is_complete ? '完整' : '有缺口') : '';
+    const detail = row.source
+      ? `来源：${row.source}；最新：${row.latest_date || '-'}；频率：${row.frequency || '-'}；完整性：${complete}。${row.detail || ''}`
+      : row.detail;
+    return `
+    <div class="quality-row">
+      <div><strong>${name}</strong></div>
+      <div>${qualityTag(row.status)}</div>
+      <div>${detail}</div>
+    </div>
+  `}).join('');
+}
+
+function boot(){
+  renderMissing();
+  if (!data) return;
+  renderMeta();
+  renderSummary();
+  renderSignals();
+  renderOverview();
+  renderStyles();
+  renderIndices();
+  renderIndustries();
+  renderQuality();
+  document.getElementById('industrySort').addEventListener('change', renderIndustries);
+}
+boot();
+</script>
+</body>
+</html>

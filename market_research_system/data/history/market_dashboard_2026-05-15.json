@@ -1,7 +1,7 @@
 {
   "version": "0.4.0",
-  "generated_at": "2026-05-18 19:14:22",
-  "trade_date": "2026-05-18",
+  "generated_at": "2026-05-18 15:25:19",
+  "trade_date": "2026-05-15",
   "source": {
     "wide_index": "congestion_data.json",
     "industry": "东方财富板块API",
@@ -9,13 +9,13 @@
     "raw_latest_date": "2026-05-18"
   },
   "summary": {
-    "headline": "市场风险温度 62.4，最热宽基为 创业板指，最热风格为 成长科技，板块扩散为 温和扩散。",
+    "headline": "市场风险温度 65.4，最热宽基为 创业板指，最热风格为 成长科技，板块扩散为 温和扩散。",
     "bullets": [
-      "创业板指综合拥挤度 83.6，较前日 降6.2。",
-      "成长科技组均值 63.3，组内包含 创业板指、科创50。",
+      "创业板指综合拥挤度 89.8，较前日 降0.5。",
+      "成长科技组均值 68.5，组内包含 创业板指、科创50。",
       "行业/主题上涨覆盖 100.0%，热点数量 14 个，扩散分 67.6。",
       "行业/主题热度最高为 通信线缆及配套，状态：放量领涨。",
-      "最大风格温差为 创业板 - 科创50：创业板占优，温差 40.5 分。",
+      "最大风格温差为 成长 - 红利：成长占优，温差 42.7 分。",
       "关键背离：板块扩散领先于宽基温度。",
       "若高拥挤方向继续放量但价格动量钝化，应提高对退潮信号的敏感度。"
     ]
@@ -24,22 +24,22 @@
     {
       "id": "regime",
       "name": "市场温度",
-      "score": 44.2,
+      "score": 47.2,
       "status": {
         "label": "中性",
         "class": "safe"
       },
-      "detail": "宽基平均拥挤度 44.2，4 个指数处于偏热以上。"
+      "detail": "宽基平均拥挤度 47.2，4 个指数处于偏热以上。"
     },
     {
       "id": "liquidity",
       "name": "流动性",
-      "score": 52.0,
+      "score": 70.1,
       "status": {
-        "label": "偏热",
-        "class": "warning"
+        "label": "高风险",
+        "class": "danger"
       },
-      "detail": "全A成交额 28000 亿，换手约 4.64%。"
+      "detail": "全A成交额 32537 亿，换手约 5.39%。"
     },
     {
       "id": "concentration",
@@ -59,17 +59,17 @@
         "label": "中性",
         "class": "safe"
       },
-      "detail": "0 个宽基指数较前日升温，最热风格为 成长科技。"
+      "detail": "3 个宽基指数较前日升温，最热风格为 成长科技。"
     },
     {
       "id": "risk",
       "name": "风险温度",
-      "score": 62.4,
+      "score": 65.4,
       "status": {
         "label": "偏热",
         "class": "warning"
       },
-      "detail": "当前最高拥挤方向为 创业板指，综合分 83.6。"
+      "detail": "当前最高拥挤方向为 创业板指，综合分 89.8。"
     }
   ],
   "wide_indices": [
@@ -77,21 +77,21 @@
       "id": "399006",
       "name": "创业板指",
       "group": "成长科技",
-      "date": "2026-05-18",
-      "score": 83.6,
-      "day_delta": -6.2,
-      "range_delta": 5.4,
-      "recent_delta": -4.6,
-      "congestion": 8.3,
-      "turnover_ratio": 27.24,
-      "turnover_rate": 8.3,
-      "percentile": 96.0,
-      "turnover": 7628.0,
+      "date": "2026-05-15",
+      "score": 89.8,
+      "day_delta": -0.5,
+      "range_delta": 11.5,
+      "recent_delta": -0.1,
+      "congestion": 9.61,
+      "turnover_ratio": 27.13,
+      "turnover_rate": 9.61,
+      "percentile": 99.0,
+      "turnover": 8826.0,
       "level": {
         "label": "高风险",
         "class": "danger"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -168,10 +168,6 @@
         {
           "date": "2026-05-15",
           "score": 89.8
-        },
-        {
-          "date": "2026-05-18",
-          "score": 83.6
         }
       ]
     },
@@ -179,21 +175,21 @@
       "id": "000852",
       "name": "中证1000",
       "group": "小盘",
-      "date": "2026-05-18",
-      "score": 64.0,
-      "day_delta": -3.3,
-      "range_delta": 5.3,
-      "recent_delta": -1.7,
-      "congestion": 4.15,
-      "turnover_ratio": 22.45,
-      "turnover_rate": 4.15,
-      "percentile": 97.0,
-      "turnover": 6285.0,
+      "date": "2026-05-15",
+      "score": 67.3,
+      "day_delta": 0.1,
+      "range_delta": 8.6,
+      "recent_delta": 1.0,
+      "congestion": 4.82,
+      "turnover_ratio": 22.44,
+      "turnover_rate": 4.82,
+      "percentile": 99.0,
+      "turnover": 7302.0,
       "level": {
         "label": "偏热",
         "class": "warning"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -270,10 +266,6 @@
         {
           "date": "2026-05-15",
           "score": 67.3
-        },
-        {
-          "date": "2026-05-18",
-          "score": 64.0
         }
       ]
     },
@@ -281,21 +273,21 @@
       "id": "000905",
       "name": "中证500",
       "group": "中盘",
-      "date": "2026-05-18",
-      "score": 57.3,
-      "day_delta": -2.5,
-      "range_delta": 6.3,
-      "recent_delta": -2.2,
-      "congestion": 3.21,
-      "turnover_ratio": 19.97,
-      "turnover_rate": 3.21,
-      "percentile": 96.0,
-      "turnover": 5593.0,
+      "date": "2026-05-15",
+      "score": 59.9,
+      "day_delta": -0.7,
+      "range_delta": 8.8,
+      "recent_delta": -0.7,
+      "congestion": 3.69,
+      "turnover_ratio": 19.76,
+      "turnover_rate": 3.69,
+      "percentile": 99.0,
+      "turnover": 6430.0,
       "level": {
         "label": "偏热",
         "class": "warning"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -372,10 +364,6 @@
         {
           "date": "2026-05-15",
           "score": 59.9
-        },
-        {
-          "date": "2026-05-18",
-          "score": 57.3
         }
       ]
     },
@@ -383,21 +371,21 @@
       "id": "000300",
       "name": "沪深300",
       "group": "大盘权重",
-      "date": "2026-05-18",
-      "score": 54.8,
-      "day_delta": -2.0,
-      "range_delta": 3.8,
-      "recent_delta": -1.2,
-      "congestion": 1.39,
-      "turnover_ratio": 26.19,
-      "turnover_rate": 1.39,
-      "percentile": 96.0,
-      "turnover": 7335.0,
+      "date": "2026-05-15",
+      "score": 56.7,
+      "day_delta": 0.2,
+      "range_delta": 5.8,
+      "recent_delta": 0.3,
+      "congestion": 1.68,
+      "turnover_ratio": 27.28,
+      "turnover_rate": 1.68,
+      "percentile": 99.0,
+      "turnover": 8877.0,
       "level": {
         "label": "偏热",
         "class": "warning"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -474,10 +462,6 @@
         {
           "date": "2026-05-15",
           "score": 56.7
-        },
-        {
-          "date": "2026-05-18",
-          "score": 54.8
         }
       ]
     },
@@ -485,21 +469,21 @@
       "id": "000688",
       "name": "科创50",
       "group": "成长科技",
-      "date": "2026-05-18",
-      "score": 43.1,
-      "day_delta": -4.0,
-      "range_delta": 9.0,
-      "recent_delta": -1.4,
-      "congestion": 3.1,
-      "turnover_ratio": 5.44,
-      "turnover_rate": 3.1,
-      "percentile": 99.0,
-      "turnover": 1524.0,
+      "date": "2026-05-15",
+      "score": 47.1,
+      "day_delta": 2.4,
+      "range_delta": 13.0,
+      "recent_delta": 2.1,
+      "congestion": 3.88,
+      "turnover_ratio": 5.87,
+      "turnover_rate": 3.88,
+      "percentile": 100.0,
+      "turnover": 1911.0,
       "level": {
         "label": "中性",
         "class": "safe"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -576,10 +560,6 @@
         {
           "date": "2026-05-15",
           "score": 47.1
-        },
-        {
-          "date": "2026-05-18",
-          "score": 43.1
         }
       ]
     },
@@ -587,21 +567,21 @@
       "id": "000016",
       "name": "上证50",
       "group": "大盘权重",
-      "date": "2026-05-18",
-      "score": 33.3,
-      "day_delta": -2.8,
-      "range_delta": 6.6,
-      "recent_delta": -1.8,
-      "congestion": 0.8,
-      "turnover_ratio": 6.45,
-      "turnover_rate": 0.8,
-      "percentile": 94.0,
-      "turnover": 1805.0,
+      "date": "2026-05-15",
+      "score": 36.1,
+      "day_delta": 1.3,
+      "range_delta": 9.5,
+      "recent_delta": 0.4,
+      "congestion": 1.02,
+      "turnover_ratio": 7.11,
+      "turnover_rate": 1.02,
+      "percentile": 99.0,
+      "turnover": 2312.0,
       "level": {
         "label": "中性",
         "class": "safe"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -678,10 +658,6 @@
         {
           "date": "2026-05-15",
           "score": 36.1
-        },
-        {
-          "date": "2026-05-18",
-          "score": 33.3
         }
       ]
     },
@@ -689,21 +665,21 @@
       "id": "8841331",
       "name": "中证红利",
       "group": "红利低波",
-      "date": "2026-05-18",
-      "score": 23.6,
-      "day_delta": -2.2,
-      "range_delta": 1.4,
-      "recent_delta": -1.0,
-      "congestion": 0.38,
-      "turnover_ratio": 2.07,
-      "turnover_rate": 0.38,
-      "percentile": 80.0,
-      "turnover": 579.0,
+      "date": "2026-05-15",
+      "score": 25.8,
+      "day_delta": 1.3,
+      "range_delta": 3.6,
+      "recent_delta": 0.6,
+      "congestion": 0.43,
+      "turnover_ratio": 2.04,
+      "turnover_rate": 0.43,
+      "percentile": 88.0,
+      "turnover": 662.0,
       "level": {
         "label": "偏冷",
         "class": "info"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -780,10 +756,6 @@
         {
           "date": "2026-05-15",
           "score": 25.8
-        },
-        {
-          "date": "2026-05-18",
-          "score": 23.6
         }
       ]
     },
@@ -791,21 +763,21 @@
       "id": "000464",
       "name": "中证2000",
       "group": "小盘",
-      "date": "2026-05-18",
-      "score": 19.7,
-      "day_delta": -3.7,
-      "range_delta": 3.6,
-      "recent_delta": -2.3,
-      "congestion": 0.35,
-      "turnover_ratio": 1.94,
-      "turnover_rate": 0.35,
-      "percentile": 65.0,
-      "turnover": 543.0,
+      "date": "2026-05-15",
+      "score": 23.4,
+      "day_delta": 0.6,
+      "range_delta": 7.4,
+      "recent_delta": 0.5,
+      "congestion": 0.41,
+      "turnover_ratio": 1.93,
+      "turnover_rate": 0.41,
+      "percentile": 79.0,
+      "turnover": 628.0,
       "level": {
         "label": "偏冷",
         "class": "info"
       },
-      "coverage": "20/20",
+      "coverage": "19/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -882,10 +854,6 @@
         {
           "date": "2026-05-15",
           "score": 23.4
-        },
-        {
-          "date": "2026-05-18",
-          "score": 19.7
         }
       ]
     },
@@ -907,7 +875,7 @@
         "label": "偏冷",
         "class": "info"
       },
-      "coverage": "18/20",
+      "coverage": "18/19",
       "series": [
         {
           "date": "2026-04-16",
@@ -988,9 +956,9 @@
     {
       "name": "成长科技",
       "members": "创业板指、科创50",
-      "score": 63.3,
-      "day_delta": -5.1,
-      "range_delta": 7.2,
+      "score": 68.5,
+      "day_delta": 0.9,
+      "range_delta": 12.2,
       "level": {
         "label": "偏热",
         "class": "warning"
@@ -999,9 +967,9 @@
     {
       "name": "中盘",
       "members": "中证500",
-      "score": 57.3,
-      "day_delta": -2.5,
-      "range_delta": 6.3,
+      "score": 59.9,
+      "day_delta": -0.7,
+      "range_delta": 8.8,
       "level": {
         "label": "偏热",
         "class": "warning"
@@ -1010,9 +978,9 @@
     {
       "name": "大盘权重",
       "members": "上证50、沪深300",
-      "score": 44.0,
-      "day_delta": -2.4,
-      "range_delta": 5.2,
+      "score": 46.4,
+      "day_delta": 0.8,
+      "range_delta": 7.7,
       "level": {
         "label": "中性",
         "class": "safe"
@@ -1021,9 +989,9 @@
     {
       "name": "小盘",
       "members": "中证1000、中证2000",
-      "score": 41.9,
-      "day_delta": -3.5,
-      "range_delta": 4.5,
+      "score": 45.3,
+      "day_delta": 0.3,
+      "range_delta": 8.0,
       "level": {
         "label": "中性",
         "class": "safe"
@@ -1032,9 +1000,9 @@
     {
       "name": "红利低波",
       "members": "中证红利",
-      "score": 23.6,
-      "day_delta": -2.2,
-      "range_delta": 1.4,
+      "score": 25.8,
+      "day_delta": 1.3,
+      "range_delta": 3.6,
       "level": {
         "label": "偏冷",
         "class": "info"
@@ -1208,52 +1176,52 @@
   },
   "style_spreads": [
     {
-      "name": "创业板 - 科创50",
-      "value": 40.5,
-      "abs_value": 40.5,
-      "direction": "创业板占优",
-      "status": {
-        "label": "极端分化",
-        "class": "danger"
-      },
-      "long_score": 83.6,
-      "short_score": 43.1
-    },
-    {
       "name": "成长 - 红利",
-      "value": 39.7,
-      "abs_value": 39.7,
+      "value": 42.7,
+      "abs_value": 42.7,
       "direction": "成长占优",
       "status": {
         "label": "极端分化",
         "class": "danger"
       },
-      "long_score": 63.3,
-      "short_score": 23.6
+      "long_score": 68.5,
+      "short_score": 25.8
+    },
+    {
+      "name": "创业板 - 科创50",
+      "value": 42.7,
+      "abs_value": 42.7,
+      "direction": "创业板占优",
+      "status": {
+        "label": "极端分化",
+        "class": "danger"
+      },
+      "long_score": 89.8,
+      "short_score": 47.1
     },
     {
       "name": "微盘 - 中小盘",
-      "value": -28.5,
-      "abs_value": 28.5,
+      "value": -31.7,
+      "abs_value": 31.7,
       "direction": "微盘落后",
       "status": {
         "label": "极端分化",
         "class": "danger"
       },
       "long_score": 18.5,
-      "short_score": 47.0
+      "short_score": 50.2
     },
     {
       "name": "中盘 - 大盘",
-      "value": 13.2,
-      "abs_value": 13.2,
+      "value": 13.5,
+      "abs_value": 13.5,
       "direction": "中盘占优",
       "status": {
         "label": "明显占优",
         "class": "warning"
       },
-      "long_score": 57.3,
-      "short_score": 44.0
+      "long_score": 59.9,
+      "short_score": 46.4
     },
     {
       "name": "小盘 - 大盘",
@@ -1264,8 +1232,8 @@
         "label": "相对均衡",
         "class": "safe"
       },
-      "long_score": 34.1,
-      "short_score": 44.0
+      "long_score": 36.4,
+      "short_score": 46.4
     }
   ],
   "divergence_signals": [
@@ -1273,28 +1241,28 @@
       "type": "扩散领先",
       "level": "中",
       "title": "板块扩散领先于宽基温度",
-      "message": "行业上涨占比 100.0%，但宽基均温 44.2，可能处在结构行情向指数传导阶段。",
+      "message": "行业上涨占比 100.0%，但宽基均温 47.2，可能处在结构行情向指数传导阶段。",
       "target": "行业/主题"
     },
     {
       "type": "风格极端",
       "level": "中",
-      "title": "创业板 - 科创50温差处在极端区间",
-      "message": "创业板占优，温差 40.5 分。极端价差后要跟踪均值回归或强化突破。",
-      "target": "创业板 - 科创50"
+      "title": "成长 - 红利温差处在极端区间",
+      "message": "成长占优，温差 42.7 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "成长 - 红利"
     },
     {
       "type": "风格极端",
       "level": "中",
-      "title": "成长 - 红利温差处在极端区间",
-      "message": "成长占优，温差 39.7 分。极端价差后要跟踪均值回归或强化突破。",
-      "target": "成长 - 红利"
+      "title": "创业板 - 科创50温差处在极端区间",
+      "message": "创业板占优，温差 42.7 分。极端价差后要跟踪均值回归或强化突破。",
+      "target": "创业板 - 科创50"
     },
     {
       "type": "微盘背离",
       "level": "中",
       "title": "微盘显著弱于中小盘",
-      "message": "Choice微盘温度 18.5，中小盘篮子 47.0，说明风险偏好并未完全下沉。",
+      "message": "Choice微盘温度 18.5，中小盘篮子 50.2，说明风险偏好并未完全下沉。",
       "target": "Choice微盘"
     }
   ],
@@ -2345,7 +2313,7 @@
       "type": "高拥挤",
       "target": "创业板指",
       "level": "高",
-      "message": "综合拥挤度 83.6，换手分位 96%。"
+      "message": "综合拥挤度 89.8，换手分位 99%。"
     },
     {
       "type": "行业热度",
@@ -2379,415 +2347,22 @@
     },
     {
       "type": "风格分化",
-      "target": "创业板 - 科创50",
+      "target": "成长 - 红利",
       "level": "中",
-      "message": "创业板占优，温差 40.5 分，需跟踪是否触发再平衡。"
+      "message": "成长占优，温差 42.7 分，需跟踪是否触发再平衡。"
     },
     {
       "type": "风格分化",
-      "target": "成长 - 红利",
+      "target": "创业板 - 科创50",
       "level": "中",
-      "message": "成长占优，温差 39.7 分，需跟踪是否触发再平衡。"
+      "message": "创业板占优，温差 42.7 分，需跟踪是否触发再平衡。"
     }
   ],
-  "data_health": [
-    {
-      "indicator_key": "basic:a_share:reserved",
-      "indicator_name": "A股基础资料",
-      "source": "AKShare basic data reserved",
-      "latest_date": null,
-      "frequency": "ad hoc",
-      "rows_count": 0,
-      "is_complete": 0,
-      "status": "limited",
-      "detail": "基础资料入口预留；本机AKShare部分基础资料接口较慢，先不放入日常更新链路。",
-      "checked_at": "2026-05-18 19:14:05"
-    },
-    {
-      "indicator_key": "minute:two_year:reserved",
-      "indicator_name": "两年分钟历史接口",
-      "source": "QMT/Tushare/CSV reserved",
-      "latest_date": null,
-      "frequency": "1min",
-      "rows_count": 0,
-      "is_complete": 0,
-      "status": "limited",
-      "detail": "SQLite已预留 market_minute_bars；当前页面仍使用 index_minute_bars 最近5日，后续可接QMT、Tushare分钟或CSV导入。",
-      "checked_at": "2026-05-18 19:14:05"
-    },
-    {
-      "indicator_key": "etf:159915:daily",
-      "indicator_name": "创业板ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sz159915。",
-      "checked_at": "2026-05-18 19:13:47"
-    },
-    {
-      "indicator_key": "etf:159985:daily",
-      "indicator_name": "豆粕ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sz159985。",
-      "checked_at": "2026-05-18 19:13:55"
-    },
-    {
-      "indicator_key": "etf:510050:daily",
-      "indicator_name": "上证50ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh510050。",
-      "checked_at": "2026-05-18 19:13:43"
-    },
-    {
-      "indicator_key": "etf:510300:daily",
-      "indicator_name": "沪深300ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh510300。",
-      "checked_at": "2026-05-18 19:13:44"
-    },
-    {
-      "indicator_key": "etf:510500:daily",
-      "indicator_name": "中证500ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh510500。",
-      "checked_at": "2026-05-18 19:13:45"
-    },
-    {
-      "indicator_key": "etf:510880:daily",
-      "indicator_name": "红利ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh510880。",
-      "checked_at": "2026-05-18 19:13:49"
-    },
-    {
-      "indicator_key": "etf:511010:daily",
-      "indicator_name": "国债ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh511010。",
-      "checked_at": "2026-05-18 19:13:52"
-    },
-    {
-      "indicator_key": "etf:512100:daily",
-      "indicator_name": "中证1000ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh512100。",
-      "checked_at": "2026-05-18 19:13:46"
-    },
-    {
-      "indicator_key": "etf:512480:daily",
-      "indicator_name": "半导体ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh512480。",
-      "checked_at": "2026-05-18 19:13:50"
-    },
-    {
-      "indicator_key": "etf:512880:daily",
-      "indicator_name": "证券ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh512880。",
-      "checked_at": "2026-05-18 19:13:50"
-    },
-    {
-      "indicator_key": "etf:515790:daily",
-      "indicator_name": "光伏ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh515790。",
-      "checked_at": "2026-05-18 19:13:51"
-    },
-    {
-      "indicator_key": "etf:518880:daily",
-      "indicator_name": "黄金ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh518880。",
-      "checked_at": "2026-05-18 19:13:54"
-    },
-    {
-      "indicator_key": "etf:588000:daily",
-      "indicator_name": "科创50ETF",
-      "source": "akshare_sina_etf_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh588000。",
-      "checked_at": "2026-05-18 19:13:48"
-    },
-    {
-      "indicator_key": "fund:000001:daily",
-      "indicator_name": "华夏成长混合",
-      "source": "akshare_em_open_fund_nav",
-      "latest_date": "2026-05-15",
-      "frequency": "daily",
-      "rows_count": 17,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 17 行；源代码 000001。",
-      "checked_at": "2026-05-18 19:13:58"
-    },
-    {
-      "indicator_key": "fund:110022:daily",
-      "indicator_name": "易方达消费行业股票",
-      "source": "akshare_em_open_fund_nav",
-      "latest_date": "2026-05-15",
-      "frequency": "daily",
-      "rows_count": 17,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 17 行；源代码 110022。",
-      "checked_at": "2026-05-18 19:13:59"
-    },
-    {
-      "indicator_key": "fund:161725:daily",
-      "indicator_name": "招商中证白酒指数",
-      "source": "akshare_em_open_fund_nav",
-      "latest_date": "2026-05-15",
-      "frequency": "daily",
-      "rows_count": 17,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 17 行；源代码 161725。",
-      "checked_at": "2026-05-18 19:14:01"
-    },
-    {
-      "indicator_key": "future:IC0:daily",
-      "indicator_name": "中证500股指期货连续",
-      "source": "akshare_sina_future_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 IC0。",
-      "checked_at": "2026-05-18 19:14:03"
-    },
-    {
-      "indicator_key": "future:IF0:daily",
-      "indicator_name": "沪深300股指期货连续",
-      "source": "akshare_sina_future_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 IF0。",
-      "checked_at": "2026-05-18 19:14:02"
-    },
-    {
-      "indicator_key": "future:IH0:daily",
-      "indicator_name": "上证50股指期货连续",
-      "source": "akshare_sina_future_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 IH0。",
-      "checked_at": "2026-05-18 19:14:05"
-    },
-    {
-      "indicator_key": "future:IM0:daily",
-      "indicator_name": "中证1000股指期货连续",
-      "source": "akshare_sina_future_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 IM0。",
-      "checked_at": "2026-05-18 19:14:04"
-    },
-    {
-      "indicator_key": "index:000016:daily",
-      "indicator_name": "上证50",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh000016。",
-      "checked_at": "2026-05-18 19:13:20"
-    },
-    {
-      "indicator_key": "index:000300:daily",
-      "indicator_name": "沪深300",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh000300。",
-      "checked_at": "2026-05-18 19:13:21"
-    },
-    {
-      "indicator_key": "index:000464:daily",
-      "indicator_name": "中证2000",
-      "source": "akshare_csindex_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 19,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 19 行；源代码 932000。",
-      "checked_at": "2026-05-18 19:13:27"
-    },
-    {
-      "indicator_key": "index:000688:daily",
-      "indicator_name": "科创50",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh000688。",
-      "checked_at": "2026-05-18 19:13:28"
-    },
-    {
-      "indicator_key": "index:000852:daily",
-      "indicator_name": "中证1000",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh000852。",
-      "checked_at": "2026-05-18 19:13:23"
-    },
-    {
-      "indicator_key": "index:000905:daily",
-      "indicator_name": "中证500",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sh000905。",
-      "checked_at": "2026-05-18 19:13:22"
-    },
-    {
-      "indicator_key": "index:399006:daily",
-      "indicator_name": "创业板指",
-      "source": "akshare_sina_index_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 18,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 18 行；源代码 sz399006。",
-      "checked_at": "2026-05-18 19:13:28"
-    },
-    {
-      "indicator_key": "index:8841331:daily",
-      "indicator_name": "中证红利",
-      "source": "akshare_csindex_daily",
-      "latest_date": "2026-05-18",
-      "frequency": "daily",
-      "rows_count": 19,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare日线入库 19 行；源代码 000922。",
-      "checked_at": "2026-05-18 19:13:43"
-    },
-    {
-      "indicator_key": "macro:china_cpi",
-      "indicator_name": "中国CPI",
-      "source": "akshare_macro_china_cpi",
-      "latest_date": "2026-04-01",
-      "frequency": "monthly",
-      "rows_count": 220,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "AKShare宏观月频入库；当前取全国CPI同比。",
-      "checked_at": "2026-05-18 19:03:55"
-    },
-    {
-      "indicator_key": "minute:index:latest5",
-      "indicator_name": "最近5日宽基分时",
-      "source": "eastmoney_trends2/strategy_cache",
-      "latest_date": "2026-05-18",
-      "frequency": "1min/latest5",
-      "rows_count": 10438,
-      "is_complete": 1,
-      "status": "ok",
-      "detail": "覆盖 9 个指数、5 个交易日，日期 2026-05-12 至 2026-05-18；两年历史仍走预留表和后续数据源。",
-      "checked_at": "2026-05-18 19:07:56"
-    }
-  ],
-  "data_health_summary": {
-    "ok": 30,
-    "partial": 0,
-    "limited": 2,
-    "failed": 0,
-    "total": 32
-  },
   "data_quality": [
     {
       "item": "宽基指数",
       "status": "ok",
-      "detail": "9 个指数，覆盖 2026-05-18。"
+      "detail": "9 个指数，覆盖 2026-05-15。"
     },
     {
       "item": "行业热力",
@@ -2812,18 +2387,18 @@
     {
       "item": "历史快照",
       "status": "ok",
-      "detail": "按交易日写入 data/history/market_dashboard_2026-05-18.json。"
+      "detail": "按交易日写入 data/history/market_dashboard_2026-05-15.json。"
     },
     {
       "item": "收盘日过滤",
       "status": "ok",
-      "detail": "原始最新日 2026-05-18；有效收盘日 2026-05-18。午盘日频为空时会自动跳过。"
+      "detail": "原始最新日 2026-05-18；有效收盘日 2026-05-15。午盘日频为空时会自动跳过。"
     }
   ],
   "report": {
-    "daily_markdown": "outputs/reports/daily_2026-05-18.md"
+    "daily_markdown": "outputs/reports/daily_2026-05-15.md"
   },
   "history": {
-    "snapshot": "data/history/market_dashboard_2026-05-18.json"
+    "snapshot": "data/history/market_dashboard_2026-05-15.json"
   }
 }

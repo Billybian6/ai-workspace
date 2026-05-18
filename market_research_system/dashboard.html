@@ -39,6 +39,7 @@ body{
   border:1px solid var(--line);background:var(--panel);border-radius:999px;
   padding:6px 10px;font-size:12px;color:var(--muted);max-width:100%;min-width:0;overflow-wrap:anywhere;word-break:break-word
 }
+.chip a{color:var(--blue);text-decoration:none}
 .section{margin-bottom:18px}
 .summary{
   display:grid;grid-template-columns:1.15fr .85fr;gap:16px;
@@ -138,6 +139,10 @@ tr:hover td{background:#fbfdff}
 .empty{
   padding:20px;border:1px dashed var(--line);border-radius:8px;background:var(--panel-soft);
   color:var(--muted);font-size:13px
+}
+.notice{
+  padding:12px 14px;border:1px solid #f3d08b;border-radius:8px;background:#fff8e6;
+  color:#8a5a12;font-size:13px
 }
 .footer{color:var(--muted);font-size:12px;padding:4px 0 20px}
 @media(max-width:620px){
@@ -263,7 +268,6 @@ tr:hover td{background:#fbfdff}
               <th>涨跌</th>
               <th>成交额</th>
               <th>主力净流入</th>
-              <th>领涨股</th>
               <th>质量</th>
             </tr>
           </thead>
@@ -276,7 +280,7 @@ tr:hover td{background:#fbfdff}
       <div id="signalMatrix"></div>
     </div>
     <div class="panel">
-      <h3>数据质量</h3>
+      <h3>数据源健康状态</h3>
       <div id="qualityRows"></div>
     </div>
   </div>
@@ -307,7 +311,7 @@ function bar(score){
   return `<div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>`;
 }
 function qualityTag(status){
-  const map = { ok:'safe', cache:'warning', proxy:'warning', mixed:'warning', fallback:'warning' };
+  const map = { ok:'safe', cache:'warning', proxy:'warning', mixed:'warning', fallback:'warning', partial:'warning', limited:'warning', failed:'danger' };
   return `<span class="tag ${map[status] || 'info'}">${status}</span>`;
 }
 function severityClass(value){
@@ -320,7 +324,15 @@ function severityTag(value){
 
 function renderMissing(){
   const box = document.getElementById('missingData');
-  if (data) { box.innerHTML = ''; return; }
+  if (data) {
+    const rawDate = data.source?.raw_latest_date;
+    if (rawDate && rawDate !== data.trade_date) {
+      box.innerHTML = `<div class="notice">原始基础库最新日期为 ${rawDate}，但宽基指数日频成交额尚未完整落库；当前收盘驾驶舱使用最近完整收盘日 ${data.trade_date}。行业/主题热力仍为本次生成时的实时数据。</div>`;
+    } else {
+      box.innerHTML = '';
+    }
+    return;
+  }
   box.innerHTML = `<div class="empty">未找到缓存数据。请先运行 tools/build_market_dashboard.py 生成 data/cache/market_dashboard_data.js。</div>`;
 }
 
@@ -328,10 +340,14 @@ function renderMeta(){
   document.getElementById('metaChips').innerHTML = [
     `版本 ${data.version}`,
     `交易日 ${data.trade_date}`,
+    data.source?.raw_latest_date && data.source.raw_latest_date !== data.trade_date ? `原始最新 ${data.source.raw_latest_date}` : '',
     `生成 ${data.generated_at}`,
     `行业数据 ${data.source.industry_quality}`,
     data.report?.daily_markdown ? `日报 ${data.report.daily_markdown}` : '',
     data.history?.snapshot ? `快照 ${data.history.snapshot}` : '',
+    `<a href="intraday_research.html">历史分时</a>`,
+    `<a href="strategy_dashboard.html">策略研究</a>`,
+    `<a href="morning_dashboard.html">午盘快照</a>`,
   ].filter(Boolean).map(v => `<span class="chip">${v}</span>`).join('');
 }
 
@@ -539,7 +555,6 @@ function renderIndustries(){
       <td>${fmt(row.ret_5d,2,'%')}</td>
       <td>${fmt(row.amount,0,'亿')}</td>
       <td>${fmt(row.net_inflow,2,'亿')}</td>
-      <td>${row.leader || '-'}<div class="sub">${fmt(row.leader_change,2,'%')}</div></td>
       <td>${qualityTag(row.quality)}</td>
     </tr>
   `).join('');
@@ -566,13 +581,20 @@ function renderSignals(){
 }
 
 function renderQuality(){
-  document.getElementById('qualityRows').innerHTML = data.data_quality.map(row => `
+  const rows = data.data_health?.length ? data.data_health : data.data_quality;
+  document.getElementById('qualityRows').innerHTML = rows.map(row => {
+    const name = row.indicator_name || row.item || '-';
+    const complete = row.source ? (row.is_complete ? '完整' : '有缺口') : '';
+    const detail = row.source
+      ? `来源：${row.source}；最新：${row.latest_date || '-'}；频率：${row.frequency || '-'}；完整性：${complete}。${row.detail || ''}`
+      : row.detail;
+    return `
     <div class="quality-row">
-      <div><strong>${row.item}</strong></div>
+      <div><strong>${name}</strong></div>
       <div>${qualityTag(row.status)}</div>
-      <div>${row.detail}</div>
+      <div>${detail}</div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 function boot(){

@@ -2,19 +2,21 @@ import json
 import math
 import os
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
 
 import pandas as pd
 
+from source_health import load_source_health, summarize_source_health
+
 
 SYSTEM_ROOT = Path(__file__).resolve().parents[1]
-WORKBENCH_ROOT = SYSTEM_ROOT.parent
 CACHE_DIR = SYSTEM_ROOT / "data" / "cache"
 CACHE_JSON = CACHE_DIR / "market_dashboard.json"
 CACHE_JS = CACHE_DIR / "market_dashboard_data.js"
-CONGESTION_JSON = WORKBENCH_ROOT / "congestion_data.json"
+CONGESTION_JSON = SYSTEM_ROOT / "data" / "congestion_data.json"
 REPORT_DIR = SYSTEM_ROOT / "outputs" / "reports"
 HISTORY_DIR = SYSTEM_ROOT / "data" / "history"
 
@@ -78,6 +80,52 @@ def load_congestion_data():
         return json.load(f)
 
 
+def valid_number(value):
+    return isinstance(value, (int, float)) and not math.isnan(value)
+
+
+def filter_valid_congestion_dates(data):
+    valid_dates = []
+    raw = data.get("RAW_DATA", {})
+    for date in data.get("ALL_DATES", []):
+        market = data.get("MARKET_TOTAL", {}).get(date, {})
+        market_turnover = market.get("turnover")
+        index_count = 0
+        for rows in raw.values():
+            row = rows.get(date, {})
+            if valid_number(row.get("turnover")) and row.get("turnover") > 0:
+                index_count += 1
+        if valid_number(market_turnover) and market_turnover > 0 and index_count >= 5:
+            valid_dates.append(date)
+
+    if len(valid_dates) == len(data.get("ALL_DATES", [])):
+        return data
+    if not valid_dates:
+        raise ValueError("congestion_data.json 中没有可用的完整收盘交易日")
+
+    return {
+        **data,
+        "ALL_DATES": valid_dates,
+        "MARKET_TOTAL": {
+            date: data.get("MARKET_TOTAL", {})[date]
+            for date in valid_dates
+            if date in data.get("MARKET_TOTAL", {})
+        },
+        "TOP5_RATIO": {
+            date: data.get("TOP5_RATIO", {}).get(date, 0)
+            for date in valid_dates
+        },
+        "RAW_DATA": {
+            code: {
+                date: rows[date]
+                for date in valid_dates
+                if date in rows
+            }
+            for code, rows in raw.items()
+        },
+    }
+
+
 def pct_rank(values, value):
     clean = [v for v in values if v is not None and not math.isnan(v)]
     if not clean:
@@ -94,31 +142,30 @@ def clamp(value, low=0, high=100):
     return max(low, min(high, value))
 
 
-def get_json(url, timeout=20):
-    try:
-        import requests
-        response = requests.get(
-            url,
-            headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-                "Referer": "https://quote.eastmoney.com/",
-            },
-            timeout=timeout,
-        )
-        response.raise_for_status()
-        return response.json()
-    except Exception:
-        pass
+def get_json(url, timeout=20, retries=3):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Referer": "https://quote.eastmoney.com/",
+    }
+    last_error = None
+    for attempt in range(retries):
+        try:
+            import requests
+            response = requests.get(url, headers=headers, timeout=timeout)
+            response.raise_for_status()
+            return response.json()
+        except Exception as exc:
+            last_error = exc
 
-    req = Request(
-        url,
-        headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Referer": "https://quote.eastmoney.com/",
-        },
-    )
-    with urlopen(req, timeout=timeout) as response:
-        return json.loads(response.read().decode("utf-8"))
+        try:
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as exc:
+            last_error = exc
+
+        time.sleep(1 + attempt)
+    raise last_error
 
 
 def level(score):
@@ -255,7 +302,7 @@ def build_market_state(data, indices, styles):
             "name": "成交集中度",
             "score": round(concentration_score, 1),
             "status": level(concentration_score),
-            "detail": f"前5%个股成交占比 {top5:.1f}%，45%附近为拥挤交易临界区。",
+            "detail": f"前5%成交占比 {top5:.1f}%，45%附近为拥挤交易临界区。",
         },
         {
             "id": "rotation",
@@ -363,8 +410,6 @@ def try_fetch_eastmoney_boards():
                 "amount_pct": round(amount_rank, 0),
                 "net_inflow": round(net_inflow_yi, 2),
                 "net_inflow_pct": round(inflow_rank, 0),
-                "leader": row.get("f128") or "-",
-                "leader_change": round(float(row.get("f136") or 0), 2),
                 "state": classify_board(heat, pct_chg, amount_rank, net_inflow_yi),
                 "quality": "ok",
             })
@@ -429,8 +474,6 @@ def build_proxy_industries(indices):
             "amount_pct": round(base["percentile"], 0),
             "net_inflow": None,
             "net_inflow_pct": None,
-            "leader": "-",
-            "leader_change": None,
             "state": "代理观察",
             "quality": "proxy",
         })
@@ -685,7 +728,7 @@ def build_risk_alerts(indices, industries, state, breadth=None, spreads=None):
                 "level": "高",
                 "message": f"综合拥挤度 {row['score']:.1f}，换手分位 {row['percentile']:.0f}%。",
             })
-        if row["day_delta"] >= 4:
+        if row.get("day_delta") is not None and row["day_delta"] >= 4:
             alerts.append({
                 "type": "快速升温",
                 "target": row["name"],
@@ -852,7 +895,8 @@ def write_daily_report(dashboard):
 def build_dashboard():
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    congestion = load_congestion_data()
+    raw_congestion = load_congestion_data()
+    congestion = filter_valid_congestion_dates(raw_congestion)
     indices = compute_index_series(congestion)
     styles = build_style_rotation(indices)
     state = build_market_state(congestion, indices, styles)
@@ -868,6 +912,7 @@ def build_dashboard():
     alerts = build_risk_alerts(indices, industries, state, breadth, spreads)
     summary = build_summary(indices, styles, state, industries, breadth, spreads, divergences)
     trade_date = congestion["ALL_DATES"][-1]
+    data_health = load_source_health()
 
     dashboard = {
         "version": "0.4.0",
@@ -877,6 +922,7 @@ def build_dashboard():
             "wide_index": "congestion_data.json",
             "industry": industry_source,
             "industry_quality": industry_quality,
+            "raw_latest_date": raw_congestion["ALL_DATES"][-1],
         },
         "summary": summary,
         "market_state": state,
@@ -887,6 +933,8 @@ def build_dashboard():
         "divergence_signals": divergences,
         "industry_heatmap": industries,
         "risk_alerts": alerts,
+        "data_health": data_health,
+        "data_health_summary": summarize_source_health(data_health),
         "data_quality": [
             {"item": "宽基指数", "status": "ok", "detail": f"{len(indices)} 个指数，覆盖 {trade_date}。"},
             {"item": "行业热力", "status": industry_quality, "detail": industry_source},
@@ -894,6 +942,7 @@ def build_dashboard():
             {"item": "微盘指数", "status": "cache", "detail": "使用 800007 Choice微盘股指数；外部接口失败时读取本地缓存。"},
             {"item": "历史分位", "status": "mixed", "detail": "宽基更新脚本支持近3年分位；缓存页保留最新生成结果。"},
             {"item": "历史快照", "status": "ok", "detail": f"按交易日写入 data/history/market_dashboard_{trade_date}.json。"},
+            {"item": "收盘日过滤", "status": "ok", "detail": f"原始最新日 {raw_congestion['ALL_DATES'][-1]}；有效收盘日 {trade_date}。午盘日频为空时会自动跳过。"},
         ],
     }
     report_path = write_daily_report(dashboard)

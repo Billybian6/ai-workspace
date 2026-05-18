@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>策略研究工作台</title>
+<style>
+:root{
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+  --panel-soft:#f9fbff;
+  --text:#172033;
+  --muted:#667085;
+  --line:#d9e1ee;
+  --blue:#2563eb;
+  --cyan:#0891b2;
+  --green:#169b62;
+  --amber:#b7791f;
+  --red:#cf3f3f;
+  --shadow:0 8px 24px rgba(16,24,40,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.5;overflow-x:hidden;
+}
+.app{width:100%;max-width:1600px;margin:0 auto;padding:20px;min-width:0}
+.topbar{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px
+}
+.title{min-width:0}
+.title h1{font-size:24px;margin:0 0 4px;font-weight:760;letter-spacing:0}
+.title p{margin:0;color:var(--muted);font-size:13px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;min-width:0}
+.chip{
+  border:1px solid var(--line);background:var(--panel);border-radius:999px;
+  padding:6px 10px;font-size:12px;color:var(--muted);max-width:100%;word-break:break-word
+}
+.chip a{color:var(--blue);text-decoration:none}
+.section{margin-bottom:18px}
+.summary{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:1100px){.summary,.two-col,.three-col{grid-template-columns:1fr!important}.topbar{display:block}.meta{justify-content:flex-start;margin-top:12px}}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  box-shadow:var(--shadow);padding:16px;min-width:0
+}
+.panel h2,.panel h3{font-size:15px;margin:0 0 12px;font-weight:720}
+.headline{font-size:20px;font-weight:760;margin-bottom:10px;overflow-wrap:anywhere;word-break:break-word}
+.bullets{margin:0;padding-left:18px;color:var(--muted);font-size:13px}
+.bullets li{margin:5px 0;overflow-wrap:anywhere;word-break:break-word}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+@media(max-width:900px){.score-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.score-grid{grid-template-columns:1fr}}
+.score-card{border:1px solid var(--line);background:var(--panel-soft);border-radius:8px;padding:12px;min-height:126px}
+.score-card .name{font-size:12px;color:var(--muted)}
+.score-card .score{font-size:26px;font-weight:780;margin:2px 0}
+.score-card .comment{font-size:12px;color:var(--muted)}
+.trend-list{display:grid;gap:10px}
+.trend-row{
+  display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px;
+  border:1px solid var(--line);border-radius:8px;background:var(--panel-soft);padding:10px
+}
+@media(max-width:760px){.trend-row{grid-template-columns:1fr}}
+.trend-meta{min-width:0}
+.trend-name{font-weight:760}
+.trend-values{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px;font-size:12px;color:var(--muted)}
+.trend-canvas-wrap{height:126px;position:relative;min-width:0}
+.trend-canvas-wrap canvas{width:100%;height:100%;display:block}
+.trend-tooltip{
+  position:absolute;z-index:5;display:none;pointer-events:none;min-width:132px;
+  border:1px solid var(--line);background:rgba(255,255,255,.96);box-shadow:var(--shadow);
+  border-radius:8px;padding:7px 9px;font-size:12px;color:var(--text)
+}
+.trend-tooltip .muted{color:var(--muted)}
+.action-bar{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  box-shadow:var(--shadow);padding:10px
+}
+.action-btn{
+  appearance:none;border:1px solid var(--line);background:var(--panel-soft);color:var(--text);
+  border-radius:7px;padding:8px 11px;font-size:13px;text-decoration:none;cursor:pointer
+}
+.action-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.action-btn:hover{filter:brightness(.98)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{
+  text-align:left;color:var(--muted);font-weight:650;background:#f3f6fb;
+  border-bottom:1px solid var(--line);padding:9px 10px;white-space:nowrap
+}
+td{padding:9px 10px;border-bottom:1px solid #edf1f7;vertical-align:middle;white-space:nowrap}
+tr:hover td{background:#fbfdff}
+.tag{
+  display:inline-block;min-width:50px;text-align:center;border-radius:6px;padding:3px 8px;
+  font-weight:700;font-size:12px
+}
+.tag.danger{background:#fee5e5;color:var(--red)}
+.tag.warning{background:#fff2d6;color:var(--amber)}
+.tag.safe{background:#def7ec;color:var(--green)}
+.tag.info{background:#dff4fb;color:var(--cyan)}
+.tag.neutral{background:#edf1f7;color:var(--muted)}
+.text-danger{color:var(--red)}
+.text-warning{color:var(--amber)}
+.text-safe{color:var(--green)}
+.text-info{color:var(--cyan)}
+.sub{color:var(--muted);font-size:12px}
+.bar-track{width:120px;height:8px;border-radius:999px;background:#e8eef7;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.quality-row{
+  display:grid;grid-template-columns:96px 74px minmax(0,1fr);gap:8px;align-items:start;
+  border-bottom:1px solid #edf1f7;padding:9px 0;font-size:13px
+}
+.quality-row:last-child{border-bottom:none}
+.quality-row>div{min-width:0;overflow-wrap:anywhere}
+.micro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:640px){.micro-grid{grid-template-columns:1fr 1fr}}
+.micro-stat{border-bottom:1px solid #edf1f7;padding:4px 0 9px}
+.micro-stat .k{font-size:12px;color:var(--muted)}
+.micro-stat .v{font-size:20px;font-weight:760}
+.footer{color:var(--muted);font-size:12px;padding:4px 0 20px}
+.empty{padding:18px;border:1px dashed var(--line);border-radius:8px;background:var(--panel-soft);color:var(--muted);font-size:13px}
+@media(max-width:620px){.app{padding:20px 14px}.headline{font-size:17px;line-height:1.45;word-break:break-all}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="title">
+      <h1>策略研究工作台</h1>
+      <p>面向 FOF、CTA、期权、套利与低波组合的市场状态识别。</p>
+    </div>
+    <div class="meta" id="metaChips"></div>
+  </div>
+
+  <div id="missingData" class="section"></div>
+
+  <div class="section action-bar">
+    <a class="action-btn primary" href="update_strategy.cmd">更新策略研究</a>
+    <a class="action-btn" href="update_morning.cmd">生成午盘快照</a>
+    <a class="action-btn" href="update_daily.cmd">生成收盘复盘</a>
+    <button class="action-btn" type="button" onclick="location.reload()">刷新页面</button>
+  </div>
+
+  <div class="section summary">
+    <div class="panel">
+      <h2>策略摘要</h2>
+      <div id="summaryPanel"></div>
+    </div>
+    <div class="panel">
+      <h2>策略环境评分</h2>
+      <div class="score-grid" id="scoreCards"></div>
+    </div>
+  </div>
+
+  <div class="section panel">
+    <h3>指数最近5日分时趋势</h3>
+    <div class="trend-list" id="trendRows"></div>
+  </div>
+
+  <div class="section two-col">
+    <div class="panel">
+      <h3>量化/指增超额观察</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>策略</th>
+              <th>基准</th>
+              <th>5日</th>
+              <th>超额</th>
+              <th>环境</th>
+            </tr>
+          </thead>
+          <tbody id="quantRows"></tbody>
+        </table>
+      </div>
+      <div class="sub" id="quantDiag"></div>
+    </div>
+    <div class="panel">
+      <h3>宏观股债商</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>资产</th>
+              <th>代理</th>
+              <th>周期</th>
+              <th>涨跌</th>
+              <th>信号</th>
+            </tr>
+          </thead>
+          <tbody id="macroRows"></tbody>
+        </table>
+      </div>
+      <div class="sub" id="macroDiag"></div>
+    </div>
+  </div>
+
+  <div class="section three-col">
+    <div class="panel">
+      <h3>市场微结构</h3>
+      <div class="micro-grid" id="microGrid"></div>
+    </div>
+    <div class="panel">
+      <h3>主线强度</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方向</th>
+              <th>热度</th>
+              <th>涨跌</th>
+              <th>资金</th>
+            </tr>
+          </thead>
+          <tbody id="industryRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>ETF跟踪</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ETF</th>
+              <th>分类</th>
+              <th>涨跌</th>
+              <th>成交</th>
+              <th>净流入</th>
+            </tr>
+          </thead>
+          <tbody id="etfRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section two-col">
+    <div class="panel">
+      <h3>板块扩散与资金</h3>
+      <div id="breadthPanel"></div>
+    </div>
+    <div class="panel">
+      <h3>数据源健康状态</h3>
+      <div id="qualityRows"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    本页只展示指数、ETF、板块和全市场聚合指标；不展示个股明细。历史任意日期分时回看需要后续每日沉淀分钟线。
+  </div>
+</div>
+
+<script src="data/cache/strategy_dashboard_data.js"></script>
+<script>
+const data = window.STRATEGY_DASHBOARD_DATA;
+
+function cls(level){ return level?.class || 'info'; }
+function fmt(value, digits=1, suffix=''){
+  return Number.isFinite(value) ? `${value.toFixed(digits)}${suffix}` : '-';
+}
+function tag(level){
+  return `<span class="tag ${cls(level)}">${level?.label || '-'}</span>`;
+}
+function qualityTag(status){
+  const map = { ok:'safe', hidden:'safe', limited:'warning', fallback:'warning', proxy:'warning', cache:'warning', partial:'warning', failed:'danger' };
+  return `<span class="tag ${map[status] || 'neutral'}">${status}</span>`;
+}
+function bar(score){
+  const width = Math.max(0, Math.min(100, Number(score) || 0));
+  return `<div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>`;
+}
+function retClass(v){
+  const n = Number(v);
+  if (!Number.isFinite(n)) return 'text-info';
+  return n >= 0 ? 'text-danger' : 'text-safe';
+}
+
+function renderMissing(){
+  const box = document.getElementById('missingData');
+  if (data) { box.innerHTML = ''; return; }
+  box.innerHTML = `<div class="empty">未找到策略研究缓存。请先运行 tools/build_strategy_dashboard.py。</div>`;
+}
+
+function renderMeta(){
+  document.getElementById('metaChips').innerHTML = [
+    `版本 ${data.version}`,
+    `交易日 ${data.trade_date}`,
+    `生成 ${data.generated_at}`,
+    `范围 最近5日分时`,
+    data.history?.snapshot ? `快照 ${data.history.snapshot}` : '',
+    `<a href="intraday_research.html">历史分时</a>`,
+    `<a href="morning_dashboard.html">午盘快照</a>`,
+    `<a href="dashboard.html">收盘驾驶舱</a>`,
+  ].filter(Boolean).map(v => `<span class="chip">${v}</span>`).join('');
+}
+
+function renderSummary(){
+  document.getElementById('summaryPanel').innerHTML = `
+    <div class="headline">${data.summary.headline}</div>
+    <ul class="bullets">${data.summary.bullets.map(v => `<li>${v}</li>`).join('')}</ul>
+  `;
+}
+
+function renderScores(){
+  const rows = Object.values(data.strategy_scores);
+  document.getElementById('scoreCards').innerHTML = rows.map(row => `
+    <div class="score-card">
+      <div class="name">${row.name}</div>
+      <div class="score text-${cls(row.level)}">${fmt(row.score)}</div>
+      <div>${tag(row.level)}</div>
+      <div class="comment">${row.comment}</div>
+    </div>
+  `).join('');
+}
+
+function renderTrendRows(){
+  document.getElementById('trendRows').innerHTML = data.index_trends.map((row, i) => `
+    <div class="trend-row">
+      <div class="trend-meta">
+        <div class="trend-name">${row.name}</div>
+        <div class="sub">${row.style} · ${row.metrics.label}</div>
+        <div class="trend-values">
+          <div>CTA分<br><strong>${fmt(row.metrics.cta_score)}</strong></div>
+          <div>5日收益<br><strong class="${retClass(row.metrics.total_return)}">${fmt(row.metrics.total_return,2,'%')}</strong></div>
+          <div>趋势效率<br><strong>${fmt(row.metrics.trend_efficiency,1,'%')}</strong></div>
+          <div>日方向<br><strong>${fmt(row.metrics.day_consistency,1,'%')}</strong></div>
+        </div>
+      </div>
+      <div class="trend-canvas-wrap">
+        <canvas id="trend_${i}"></canvas>
+        <div class="trend-tooltip" id="trend_tip_${i}"></div>
+      </div>
+    </div>
+  `).join('');
+  drawAllTrends();
+  bindTrendInteractions();
+}
+
+function drawAllTrends(){
+  data.index_trends.forEach((row, i) => drawTrend(row, document.getElementById(`trend_${i}`)));
+}
+
+function bindTrendInteractions(){
+  data.index_trends.forEach((row, i) => {
+    const canvas = document.getElementById(`trend_${i}`);
+    const tip = document.getElementById(`trend_tip_${i}`);
+    if (!canvas || !tip || canvas.dataset.bound === '1') return;
+    canvas.dataset.bound = '1';
+    canvas.addEventListener('mousemove', event => {
+      const state = canvas._chartState;
+      if (!state || !state.points.length) return;
+      const rect = canvas.getBoundingClientRect();
+      const cx = event.clientX - rect.left;
+      const ratio = (cx - state.pad.left) / Math.max(1, state.plotW);
+      const idx = Math.max(0, Math.min(state.points.length - 1, Math.round(ratio * (state.points.length - 1))));
+      const point = state.points[idx];
+      drawTrend(row, canvas, idx);
+      const px = state.x(idx);
+      const py = state.y(point.return);
+      tip.innerHTML = `
+        <strong>${row.name}</strong><br>
+        <span class="muted">${point.date} ${point.time}</span><br>
+        涨跌幅 <strong class="${retClass(point.return)}">${fmt(point.return,2,'%')}</strong>
+      `;
+      tip.style.left = `${Math.max(8, Math.min(state.width - 148, px + 10))}px`;
+      tip.style.top = `${Math.max(8, Math.min(state.height - 68, py - 54))}px`;
+      tip.style.display = 'block';
+    });
+    canvas.addEventListener('mouseleave', () => {
+      tip.style.display = 'none';
+      drawTrend(row, canvas);
+    });
+  });
+}
+
+function drawTrend(row, canvas, hoverIndex=null){
+  if (!canvas) return;
+  const box = canvas.parentElement;
+  const ratio = window.devicePixelRatio || 1;
+  const width = box.clientWidth || 720;
+  const height = box.clientHeight || 126;
+  canvas.width = width * ratio;
+  canvas.height = height * ratio;
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  ctx.clearRect(0, 0, width, height);
+  const points = row.points || [];
+  const pad = { left: 34, right: 10, top: 12, bottom: 18 };
+  const plotW = width - pad.left - pad.right;
+  const plotH = height - pad.top - pad.bottom;
+  ctx.fillStyle = '#667085';
+  ctx.font = '11px sans-serif';
+  if (!points.length) {
+    ctx.fillText(row.quality || '无数据', pad.left, height / 2);
+    return;
+  }
+  const values = points.map(p => p.return);
+  const max = Math.max(1, ...values);
+  const min = Math.min(-1, ...values);
+  const y = v => pad.top + (max - v) / (max - min || 1) * plotH;
+  const x = idx => pad.left + idx / Math.max(1, points.length - 1) * plotW;
+  canvas._chartState = { points, pad, plotW, plotH, width, height, min, max, x, y };
+  ctx.strokeStyle = '#d9e1ee';
+  ctx.lineWidth = 1;
+  [0].forEach(line => {
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y(line));
+    ctx.lineTo(width - pad.right, y(line));
+    ctx.stroke();
+    ctx.fillText('0%', 6, y(line) + 4);
+  });
+  let lastDate = points[0].date;
+  points.forEach((p, idx) => {
+    if (p.date !== lastDate) {
+      ctx.strokeStyle = '#edf1f7';
+      ctx.beginPath();
+      ctx.moveTo(x(idx), pad.top);
+      ctx.lineTo(x(idx), height - pad.bottom);
+      ctx.stroke();
+      ctx.fillStyle = '#667085';
+      ctx.fillText(p.date.slice(5), x(idx) + 3, height - 5);
+      lastDate = p.date;
+    }
+  });
+  ctx.beginPath();
+  points.forEach((p, idx) => {
+    if (idx === 0) ctx.moveTo(x(idx), y(p.return));
+    else ctx.lineTo(x(idx), y(p.return));
+  });
+  ctx.strokeStyle = row.metrics.total_return >= 0 ? '#cf3f3f' : '#169b62';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  ctx.fillStyle = '#667085';
+  ctx.fillText(points[0].date.slice(5), pad.left, height - 5);
+  ctx.fillText(`${max.toFixed(1)}%`, 4, pad.top + 4);
+  ctx.fillText(`${min.toFixed(1)}%`, 4, height - pad.bottom);
+  if (Number.isInteger(hoverIndex) && points[hoverIndex]) {
+    const p = points[hoverIndex];
+    const px = x(hoverIndex);
+    const py = y(p.return);
+    ctx.strokeStyle = '#98a2b3';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 3]);
+    ctx.beginPath();
+    ctx.moveTo(px, pad.top);
+    ctx.lineTo(px, height - pad.bottom);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(pad.left, py);
+    ctx.lineTo(width - pad.right, py);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.arc(px, py, 4, 0, Math.PI * 2);
+    ctx.fillStyle = row.metrics.total_return >= 0 ? '#cf3f3f' : '#169b62';
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+}
+
+function renderQuant(){
+  const view = data.quant_view || {};
+  const rows = view.rows || [];
+  document.getElementById('quantRows').innerHTML = rows.map(row => `
+    <tr>
+      <td><strong>${row.name}</strong><div class="sub">${row.style}</div></td>
+      <td>${row.benchmark}</td>
+      <td class="${retClass(row.return_5d)}">${fmt(row.return_5d,2,'%')}</td>
+      <td class="${retClass(row.excess_vs_core)}">${fmt(row.excess_vs_core,2,'%')}</td>
+      <td>${tag(row.level)}<div class="sub">${fmt(row.score)}</div></td>
+    </tr>
+  `).join('');
+  const d = view.diagnostics || {};
+  document.getElementById('quantDiag').textContent =
+    `小微盘相对核心宽基 ${fmt(d.small_premium,2,'%')}，指数离散 ${fmt(d.dispersion,2,'%')}，全A上涨占比 ${fmt(d.up_ratio,1,'%')}。`;
+}
+
+function renderMacro(){
+  const view = data.macro_view || {};
+  const rows = view.rows || [];
+  document.getElementById('macroRows').innerHTML = rows.map(row => `
+    <tr>
+      <td><strong>${row.asset}</strong></td>
+      <td>${row.proxy}</td>
+      <td>${row.horizon}</td>
+      <td class="${retClass(row.change)}">${fmt(row.change,2,'%')}</td>
+      <td>${row.signal}</td>
+    </tr>
+  `).join('');
+  document.getElementById('macroDiag').textContent =
+    `${view.regime || '-'}；股债商离散 ${fmt(view.dispersion,2,'%')}。债券先用国债ETF代理，后续可升级国债期货/中债曲线。`;
+}
+
+function renderMicro(){
+  const m = data.microstructure || {};
+  const rows = [
+    ['上涨占比', fmt(m.up_ratio,1,'%'), `${m.up_count} 涨 / ${m.down_count} 跌`],
+    ['涨停估算', `${m.limit_up_est || 0}`, fmt(m.limit_up_ratio,2,'%')],
+    ['跌停估算', `${m.limit_down_est || 0}`, fmt(m.limit_down_ratio,2,'%')],
+    ['强势家数', `${m.strong_count || 0}`, '涨幅 >= 5%'],
+    ['弱势家数', `${m.weak_count || 0}`, '跌幅 <= -5%'],
+    ['样本数', `${m.sample_count || 0}`, '全A聚合'],
+  ];
+  document.getElementById('microGrid').innerHTML = rows.map(([k,v,d]) => `
+    <div class="micro-stat"><div class="k">${k}</div><div class="v">${v}</div><div class="sub">${d}</div></div>
+  `).join('');
+}
+
+function renderIndustries(){
+  document.getElementById('industryRows').innerHTML = data.industry_rotation.slice(0, 12).map(row => `
+    <tr>
+      <td><strong>${row.name}</strong></td>
+      <td>${bar(row.score)}<div class="sub">${fmt(row.score)}</div></td>
+      <td class="${retClass(row.ret_5d)}">${fmt(row.ret_5d,2,'%')}</td>
+      <td>${fmt(row.net_inflow,2,'亿')}</td>
+    </tr>
+  `).join('');
+}
+
+function renderEtfs(){
+  document.getElementById('etfRows').innerHTML = data.etf_tracking.map(row => `
+    <tr>
+      <td><strong>${row.name}</strong><div class="sub">${row.id}</div></td>
+      <td>${row.bucket}</td>
+      <td class="${retClass(row.pct_chg)}">${fmt(row.pct_chg,2,'%')}</td>
+      <td>${fmt(row.amount,0,'亿')}</td>
+      <td>${fmt(row.net_inflow,2,'亿')}</td>
+    </tr>
+  `).join('');
+}
+
+function renderBreadth(){
+  const b = data.market_breadth || {};
+  document.getElementById('breadthPanel').innerHTML = `
+    <div class="micro-grid">
+      <div class="micro-stat"><div class="k">扩散分</div><div class="v">${fmt(b.diffusion_score)}</div><div class="sub">${b.status?.label || '-'}</div></div>
+      <div class="micro-stat"><div class="k">上涨覆盖</div><div class="v">${fmt(b.positive_ratio,1,'%')}</div><div class="sub">${b.positive_count}/${b.coverage}</div></div>
+      <div class="micro-stat"><div class="k">热点数量</div><div class="v">${b.hot_count || 0}</div><div class="sub">低热 ${b.cold_count || 0}</div></div>
+      <div class="micro-stat"><div class="k">主力净流入</div><div class="v">${fmt(b.total_net_inflow,2,'亿')}</div><div class="sub">覆盖 ${fmt(b.net_inflow_positive_ratio,1,'%')}</div></div>
+      <div class="micro-stat"><div class="k">头尾分化</div><div class="v">${fmt(b.dispersion_score)}</div></div>
+      <div class="micro-stat"><div class="k">前五成交占比</div><div class="v">${fmt(b.top5_amount_share,1,'%')}</div></div>
+    </div>
+    <p class="sub">${b.note || ''}</p>
+  `;
+}
+
+function renderQuality(){
+  const rows = data.data_health?.length ? data.data_health : data.data_quality;
+  document.getElementById('qualityRows').innerHTML = rows.map(row => {
+    const name = row.indicator_name || row.item || '-';
+    const complete = row.source ? (row.is_complete ? '完整' : '有缺口') : '';
+    const detail = row.source
+      ? `来源：${row.source}；最新：${row.latest_date || '-'}；频率：${row.frequency || '-'}；完整性：${complete}。${row.detail || ''}`
+      : row.detail;
+    return `
+    <div class="quality-row">
+      <div><strong>${name}</strong></div>
+      <div>${qualityTag(row.status)}</div>
+      <div>${detail}</div>
+    </div>
+  `}).join('');
+}
+
+function boot(){
+  renderMissing();
+  if (!data) return;
+  renderMeta();
+  renderSummary();
+  renderScores();
+  renderTrendRows();
+  renderQuant();
+  renderMacro();
+  renderMicro();
+  renderIndustries();
+  renderEtfs();
+  renderBreadth();
+  renderQuality();
+  window.addEventListener('resize', drawAllTrends);
+}
+boot();
+</script>
+</body>
+</html>
