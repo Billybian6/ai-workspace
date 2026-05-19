@@ -24,6 +24,18 @@ def percentile_rank(history_values, current_value):
     below_or_equal = sum(1 for v in values if v <= current_value)
     return round(below_or_equal / len(values) * 100, 0)
 
+def safe_number(value, default=None):
+    """Convert Choice/Eastmoney values to float, treating None/NaN as missing."""
+    try:
+        if value is None or pd.isna(value):
+            return default
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+def numeric_series(series):
+    return pd.to_numeric(series, errors="coerce").fillna(0)
+
 def get_json_with_retry(url, retries=3, timeout=20):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
@@ -136,6 +148,25 @@ def fetch_congestion_data():
         # 使用 000985.CSI 作为全市场成交额参考
         print("Fetching Market Total Amount History (000985.CSI)...")
         market_amt_df = c.csd("000985.CSI", "AMOUNT", all_dates[0], latest_trade_date, "Ispandas=1")
+        if not isinstance(market_amt_df, pd.DataFrame) or market_amt_df.empty:
+            print("Failed to get valid market amount history")
+            return
+        market_amt_df["AMOUNT"] = numeric_series(market_amt_df["AMOUNT"])
+        valid_market_dates = {
+            format_date(row["DATES"])
+            for _, row in market_amt_df.iterrows()
+            if safe_number(row.get("AMOUNT"), 0) > 0
+        }
+        filtered_dates = [dt for dt in all_dates if dt in valid_market_dates]
+        if not filtered_dates:
+            print("No completed trading day has valid AMOUNT; aborting update.")
+            return
+        if filtered_dates[-1] != all_dates[-1]:
+            print(f"Latest trade date {all_dates[-1]} has no completed AMOUNT yet; using {filtered_dates[-1]} as latest valid close.")
+            all_dates = filtered_dates
+            latest_trade_date = all_dates[-1]
+            history_start = (pd.to_datetime(latest_trade_date) - timedelta(days=365 * 3 + 30)).strftime("%Y-%m-%d")
+            market_amt_df = market_amt_df[market_amt_df["DATES"].apply(format_date).isin(all_dates)]
         
         print("Fetching current listed A-shares...")
         all_a_res = c.sector("001004", latest_trade_date)
@@ -151,6 +182,8 @@ def fetch_congestion_data():
                 all_mv_data.append(res_css)
         
         mv_df = pd.concat(all_mv_data)
+        mv_df["FREEFLOATMV"] = numeric_series(mv_df["FREEFLOATMV"])
+        mv_df["AMOUNT"] = numeric_series(mv_df["AMOUNT"])
         # FREEFLOATMV 在 css 中单位是元
         total_market_free_mv_yi = mv_df["FREEFLOATMV"].sum() / 1e8
         print(f"Market FreeFloatMV: {total_market_free_mv_yi:.2f} 亿")
@@ -171,8 +204,9 @@ def fetch_congestion_data():
         
         for _, row in market_amt_df.iterrows():
             dt = format_date(row["DATES"])
+            amount = safe_number(row.get("AMOUNT"), 0)
             final_json["MARKET_TOTAL"][dt] = {
-                "turnover": round(row["AMOUNT"] / 1e8, 2),
+                "turnover": round(amount / 1e8, 2),
                 "free_float_mv": round(total_market_free_mv_yi, 2)
             }
             final_json["TOP5_RATIO"][dt] = round(top5_ratio, 1)
@@ -202,12 +236,14 @@ def fetch_congestion_data():
             
             if isinstance(idx_const, pd.DataFrame) and not idx_const.empty:
                 # SHRMARKETVALUE 在 ctr 中是亿元
-                idx_free_mv_yi = idx_const["SHRMARKETVALUE"].sum()
+                idx_free_mv_yi = numeric_series(idx_const["SHRMARKETVALUE"]).sum()
             else:
                 # Fallback: 使用指数自带的换手率反推 (假设 TURN 是基于自由流通市值)
                 idx_css = c.css(choice_code, "AMOUNT,TURN", f"TradeDate={latest_trade_date},Ispandas=1")
-                if isinstance(idx_css, pd.DataFrame) and not idx_css.empty and idx_css["TURN"].iloc[0] > 0:
-                    idx_free_mv_yi = (idx_css["AMOUNT"].iloc[0] / 1e8) / (idx_css["TURN"].iloc[0] / 100)
+                css_amount = safe_number(idx_css["AMOUNT"].iloc[0], 0) if isinstance(idx_css, pd.DataFrame) and not idx_css.empty else 0
+                css_turn = safe_number(idx_css["TURN"].iloc[0], 0) if isinstance(idx_css, pd.DataFrame) and not idx_css.empty else 0
+                if css_turn > 0:
+                    idx_free_mv_yi = (css_amount / 1e8) / (css_turn / 100)
                 else:
                     idx_free_mv_yi = 10000 # 兜底
             
@@ -216,7 +252,8 @@ def fetch_congestion_data():
                 history_congestion = []
                 for _, row in idx_hist.iterrows():
                     dt = format_date(row["DATES"])
-                    turnover_yi = row["AMOUNT"] / 1e8
+                    amount = safe_number(row.get("AMOUNT"), 0)
+                    turnover_yi = amount / 1e8
                     cong = (turnover_yi / idx_free_mv_yi * 100) if idx_free_mv_yi > 0 else 0
                     history_congestion.append(cong)
                     if dt not in all_dates:
